@@ -36,7 +36,7 @@ public class LevelGenerator : MonoBehaviour
     private void BuildMesh()
     {
         Mesh mesh = new Mesh();
-        Vector3 p = transform.position;
+        Vector3 p = transform.localPosition;
         int xArraySize = (int)(xSize * 2 * cellsPerUnit);
         int zArraySize = (int)(zSize * 2 * cellsPerUnit);
         Vector3[] vertices = new Vector3[(xArraySize + 1) * (zArraySize + 1)];
@@ -47,7 +47,7 @@ public class LevelGenerator : MonoBehaviour
         {
             for (int z = 0; z < zArraySize + 1; z++, vertex++)
             {
-                vertices[vertex] = new Vector3(p.x -xSize + x / cellsPerUnit, GetOctave(p.x - xSize + x / cellsPerUnit,p.z -zSize + z / cellsPerUnit, fineness) * roughness, p.z - zSize + z / cellsPerUnit);
+                vertices[vertex] = new Vector3(x / cellsPerUnit - xSize, GetOctave(- xSize + x / cellsPerUnit,-zSize + z / cellsPerUnit, fineness) * roughness,z / cellsPerUnit - zSize) + p;
                 uvCoords[vertex] = new Vector2(p.x - xSize + x / cellsPerUnit, p.z - zSize + z / cellsPerUnit);
             }
         }

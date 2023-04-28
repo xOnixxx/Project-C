@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Character stats
-    public CharacterController character;
+    private CharacterController character;
     public float gravity = 9.87f;
     public float horizontalSpeed = 4;
     private float verticalSpeed = 0;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        character = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame

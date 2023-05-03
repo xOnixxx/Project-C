@@ -11,19 +11,24 @@ public class LevelGenerator : MonoBehaviour
     public float roughness = 1;
     public float noiseFrequency = 1;
     public int fineness = 4;
+    public List<GameObject> trees = new List<GameObject>();
+    public int treeNumber = 20;
+    public List<GameObject> props = new List<GameObject>();
+    public int propNumber = 10;
+
 
     void Start()
     {
         BuildMesh();
+        GenerateEnvironment();
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
-    private float GetOctave(float x, float z, int fineness)
+    public float GetOctave(float x, float z, int fineness)
     {
         float sum = 0;
         for (int i = 0, coef = 1; i < fineness; i++, coef*=2)
@@ -33,7 +38,7 @@ public class LevelGenerator : MonoBehaviour
         return sum;
     }
 
-    private void BuildMesh()
+    public void BuildMesh()
     {
         Mesh mesh = new Mesh();
         Vector3 p = transform.localPosition;
@@ -67,8 +72,28 @@ public class LevelGenerator : MonoBehaviour
         mesh.triangles = triangles;
         mesh.uv = uvCoords;
         mesh.RecalculateNormals();
+        mesh.RecalculateTangents();
 
         GetComponent<MeshCollider>().sharedMesh = mesh;
         GetComponent<MeshFilter>().mesh = mesh;
+    }
+
+    public void GenerateEnvironment()
+    {
+        float radius = Mathf.Min(xSize, zSize);
+        for (int i = 0; i < treeNumber; i++)
+        {
+            Vector2 xz = Random.insideUnitCircle * radius;
+            GameObject obj = Instantiate(trees[Random.Range(0, trees.Count)],
+                new Vector3(xz.x + transform.position.x, GetOctave(xz.x, xz.y, fineness) * roughness - 0.5f, xz.y + transform.position.z), Quaternion.identity, transform);
+            obj.transform.eulerAngles = new Vector3(-90, 0, Random.Range(0f,360f));
+        }
+        for (int i = 0; i < propNumber; i++)
+        {
+            Vector2 xz = Random.insideUnitCircle * radius;
+            GameObject obj = Instantiate(props[Random.Range(0, props.Count)],
+                new Vector3(xz.x + transform.position.x, GetOctave(xz.x, xz.y, fineness) * roughness - 0.5f, xz.y + transform.position.z), Quaternion.identity, transform);
+            obj.transform.eulerAngles = new Vector3(-90, 0, Random.Range(0f, 360f));
+        }
     }
 }

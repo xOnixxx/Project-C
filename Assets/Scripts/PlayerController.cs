@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private enum State
     {
         Idle,
+        SpellReady,
         Casting
     }
     //Character stats
@@ -27,12 +28,22 @@ public class PlayerController : MonoBehaviour
     public float mouseSensitivity = 3f;
     public float upLimit = -50;
     public float downLimit = 50;
+    List<GameObject> spikes = new List<GameObject>();
 
+    private SpellManager spellManager;
+
+    //DEBUG MODE PARAMETERS
+    private Emitter emitter;
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         animator = GetComponent<Animator>();
         character = GetComponent<CharacterController>();
+        spellManager = GetComponent<SpellManager>();
+
+        //DEBUG MODE PARAMETERS
+        emitter = GetComponent<Emitter>();
     }
 
     // Update is called once per frame
@@ -76,8 +87,12 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalRotation = Input.GetAxis("Mouse X");
         float verticalRotation = Input.GetAxis("Mouse Y");
-
         transform.Rotate(0, horizontalRotation * mouseSensitivity, 0);
+
+        foreach(var spike in spikes)
+        {
+            spike.transform.Rotate(0, -horizontalRotation * mouseSensitivity, 0);
+        }
         cameraHolder.Rotate(-verticalRotation * mouseSensitivity, 0, 0);
 
         Vector3 currentRotation = cameraHolder.localEulerAngles;
@@ -87,6 +102,10 @@ public class PlayerController : MonoBehaviour
     }
     private void CheckActions()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = !Cursor.visible;
+        }
         if(Input.GetKey(KeyCode.LeftShift))
         {
             curSpeed = sprintHorizontalSpeed; 
@@ -95,21 +114,39 @@ public class PlayerController : MonoBehaviour
         {
             curSpeed = speed;
         }
+        //DEBUG MODE
+        if(Input.GetButtonDown("Fire1"))
+        {
+            RaycastHit closestHit;
+            Vector3 origin = transform.position + new Vector3(0, 4, 0);
+            Vector3 target;
+            if (Physics.Raycast(origin, cameraHolder.forward, out closestHit, Mathf.Infinity))
+            {
+                target = closestHit.point;
+            }
+            else
+            {
+                target = transform.position + cameraHolder.forward * 1000;
+            }
+            emitter.Emit(target);
+        }
         if(Input.GetButtonDown("Fire2"))
         {
             if(state == State.Idle && canChangeMode)
             {
                 canChangeMode = false;
-                StartCoroutine(Cooldown());
-                state = State.Casting;
+                state = State.SpellReady;
                 inControl = false;
-                StartCoroutine(CurveUp(0));
+                StartCoroutine(CurveUp(0)); //Make it so player can't fly with this
                 animator.SetBool("inCastMode", true);
+                spellManager.enabled = true;
             }
             else
             {
+                StartCoroutine(CastModeCooldown());
                 state = State.Idle;
                 inControl = true;
+                spellManager.enabled = false;
                 animator.SetBool("inCastMode", false);
             }
         }
@@ -124,9 +161,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(CurveUp(depth + 1));
         }
     }
-    private IEnumerator Cooldown()
+    private IEnumerator CastModeCooldown()
     {
         yield return new WaitForSeconds(castModeCooldown);
         canChangeMode = true;
     }
+    
 }

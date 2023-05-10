@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
     public float castModeCooldown = 1.5f;
     private bool canChangeMode = true;
     private State state = State.Idle;
+    public float maxStamina = 5;
+    public float currentStamina = 5;
+    public float staminaRegenDelay = 0.3f;
+    public bool canRun = true;
+    public bool canRegen = true;
 
     //Camera stats
     public Transform cameraHolder;
@@ -41,7 +46,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         character = GetComponent<CharacterController>();
         spellManager = GetComponent<SpellManager>();
-
         //DEBUG MODE PARAMETERS
         emitter = GetComponent<Emitter>();
     }
@@ -106,13 +110,37 @@ public class PlayerController : MonoBehaviour
         {
             Cursor.visible = !Cursor.visible;
         }
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) && canRun)
         {
+            StopCoroutine(RecoverStamina());
+            canRegen = false;
+            currentStamina -= Time.deltaTime;
+            if(currentStamina < 0)
+            {
+                currentStamina = 0;
+                canRun = false;
+            }
             curSpeed = sprintHorizontalSpeed; 
         }
         else 
         {
             curSpeed = speed;
+            if(currentStamina < maxStamina)
+            {
+                if(canRegen)
+                {
+                    currentStamina += Time.deltaTime;
+                    if(currentStamina > maxStamina)
+                    {
+                        currentStamina = maxStamina;
+                        canRun = true;
+                    }
+                }
+                else
+                {
+                    StartCoroutine(RecoverStamina());
+                }
+            }
         }
         //DEBUG MODE
         if(Input.GetButtonDown("Fire1"))
@@ -166,5 +194,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(castModeCooldown);
         canChangeMode = true;
     }
-    
+    private IEnumerator RecoverStamina()
+    {
+        yield return new WaitForSeconds(staminaRegenDelay);
+        canRegen = true;
+    }
+
 }

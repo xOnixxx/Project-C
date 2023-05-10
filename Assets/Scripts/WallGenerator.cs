@@ -42,6 +42,7 @@ public class WallGenerator : MonoBehaviour
             polygonVertices[i] = new Vector3(Mathf.Sin((float)i / numVertices * 2 * Mathf.PI) * radius, 0, Mathf.Cos((float)i/numVertices * 2 * Mathf.PI) * radius) + centre;
         }
         GameObject newWall;
+        Collider collider;
         for (int i = 0; i < numVertices - 1; i++)
         {
             newWall = Instantiate(wall, (polygonVertices[i] + polygonVertices[i + 1]) / 2, Quaternion.identity, transform);
@@ -49,6 +50,11 @@ public class WallGenerator : MonoBehaviour
             newWall.transform.LookAt(centre);
             newWall.transform.rotation = Quaternion.AngleAxis(90, (polygonVertices[i] - polygonVertices[i+1]));
             newWall.transform.eulerAngles = new Vector3(90, newWall.transform.eulerAngles.y, newWall.transform.eulerAngles.z);
+            collider = newWall.GetComponent<Collider>();
+            if(collider != null)
+            {
+                collider.transform.localScale = new Vector3(xSize * 2, 2, height + 1);
+            }
             wallInstances.Add(newWall);
         }
         newWall = Instantiate(wall, (polygonVertices[numVertices-1] + polygonVertices[0]) / 2, Quaternion.identity, transform);
@@ -56,10 +62,20 @@ public class WallGenerator : MonoBehaviour
         newWall.transform.LookAt(centre);
         newWall.transform.rotation = Quaternion.AngleAxis(90, (polygonVertices[numVertices - 1] - polygonVertices[0]));
         newWall.transform.eulerAngles = new Vector3(90, newWall.transform.eulerAngles.y, newWall.transform.eulerAngles.z);
+        collider = newWall.GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.transform.localScale = new Vector3(xSize * 2, 2, height + 1);
+        }
         wallInstances.Add(newWall);
         newWall = Instantiate(wall, centre + new Vector3(0,height,0), Quaternion.identity, transform);
         newWall.transform.localScale = new Vector3(radius, radius, radius);
         newWall.transform.eulerAngles = new Vector3(180,0, 0);
+        collider = newWall.GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.transform.localScale = new Vector3(xSize*2, 2, xSize * 2);
+        }
         wallInstances.Add(newWall);
     }
 }

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SpellManager : MonoBehaviour
 {
+    public PlayerController player;
+    public CastingMode caster;
     //Spell stats
     public Transform cameraHolder;
     List<bool> spellStatus = new List<bool>();
     public List<GameObject> spells; //CHANGE TO SPELL
+    public bool isCasting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,14 @@ public class SpellManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForCasting();
+        if (isCasting)
+        {
+            CheckForEnd();
+        }
+        else
+        {
+            CheckForCasting();
+        }
     }
 
     private IEnumerator Cooldown(float delay, int indexChanged)
@@ -36,6 +46,9 @@ public class SpellManager : MonoBehaviour
         {
             if (Input.GetKeyDown("" + (i + 1)))
             {
+                Cursor.visible = true;
+                player.enabled = false;
+                isCasting = true;
                 RaycastHit closestHit;
                 Vector3 origin = transform.position + new Vector3(0, 4, 0);
                 Vector3 target;
@@ -47,8 +60,19 @@ public class SpellManager : MonoBehaviour
                 {
                     target = transform.position + cameraHolder.forward * 1000;
                 }
-                //spells[i].Shoot(origin,target);
+                caster.StartCasting(1, 1, 0.9f, 8);
             }
+        }
+    }
+
+    public void CheckForEnd()
+    {
+        if(caster.finishedCasting)
+        {
+            Debug.Log(caster.successfulPops);
+            isCasting = false;
+            player.enabled = true;
+            Cursor.visible = false;
         }
     }
 }

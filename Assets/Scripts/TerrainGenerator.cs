@@ -18,7 +18,6 @@ public class TerrainGenerator : MonoBehaviour
     private int[,] detailMap;
     private float maximumHeight;
     private GameObject currentTerrain;
-    public float heightAtCentre;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +45,6 @@ public class TerrainGenerator : MonoBehaviour
 
     public void GenerateNewTerrain()
     {
-        heightAtCentre = GetOctave(transform.position.x,transform.position.z, fineness) * roughness;
         if (currentTerrain != null)
         {
             Destroy(currentTerrain);

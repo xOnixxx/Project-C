@@ -10,6 +10,7 @@ public class WallGenerator : MonoBehaviour
     public float xSize = 10;
     public float zSize = 10;
     public float height = 10;
+    private List<GameObject> wallInstances = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,11 @@ public class WallGenerator : MonoBehaviour
 
     public void GenerateWalls()
     {
+        for (int i = wallInstances.Count - 1; i >= 0; i--)
+        {
+            Destroy(wallInstances[i]);
+        }
+        wallInstances.Clear();
         centre = GetComponentInParent<Transform>().position;
         Vector3[] polygonVertices = new Vector3[numVertices];
         float radius = Mathf.Min(xSize, zSize);
@@ -43,15 +49,17 @@ public class WallGenerator : MonoBehaviour
             newWall.transform.LookAt(centre);
             newWall.transform.rotation = Quaternion.AngleAxis(90, (polygonVertices[i] - polygonVertices[i+1]));
             newWall.transform.eulerAngles = new Vector3(90, newWall.transform.eulerAngles.y, newWall.transform.eulerAngles.z);
+            wallInstances.Add(newWall);
         }
         newWall = Instantiate(wall, (polygonVertices[numVertices-1] + polygonVertices[0]) / 2, Quaternion.identity, transform);
         newWall.transform.localScale = new Vector3(radius, radius, radius); ; //TODO Get reliable sizes
         newWall.transform.LookAt(centre);
         newWall.transform.rotation = Quaternion.AngleAxis(90, (polygonVertices[numVertices - 1] - polygonVertices[0]));
         newWall.transform.eulerAngles = new Vector3(90, newWall.transform.eulerAngles.y, newWall.transform.eulerAngles.z);
-
+        wallInstances.Add(newWall);
         newWall = Instantiate(wall, centre + new Vector3(0,height,0), Quaternion.identity, transform);
         newWall.transform.localScale = new Vector3(radius, radius, radius);
         newWall.transform.eulerAngles = new Vector3(180,0, 0);
+        wallInstances.Add(newWall);
     }
 }

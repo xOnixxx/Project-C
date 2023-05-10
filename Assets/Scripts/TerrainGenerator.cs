@@ -13,11 +13,12 @@ public class TerrainGenerator : MonoBehaviour
     public float roughness = 1;
     public float noiseFrequency = 1;
     public int fineness = 4;
-    private GameObject terrain;
     public int Size = 100;
     private float[,] heightMap;
     private int[,] detailMap;
     private float maximumHeight;
+    private GameObject currentTerrain;
+    public float heightAtCentre;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,11 @@ public class TerrainGenerator : MonoBehaviour
 
     public void GenerateNewTerrain()
     {
+        heightAtCentre = GetOctave(transform.position.x,transform.position.z, fineness) * roughness;
+        if (currentTerrain != null)
+        {
+            Destroy(currentTerrain);
+        }
         heightMap = new float[heightMapResolution, heightMapResolution];
         detailMap = new int[heightMapResolution, heightMapResolution];
         TerrainData terdata = new TerrainData();
@@ -108,9 +114,9 @@ public class TerrainGenerator : MonoBehaviour
         terrainLayers[0] = ground;
         terdata.terrainLayers = terrainLayers;
 
-        terrain = Terrain.CreateTerrainGameObject(terdata);
-        terrain.GetComponent<Terrain>().detailObjectDistance = Size;
-        terrain.transform.position = transform.position - new Vector3(Size,0,Size);
+        currentTerrain = Terrain.CreateTerrainGameObject(terdata);
+        currentTerrain.GetComponent<Terrain>().detailObjectDistance = Size;
+        currentTerrain.transform.position = transform.position - new Vector3(Size,0,Size);
     }
     public void UpdateTerrain()
     {

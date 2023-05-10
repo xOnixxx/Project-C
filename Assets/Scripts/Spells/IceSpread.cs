@@ -44,13 +44,13 @@ public class IceSpread : MonoBehaviour, ISpell
         int numberOfIcicles = Random.Range(3, 8);
         for (int i = 0; i < numberOfIcicles; i++)
         {
-            MakeIcicle((origin+new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * 0.5f, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * 0.5f)),target);
+            MakeIcicle((new Vector3(0, 0, 0)),target);
         }
     }
 
     private void MakeIcicle(Vector3 origin, Vector3 target)
     {
-        GameObject icicle = Instantiate(spellParts[0], origin, cameraHolder.rotation);
+        GameObject icicle = Instantiate(spellParts[0], origin, cameraHolder.rotation, spellParts[0].transform);
         icicle.GetComponent<IceSpread>().cameraHolder = cameraHolder;
     }
 }

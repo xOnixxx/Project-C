@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameHandler gameMaster;
     private enum State
     {
         Idle,
@@ -106,6 +107,10 @@ public class PlayerController : MonoBehaviour
     }
     private void CheckActions()
     {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            gameMaster.Restart();
+        }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = !Cursor.visible;

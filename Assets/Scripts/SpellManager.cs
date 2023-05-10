@@ -7,7 +7,7 @@ public class SpellManager : MonoBehaviour
     //Spell stats
     public Transform cameraHolder;
     List<bool> spellStatus = new List<bool>();
-    public List<GameObject> spells; //CHANGE TO SPELL
+    public List<ISpell> spells; //CHANGE TO SPELL
 
     // Start is called before the first frame update
     void Start()

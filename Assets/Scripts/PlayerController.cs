@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
     }
     private void CheckActions()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             gameMaster.Restart();
         }

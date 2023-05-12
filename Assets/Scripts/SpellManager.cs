@@ -9,8 +9,11 @@ public class SpellManager : MonoBehaviour
     //Spell stats
     public Transform cameraHolder;
     List<bool> spellStatus = new List<bool>();
+
+
     public List<GameObject> spells; //CHANGE TO SPELL
     public bool isCasting = false;
+
 
     // Start is called before the first frame update
     void Start()

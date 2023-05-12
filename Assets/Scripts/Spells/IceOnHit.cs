@@ -12,7 +12,6 @@ public class IceOnHit : MonoBehaviour
     {
         explosionEffect = explosionParent.GetComponent<ParticleSystem>();
         timeToExplode = explosionEffect.main.duration;
-        Debug.Log("Start");
     }
 
     // Update is called once per frame
@@ -25,7 +24,6 @@ public class IceOnHit : MonoBehaviour
     {
         if (collision.gameObject.tag != "Spells")
         {
-            Debug.Log(collision.gameObject.name);
             StartCoroutine(Die());
         }
 
@@ -33,7 +31,6 @@ public class IceOnHit : MonoBehaviour
 
     private IEnumerator Die()
     {
-        Debug.Log("Here");
         explosionParent.transform.parent = null;
         explosionEffect.Play();
         

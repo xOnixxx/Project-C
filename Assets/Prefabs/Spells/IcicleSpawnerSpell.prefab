@@ -120,7 +120,11 @@ MonoBehaviour:
   nodeNum: 0
   cameraHolder: {fileID: 6527408018626428904}
   spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
-  numInBurst: 10
+  shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
+  burstAmount: 10
+  burstInterval: 1
+  speedProjectile: 300
+  speedSpawner: 100
 --- !u!54 &624818418826276025
 Rigidbody:
   m_ObjectHideFlags: 0

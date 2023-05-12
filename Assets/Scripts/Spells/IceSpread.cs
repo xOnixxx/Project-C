@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class IceSpread : Spell
 {
-    private shootIcicle shooter;
+    private ShootProjectile shooter;
     //public List<GameObject> spellParts;
     public GameObject spell;
+    public float radius;
 
     private GameObject[] icicles;
 
@@ -51,7 +52,7 @@ public class IceSpread : Spell
         icicles= new GameObject[numberOfIcicles];
         for (int i = 0; i < numberOfIcicles; i++)
         {
-            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * 0.5f, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * 0.5f, 0), i);
+            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * 1f, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * 1f, 0), i);
             yield return new WaitForSeconds(0.1f);
         }
 

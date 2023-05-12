@@ -8,6 +8,7 @@ public class MergeSpread : Spell
     private ShootProjectile shooter;
     //public List<GameObject> spellParts;
     public GameObject spell;
+    public GameObject BIGspell;
     public float radius;
 
     private GameObject[] icicles;
@@ -67,10 +68,10 @@ public class MergeSpread : Spell
             icicle.GetComponent<ProjectileMove>().SmoothSize(move, new Vector3(5, 5, 5), 100);
             //icicle.transform.localPosition = //new Vector3(0, 0, 3);
         }
-        GameObject BIGicicle = Instantiate(spell, cameraHolder.transform.position, cameraHolder.transform.rotation, cameraHolder.transform);
+        GameObject BIGicicle = Instantiate(BIGspell, cameraHolder.transform.position, cameraHolder.transform.rotation, cameraHolder.transform);
         BIGicicle.GetComponent<Transform>().localPosition = BIGicicle.GetComponent<Transform>().localPosition + new Vector3(0, 0, 8);
         BIGicicle.GetComponent<Transform>().localScale = new Vector3(5,5,5);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.1f);
         foreach (GameObject icicle in icicles)
         {
             Destroy(icicle);

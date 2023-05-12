@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CastingMode : MonoBehaviour
 {
+    public ParticleSystem particles;
+    public ParticleSystem.MainModule particleMain;
+    public RectTransform particlePos;
     public Button node;
     public int successfulPops = 0;
     private int maxDepth;
@@ -14,7 +17,8 @@ public class CastingMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        particlePos = particles.GetComponent<RectTransform>();
+        particleMain = particles.main;
     }
 
     // Update is called once per frame
@@ -53,13 +57,15 @@ public class CastingMode : MonoBehaviour
         }
         else
         {
-            Debug.Log(successfulPops);
-            finishedCasting = true;
+            StartCoroutine(FinishCasting(lifetime / 2));
         }
     }
 
     private void PopNode(GameObject button)
     {
+        particlePos.anchoredPosition = button.GetComponent<RectTransform>().anchoredPosition;
+        particleMain.startColor = button.GetComponent<Button>().image.color;
+        particles.Play();
         successfulPops += 1;
         Destroy(button);
     }
@@ -77,5 +83,10 @@ public class CastingMode : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBeforeMiniGame);
         StartCoroutine(CreateButton(spawnRate, lifetime, changeCoef, 0));
+    }
+    private IEnumerator FinishCasting(float lastWait)
+    {
+        yield return new WaitForSeconds(lastWait);
+        finishedCasting = true;
     }
 }

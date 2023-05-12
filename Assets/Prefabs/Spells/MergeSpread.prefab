@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7713510779348668176
+--- !u!1 &574187276525801989
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5150014418308163317}
-  - component: {fileID: 8370701416729366552}
+  - component: {fileID: 574370302664189128}
+  - component: {fileID: -1672620178476794197}
   m_Layer: 0
-  m_Name: IcicleSpread
+  m_Name: MergeSpread
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5150014418308163317
+--- !u!4 &574370302664189128
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7713510779348668176}
+  m_GameObject: {fileID: 574187276525801989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,16 +31,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8370701416729366552
+--- !u!114 &-1672620178476794197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7713510779348668176}
+  m_GameObject: {fileID: 574187276525801989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c789885f8ea994458381cc839e2d14c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d02cfd7a5902f24b92db50685994673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
@@ -49,6 +49,8 @@ MonoBehaviour:
   spawnRate: 0
   lifeTime: 0
   changeCoef: 0
+  cooldown: 0
   nodeNum: 0
   cameraHolder: {fileID: 0}
   spell: {fileID: 0}
+  radius: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5369237457786441608}
   - component: {fileID: 5173273707509340145}
   - component: {fileID: 6706586888979675955}
+  - component: {fileID: 8543947317683162813}
   m_Layer: 3
   m_Name: IcicleSpell
   m_TagString: Spells
@@ -159,6 +160,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   dmgLayer: 0
+--- !u!114 &8543947317683162813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268181049600962120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39db75e8897d2140a3d170557ddcd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &177676226004066005
 PrefabInstance:
   m_ObjectHideFlags: 0

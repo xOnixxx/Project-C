@@ -59,7 +59,6 @@ public class IceSpread : MonoBehaviour, ISpell
         for (int i = 0; i < numberOfIcicles; i++)
         {
             MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * 0.5f, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * 0.5f, 0), i);
-            Debug.Log(i);
             yield return new WaitForSeconds(0.1f);
         }
 

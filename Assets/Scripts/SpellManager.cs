@@ -59,7 +59,7 @@ public class SpellManager : MonoBehaviour
             {
                 target = transform.position + cameraHolder.forward * 1000;
             }
-            spells[chargedSpellIndex].Cast(origin, target);
+            spells[chargedSpellIndex].Cast(origin, target,caster.successfulPops);
             chargedSpellIndex = -2;
         }
         for (int i = 0; i < spells.Count; i++)

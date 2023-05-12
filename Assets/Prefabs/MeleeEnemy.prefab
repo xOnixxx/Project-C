@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 7529301703437032915}
   - component: {fileID: 2195332880520472236}
   - component: {fileID: 1762830174337836908}
-  m_Layer: 0
+  - component: {fileID: 8161534868163938035}
+  m_Layer: 7
   m_Name: MeleeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,3 +132,20 @@ MonoBehaviour:
   target: {fileID: 0}
   movementSpeed: 2
   gravity: 9.87
+--- !u!114 &8161534868163938035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907090797505001811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  resist: 0
+  invulnerabilityTime: 0.2
+  canBeInvulnerable: 0

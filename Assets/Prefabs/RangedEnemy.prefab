@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 905558020781758548}
   - component: {fileID: 3012021396529263855}
   - component: {fileID: 8148518775036239273}
-  m_Layer: 0
+  - component: {fileID: 8691976275799239924}
+  m_Layer: 7
   m_Name: RangedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,6 +116,8 @@ MonoBehaviour:
   bulletSpeed: 1000
   currentSpread: 0
   bulletsperShot: 1
+  canShoot: 1
+  attackDelay: 0.3
 --- !u!114 &3012021396529263855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +152,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8691976275799239924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785073729319328507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  resist: 0
+  invulnerabilityTime: 0.2
+  canBeInvulnerable: 0

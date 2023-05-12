@@ -110,17 +110,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566c46f6864f03441ae54097b31d80e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
+  damage: 1
+  dmgMultiplier: 1
   dmgLayer: 0
-  spawnRate: 0
-  lifeTime: 0
-  changeCoef: 0
+  spawnRate: 1
+  lifeTime: 1
+  changeCoef: 0.8
   cooldown: 0
-  nodeNum: 0
+  nodeNum: 4
   cameraHolder: {fileID: 6527408018626428904}
   spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
-  numInBurst: 10
+  burstAmount: 10
+  burstInterval: 1
 --- !u!54 &624818418826276025
 Rigidbody:
   m_ObjectHideFlags: 0

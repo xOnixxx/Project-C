@@ -29,7 +29,8 @@ public class HealthManager : MonoBehaviour
         {
             if(canBeInvulnerable)
             {
-                isInvulnerable = true;
+                //isInvulnerable = true;
+                //StartCoroutine(InvulnerabilityFrames());
             }
             currentHealth -= (damage - resist * damage);
             if(currentHealth <= 0)
@@ -42,7 +43,7 @@ public class HealthManager : MonoBehaviour
 
     public void Die()
     {
-
+        Destroy(gameObject);
     }
 
     private IEnumerator InvulnerabilityFrames()

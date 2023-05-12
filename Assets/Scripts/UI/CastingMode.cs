@@ -9,6 +9,8 @@ public class CastingMode : MonoBehaviour
     public int successfulPops = 0;
     private int maxDepth;
     public bool finishedCasting = false;
+    public float timeBeforeMinigame = 0.1f;
+    private Vector2 lastButton = new Vector2(960, 540);
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +28,18 @@ public class CastingMode : MonoBehaviour
         successfulPops = 0;
         maxDepth = maxd;
         finishedCasting = false;
-        StartCoroutine(CreateButton(spawnRate, lifetime,changeCoef, 0));
+        StartCoroutine(StartMinigame(spawnRate, lifetime, changeCoef));
     }
 
     private IEnumerator CreateButton(float spawnRate, float lifetime,float changeCoef, int depth)
     {
+        yield return new WaitForSeconds(spawnRate);
         Button button = Instantiate(node, Vector3.zero, Quaternion.identity, transform);
         RectTransform rect = button.GetComponent<RectTransform>();
         Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-        rect.anchoredPosition = new Vector2(Random.Range(150f, 1770f), Random.Range(150f, 870f));
+        lastButton += Random.insideUnitCircle * 200;
+        lastButton = new Vector2(Mathf.Clamp(lastButton.x, 150f, 1770f), Mathf.Clamp(lastButton.y, 150f, 930f));
+        rect.anchoredPosition = lastButton;
         Text text = button.GetComponentInChildren<Text>();
         text.text = (depth + 1).ToString();
         text.color = color;
@@ -65,5 +70,10 @@ public class CastingMode : MonoBehaviour
         {
             Destroy(button);
         }
+    }
+    private IEnumerator StartMinigame(float spawnRate, float lifetime, float changeCoef)
+    {
+        yield return new WaitForSeconds(timeBeforeMinigame);
+        StartCoroutine(CreateButton(spawnRate, lifetime, changeCoef, 0));
     }
 }

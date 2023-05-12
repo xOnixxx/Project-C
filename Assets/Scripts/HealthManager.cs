@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth = 100;
+    public float maxHealth = 100;
+    public float currentHealth = 100;
+    public float resist = 0;
+    public float invulnerabilityTime = 0.2f;
+    public bool canBeInvulnerable = true;
+    private bool isInvulnerable = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +21,33 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GetHit(float damage)
+    {
+        if(!isInvulnerable)
+        {
+            if(canBeInvulnerable)
+            {
+                isInvulnerable = true;
+            }
+            currentHealth -= (damage - resist * damage);
+            if(currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Die();
+            }
+        }
+    }
+
+    public void Die()
+    {
+
+    }
+
+    private IEnumerator InvulnerabilityFrames()
+    {
+        yield return new WaitForSeconds(invulnerabilityTime);
+        isInvulnerable = false;
     }
 }

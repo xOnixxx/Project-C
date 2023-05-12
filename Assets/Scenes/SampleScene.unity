@@ -441,8 +441,9 @@ MonoBehaviour:
   player: {fileID: 561764216}
   caster: {fileID: 967845162}
   cameraHolder: {fileID: 1305973754}
+  spellStatus: 
   spells:
-  - {fileID: 0}
+  - {fileID: 1616049376}
   isCasting: 0
 --- !u!114 &561764211
 MonoBehaviour:
@@ -458,6 +459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 60
+  resist: 0
+  invulnerabilityTime: 0.2
 --- !u!114 &561764212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,6 +1256,7 @@ MonoBehaviour:
   node: {fileID: 421465818802173645, guid: bb6f0fcae129e464f8500549a36a5993, type: 3}
   successfulPops: 0
   finishedCasting: 0
+  timeBeforeMinigame: 0.3
 --- !u!1 &1305973753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,6 +1340,58 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1616049375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1616049377}
+  - component: {fileID: 1616049376}
+  m_Layer: 6
+  m_Name: IcicleSpell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1616049376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616049375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c789885f8ea994458381cc839e2d14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  dmgMultiplier: 1
+  dmgLayer: 7
+  spawnRate: 0.5
+  lifeTime: 0.5
+  changeCoef: 1
+  nodeNum: 3
+  spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
+  cameraHolder: {fileID: 1305973754}
+--- !u!4 &1616049377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616049375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1698620711}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1650971877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1423,7 +1479,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1616049377}
   m_Father: {fileID: 561764218}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

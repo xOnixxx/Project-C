@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using Unity.Burst;
 using UnityEngine;
 
-public class IcicleSpawner : Spell
+public class Spawner : Spell
 {
     public GameObject spell;
+    public ShootProjectile shooterPrefab;
     public int burstAmount;
     public float burstInterval;
-    private shootIcicle shooter;
+    public float speedProjectile;
+    public float speedSpawner;
+
+    private ShootProjectile shooter;
     // Start is called before the first frame update
     void Start()
     {
-        shooter = new shootIcicle();
+        shooter = Instantiate<ShootProjectile>(shooterPrefab);
         shooter.spell = spell;
         shooter.cameraHolder = gameObject.transform;
         shooter.damage = damage;
         shooter.dmgMultiplier = dmgMultiplier;
         shooter.dmgLayer = dmgLayer;
+        shooter.speed = speedProjectile;
         Vector3 origin = cameraHolder.transform.position + new Vector3(0, 0.1f, 3);
-        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * 200);
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * speedSpawner);
         Cast(origin, new Vector3(0, 0, 0), dmgMultiplier); 
     }
 

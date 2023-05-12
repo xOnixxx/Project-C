@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shootIcicle : Spell
+public class SpawnSpawner : Spell
 {
     public GameObject spell;
-
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             RaycastHit closestHit;
             Vector3 origin = cameraHolder.transform.position + new Vector3(0, 0.1f, 3);
@@ -32,15 +32,9 @@ public class shootIcicle : Spell
         }
     }
 
-    public override void Cast(Vector3 origin, Vector3 target, float playerMultiplier)
+    public override void Cast(Vector3 origin, Vector3 target, float dmg)
     {
-        GameObject icicle = Instantiate(spell, cameraHolder.transform.position, cameraHolder.transform.rotation, cameraHolder.transform);
-        icicle.GetComponent<Transform>().localPosition = icicle.GetComponent<Transform>().localPosition + new Vector3(0, 0, 3);
-        icicle.GetComponent<Damager>().SetDamager(damage, dmgLayer);
-        
-
-        icicle.transform.parent = null;
-        icicle.transform.LookAt(target);
-        icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward * 500);
+        GameObject spawner = Instantiate(spell, cameraHolder.transform.position, cameraHolder.transform.rotation);
+        spawner.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * 50);
     }
 }

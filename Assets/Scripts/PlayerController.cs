@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         //DEBUG MODE
-        if(Input.GetButtonDown("Fire1"))
+        /*if(Input.GetButtonDown("Fire1"))
         {
             RaycastHit closestHit;
             Vector3 origin = transform.position + new Vector3(0, 4, 0);
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
                 target = transform.position + cameraHolder.forward * 1000;
             }
             emitter.Emit(target);
-        }
+        }*/
         if(Input.GetButtonDown("Fire2"))
         {
             if(state == State.Idle && canChangeMode)
@@ -171,7 +171,6 @@ public class PlayerController : MonoBehaviour
                 state = State.SpellReady;
                 inControl = false;
                 StartCoroutine(CurveUp(0)); //Make it so player can't fly with this
-                animator.SetBool("inCastMode", true);
                 spellManager.enabled = true;
             }
             else
@@ -180,7 +179,6 @@ public class PlayerController : MonoBehaviour
                 state = State.Idle;
                 inControl = true;
                 spellManager.enabled = false;
-                animator.SetBool("inCastMode", false);
             }
         }
     }

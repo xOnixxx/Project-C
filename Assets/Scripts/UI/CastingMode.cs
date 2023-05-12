@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class CastingMode : MonoBehaviour
 {
+    public ParticleSystem particles;
+    public ParticleSystem.MainModule particleMain;
+    public RectTransform particlePos;
     public Button node;
     public int successfulPops = 0;
     private int maxDepth;
     public bool finishedCasting = false;
+    public float timeBeforeMiniGame = 0.5f;
+    private Vector2 lastButton = new Vector2(960, 540);
     // Start is called before the first frame update
     void Start()
     {
-        
+        particlePos = particles.GetComponent<RectTransform>();
+        particleMain = particles.main;
     }
 
     // Update is called once per frame
@@ -26,16 +32,23 @@ public class CastingMode : MonoBehaviour
         successfulPops = 0;
         maxDepth = maxd;
         finishedCasting = false;
-        StartCoroutine(CreateButton(spawnRate, lifetime,changeCoef, 0));
+        StartCoroutine(StartMinigame(spawnRate, lifetime, changeCoef));
     }
 
     private IEnumerator CreateButton(float spawnRate, float lifetime,float changeCoef, int depth)
     {
+
         Button button = Instantiate(node, Vector3.zero, Quaternion.identity, transform);
         RectTransform rect = button.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(Random.Range(100f, 1820f), Random.Range(100f, 920f));
-        button.GetComponentInChildren<Text>().text = (depth + 1).ToString();
+        Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        lastButton += Random.insideUnitCircle * 400;
+        lastButton = new Vector2(Mathf.Clamp(lastButton.x, 150f, 1770f), Mathf.Clamp(lastButton.y, 150f, 930f));
+        rect.anchoredPosition = lastButton;
+        Text text = button.GetComponentInChildren<Text>();
+        text.text = (depth + 1).ToString();
+        text.color = color;
         button.onClick.AddListener(delegate { PopNode(button.gameObject); });
+        button.image.color = color;
         StartCoroutine(HandleButton(button.gameObject, lifetime));
         yield return new WaitForSeconds(spawnRate);
         if(depth < maxDepth - 1)
@@ -44,12 +57,15 @@ public class CastingMode : MonoBehaviour
         }
         else
         {
-            finishedCasting = true;
+            StartCoroutine(FinishCasting(lifetime / 2));
         }
     }
 
     private void PopNode(GameObject button)
     {
+        particlePos.anchoredPosition = button.GetComponent<RectTransform>().anchoredPosition;
+        particleMain.startColor = button.GetComponent<Button>().image.color;
+        particles.Play();
         successfulPops += 1;
         Destroy(button);
     }
@@ -61,5 +77,16 @@ public class CastingMode : MonoBehaviour
         {
             Destroy(button);
         }
+    }
+
+    private IEnumerator StartMinigame(float spawnRate, float lifetime, float changeCoef)
+    {
+        yield return new WaitForSeconds(timeBeforeMiniGame);
+        StartCoroutine(CreateButton(spawnRate, lifetime, changeCoef, 0));
+    }
+    private IEnumerator FinishCasting(float lastWait)
+    {
+        yield return new WaitForSeconds(lastWait);
+        finishedCasting = true;
     }
 }

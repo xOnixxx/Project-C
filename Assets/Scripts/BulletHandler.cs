@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BulletHandler : MonoBehaviour
 {
+    public float damage = 10;
     public float strength = 1;
-    private Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
-        direction = transform.forward;
     }
 
     // Update is called once per frame
@@ -20,19 +19,15 @@ public class BulletHandler : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject hit = collision.gameObject;
-        Rigidbody hitBody = collision.rigidbody;
-        if(hitBody == null)
+        if(hit.layer == 6 || hit.layer == 7)
         {
-            CharacterController character = hit.GetComponent<CharacterController>();
-            if(character!= null)
+            HealthManager health = hit.GetComponent<HealthManager>();
+            if(health != null)
             {
-                character.Move(direction * strength);
+                health.GetHit(damage);
             }
-        }
-        else
-        {
-            hitBody.AddForce(direction * strength);
         }
         Destroy(gameObject);
     }
+    
 }

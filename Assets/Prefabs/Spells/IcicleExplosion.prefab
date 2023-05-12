@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1795340049909174828}
   - component: {fileID: 871271029252370978}
   - component: {fileID: 857461676398738517}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IcicleExplosion
-  m_TagString: Untagged
+  m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

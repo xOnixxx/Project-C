@@ -6,6 +6,7 @@ public class ShootProjectile : Spell
 {
     public GameObject spell;
     public float speed;
+    public Vector3 offset = new Vector3(0,0,0);
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class ShootProjectile : Spell
     public override void Cast(Vector3 origin, Vector3 target, float playerMultiplier)
     {
         GameObject icicle = Instantiate(spell, cameraHolder.transform.position, cameraHolder.transform.rotation, cameraHolder.transform);
-        icicle.GetComponent<Transform>().localPosition = icicle.GetComponent<Transform>().localPosition + new Vector3(0, 0, 3);
+        icicle.GetComponent<Transform>().localPosition = icicle.GetComponent<Transform>().localPosition + offset;
         if (icicle.GetComponent<Damager>() != null )
         {
             icicle.GetComponent<Damager>().SetDamager(damage, dmgLayer);

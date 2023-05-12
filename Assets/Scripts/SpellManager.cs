@@ -60,7 +60,7 @@ public class SpellManager : MonoBehaviour
                 {
                     target = transform.position + cameraHolder.forward * 1000;
                 }
-                caster.StartCasting(1, 1, 0.9f, 8);
+                caster.StartCasting(1, 1, 1, 4);
             }
         }
     }
@@ -69,7 +69,6 @@ public class SpellManager : MonoBehaviour
     {
         if(caster.finishedCasting)
         {
-            Debug.Log(caster.successfulPops);
             isCasting = false;
             player.enabled = true;
             Cursor.visible = false;

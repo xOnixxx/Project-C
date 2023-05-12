@@ -6,7 +6,8 @@ using UnityEngine;
 public class IcicleSpawner : Spell
 {
     public GameObject spell;
-    public int numInBurst;
+    public int burstAmount;
+    public float burstInterval;
     private shootIcicle shooter;
     // Start is called before the first frame update
     void Start()
@@ -54,9 +55,9 @@ public class IcicleSpawner : Spell
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(burstInterval);
             {
-                for (int i = 0; i < numInBurst; i++)
+                for (int i = 0; i < burstAmount; i++)
                 {
                     shooter.Cast(origin, Random.insideUnitSphere*500, playerMultiplier);
                 }

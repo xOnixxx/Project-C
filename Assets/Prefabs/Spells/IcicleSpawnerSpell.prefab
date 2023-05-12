@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5139659326940519795}
   - component: {fileID: 3287447832747562032}
   - component: {fileID: 624818418826276025}
+  - component: {fileID: 7679657888172707457}
   m_Layer: 3
   m_Name: IcicleSpawnerSpell
   m_TagString: Spells
@@ -123,7 +124,7 @@ MonoBehaviour:
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
   burstAmount: 10
   burstInterval: 1
-  speedProjectile: 300
+  speedProjectile: 100
   speedSpawner: 100
 --- !u!54 &624818418826276025
 Rigidbody:
@@ -141,3 +142,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &7679657888172707457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961086595029234997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39db75e8897d2140a3d170557ddcd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

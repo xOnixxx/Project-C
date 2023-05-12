@@ -52,5 +52,5 @@ MonoBehaviour:
   cooldown: 0
   nodeNum: 0
   cameraHolder: {fileID: 0}
-  spell: {fileID: 7961086595029234997, guid: 334908e70d21d354091cdbf48167d449, type: 3}
+  spell: {fileID: 0}
   speed: 0

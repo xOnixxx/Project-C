@@ -9,6 +9,7 @@ public class CastingMode : MonoBehaviour
     public int successfulPops = 0;
     private int maxDepth;
     public bool finishedCasting = false;
+    public float timeBeforeMiniGame = 0.5f;
     private Vector2 lastButton = new Vector2(960, 540);
     // Start is called before the first frame update
     void Start()
@@ -27,12 +28,12 @@ public class CastingMode : MonoBehaviour
         successfulPops = 0;
         maxDepth = maxd;
         finishedCasting = false;
-        StartCoroutine(CreateButton(spawnRate, lifetime, changeCoef, 0));
+        StartCoroutine(StartMinigame(spawnRate, lifetime, changeCoef));
     }
 
     private IEnumerator CreateButton(float spawnRate, float lifetime,float changeCoef, int depth)
     {
-        yield return new WaitForSeconds(spawnRate);
+
         Button button = Instantiate(node, Vector3.zero, Quaternion.identity, transform);
         RectTransform rect = button.GetComponent<RectTransform>();
         Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
@@ -70,5 +71,11 @@ public class CastingMode : MonoBehaviour
         {
             Destroy(button);
         }
+    }
+
+    private IEnumerator StartMinigame(float spawnRate, float lifetime, float changeCoef)
+    {
+        yield return new WaitForSeconds(timeBeforeMiniGame);
+        StartCoroutine(CreateButton(spawnRate, lifetime, changeCoef, 0));
     }
 }

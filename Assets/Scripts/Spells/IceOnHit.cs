@@ -36,11 +36,12 @@ public class IceOnHit : MonoBehaviour
         Debug.Log("Here");
         explosionParent.transform.parent = null;
         explosionEffect.Play();
-        Destroy(gameObject);
+        
 
         gameObject.GetComponent<MeshRenderer>().enabled= false;
         gameObject.GetComponent<MeshCollider>().enabled= false;
         yield return new WaitForSeconds(timeToExplode);
-
+        Destroy(explosionParent);
+        Destroy(gameObject);
     }
 }

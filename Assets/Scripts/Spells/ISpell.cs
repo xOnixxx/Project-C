@@ -11,7 +11,10 @@ public abstract class Spell : MonoBehaviour
     public float spawnRate;
     public float lifeTime;
     public float changeCoef;
+    public float cooldown;
     public int nodeNum;
-    public abstract void Cast(Vector3 origin, Vector3 target);
+
+    public Transform cameraHolder;
+    public abstract void Cast(Vector3 origin, Vector3 target, float playerMultiplier);
 
 }

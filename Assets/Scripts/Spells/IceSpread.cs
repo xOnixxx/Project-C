@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class IceSpread : Spell
 {
+    private shootIcicle shooter;
     //public List<GameObject> spellParts;
     public GameObject spell;
 
     private GameObject[] icicles;
 
     //TEMP
-    public Transform cameraHolder;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,18 +34,18 @@ public class IceSpread : Spell
             {
                 target = transform.position + cameraHolder.forward * 1000;
             }
-            Cast(origin, target);
+            Cast(origin, target, 0);
         }
     }
 
 
 
-    public override void Cast(Vector3 origin, Vector3 target)
+    public override void Cast(Vector3 origin, Vector3 target, float Multiplier)
     {
-        StartCoroutine(RevolverCast(origin, target));
+        StartCoroutine(RevolverCast(origin, target, Multiplier));
     }
 
-    public IEnumerator RevolverCast(Vector3 origin, Vector3 target)
+    public IEnumerator RevolverCast(Vector3 origin, Vector3 target, float Multiplier)
     {
         int numberOfIcicles = Random.Range(3, 8);
         icicles= new GameObject[numberOfIcicles];
@@ -64,11 +64,9 @@ public class IceSpread : Spell
 
     private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order)
     {
-        
         GameObject icicle = Instantiate(spell, cameraHolder.transform.position, cameraHolder.transform.rotation, cameraHolder.transform);
         icicle.GetComponent<Transform>().localPosition = icicle.GetComponent<Transform>().localPosition + new Vector3(0,0,3) + offset;
         icicles[order] = icicle;
-
     }
 
     private void ShootIcicle(Vector3 target, GameObject icicle)

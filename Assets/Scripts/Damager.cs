@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletHandler : MonoBehaviour
+public class Damager : MonoBehaviour
 {
     public float damage = 10;
-    public float strength = 1;
+    public int damageLayer = 7;
+    public bool destroyObject = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +17,16 @@ public class BulletHandler : MonoBehaviour
     {
         
     }
+
+    public void SetDamager(float damage, int damageLayer)
+    {
+        this.damage = damage;
+        this.damageLayer = damageLayer;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         GameObject hit = collision.gameObject;
-        if(hit.layer == 6 || hit.layer == 7)
+        if(hit.layer == damageLayer)
         {
             HealthManager health = hit.GetComponent<HealthManager>();
             if(health != null)
@@ -27,7 +34,10 @@ public class BulletHandler : MonoBehaviour
                 health.GetHit(damage);
             }
         }
-        Destroy(gameObject);
+        if (destroyObject)
+        {
+            Destroy(gameObject);
+        }
     }
     
 }

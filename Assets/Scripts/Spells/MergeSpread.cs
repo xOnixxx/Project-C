@@ -58,8 +58,7 @@ public class MergeSpread : Spell
         yield return new WaitForSeconds(delay);
         foreach (GameObject icicle in icicles)
         {
-            
-            Destroy(icicle);
+            icicle.GetComponent<ParticleDestroy>().KillSilent();
         }
         ShootIcicle(target, BIGicicle);
 
@@ -77,6 +76,6 @@ public class MergeSpread : Spell
     private void ShootIcicle(Vector3 target, GameObject icicle)
     {
         icicle.transform.LookAt(target);
-        icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward * 500);
+        icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward * 500 * speed);
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShootProjectile : Spell
 {
-    public float speed;
     public Vector3 offset;
 
     // Start is called before the first frame update

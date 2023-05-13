@@ -65,6 +65,6 @@ public class ProjectileSpread : Spell
     {
         //icicle.transform.rotation = Quaternion.LookRotation(target);
         icicle.transform.LookAt(target);
-        icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward*500);
+        icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward*500*speed);
     }
 }

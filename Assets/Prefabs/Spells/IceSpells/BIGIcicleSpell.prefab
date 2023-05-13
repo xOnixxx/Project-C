@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c3b72c06354d94995034634b13d74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParent: {fileID: 5113673871437026505}
+  explosionEffectParents:
+  - {fileID: 7575005500444439539, guid: 09aecb6bdeabcee4eb755b16b3cf17b5, type: 3}
 --- !u!114 &7081491975329761630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,11 +342,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09aecb6bdeabcee4eb755b16b3cf17b5, type: 3}
---- !u!1 &5113673871437026505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7575005500444439539, guid: 09aecb6bdeabcee4eb755b16b3cf17b5, type: 3}
-  m_PrefabInstance: {fileID: 3452211513466398522}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3165670390399309154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 289919664670421592, guid: 09aecb6bdeabcee4eb755b16b3cf17b5, type: 3}

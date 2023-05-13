@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c3b72c06354d94995034634b13d74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParent: {fileID: 581666641724160298}
+  explosionEffectParents:
+  - {fileID: 581666641724160298}
 --- !u!114 &6706586888979675955
 MonoBehaviour:
   m_ObjectHideFlags: 0

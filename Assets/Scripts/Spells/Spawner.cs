@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Spawner : Spell
 {
-    public GameObject spell;
     public ShootProjectile shooterPrefab;
     public int burstAmount;
     public float burstInterval;
@@ -18,12 +17,11 @@ public class Spawner : Spell
     {
         shooter = Instantiate<ShootProjectile>(shooterPrefab);
         shooter.spell = spell;
-        shooter.cameraHolder = gameObject.transform;
         shooter.damage = damage;
         shooter.dmgMultiplier = dmgMultiplier;
         shooter.dmgLayer = dmgLayer;
         shooter.speed = speedProjectile;
-        Vector3 origin = cameraHolder.transform.position + new Vector3(0, 0.1f, 3);
+        Vector3 origin = gameObject.transform.position;
         gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * speedSpawner);
         Cast(origin, new Vector3(0, 0, 0), dmgMultiplier); 
     }
@@ -31,24 +29,6 @@ public class Spawner : Spell
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            RaycastHit closestHit;
-            Vector3 origin = cameraHolder.transform.position + new Vector3(0, 0.1f, 3);
-            //Debug.Log(origin);
-            Vector3 target;
-            if (Physics.Raycast(origin, cameraHolder.forward, out closestHit, Mathf.Infinity))
-            {
-                target = closestHit.point;
-            }
-            else
-            {
-                target = transform.position + cameraHolder.forward * 1000;
-            }
-            Cast(origin, target, 0);
-        }
-        */
     }
 
     public override void Cast(Vector3 origin, Vector3 target, float playerMultiplier)
@@ -64,12 +44,10 @@ public class Spawner : Spell
             {
                 for (int i = 0; i < burstAmount; i++)
                 {
-                    shooter.Cast(origin, Random.insideUnitSphere*500, playerMultiplier);
+                    shooter.Cast(gameObject.transform.position, Random.insideUnitSphere*5000, playerMultiplier);
                 }
-
             }
         }
-
     }
 
 }

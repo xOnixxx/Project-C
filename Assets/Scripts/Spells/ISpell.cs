@@ -14,7 +14,7 @@ public abstract class Spell : MonoBehaviour
     public float cooldown;
     public int nodeNum;
 
-    public Transform cameraHolder;
+    public GameObject spell;
     public abstract void Cast(Vector3 origin, Vector3 target, float playerMultiplier);
 
 }

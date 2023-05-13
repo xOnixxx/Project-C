@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class MergeSpread : Spell
 {
-    private ShootProjectile shooter;
-    //public List<GameObject> spellParts;
-    public GameObject spell;
     public GameObject BIGspell;
+
     public float radius;
+    public float delay;
+    public float bigSize;
 
     private GameObject[] icicles;
 
-    //TEMP
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,22 +24,7 @@ public class MergeSpread : Spell
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            RaycastHit closestHit;
-            Vector3 origin = cameraHolder.transform.position + new Vector3(0, 0.1f, 3);
-            //Debug.Log(origin);
-            Vector3 target;
-            if (Physics.Raycast(origin, cameraHolder.forward, out closestHit, Mathf.Infinity))
-            {
-                target = closestHit.point;
-            }
-            else
-            {
-                target = transform.position + cameraHolder.forward * 1000;
-            }
-            Cast(origin, target, 0);
-        }
+
     }
 
 
@@ -59,21 +45,20 @@ public class MergeSpread : Spell
         }
 
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("HERE");
 
         Func<float, float, float, float> move = (x, origin, target) => ((1 - (float)Math.Pow(1 - x, 5))*target)+origin;
         foreach (GameObject icicle in icicles)
         {
-            icicle.GetComponent<ProjectileMove>().SmoothMove(move, new Vector3(0,0,8), 100);
-            icicle.GetComponent<ProjectileMove>().SmoothSize(move, new Vector3(5, 5, 5), 100);
-            //icicle.transform.localPosition = //new Vector3(0, 0, 3);
+            icicle.GetComponent<ProjectileMove>().SmoothMove(move, new Vector3(0,0,5), 100);
         }
-        GameObject BIGicicle = Instantiate(BIGspell, cameraHolder.transform.position, cameraHolder.transform.rotation, cameraHolder.transform);
-        BIGicicle.GetComponent<Transform>().localPosition = BIGicicle.GetComponent<Transform>().localPosition + new Vector3(0, 0, 8);
-        BIGicicle.GetComponent<Transform>().localScale = new Vector3(5,5,5);
-        yield return new WaitForSeconds(1.1f);
+        GameObject BIGicicle = Instantiate(BIGspell, origin, Quaternion.identity, gameObject.transform);
+        BIGicicle.transform.localScale = new Vector3(bigSize,bigSize,bigSize);
+        BIGicicle.transform.LookAt(target);
+        BIGicicle.transform.parent = null;
+        yield return new WaitForSeconds(delay);
         foreach (GameObject icicle in icicles)
         {
+            
             Destroy(icicle);
         }
         ShootIcicle(target, BIGicicle);
@@ -82,16 +67,16 @@ public class MergeSpread : Spell
 
     private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order)
     {
-        GameObject icicle = Instantiate(spell, cameraHolder.transform.position, cameraHolder.transform.rotation, cameraHolder.transform);
-        icicle.GetComponent<Transform>().localPosition = icicle.GetComponent<Transform>().localPosition + new Vector3(0, 0, 3) + offset;
+        GameObject icicle = Instantiate(spell, origin, Quaternion.identity, gameObject.transform);
+        icicle.transform.LookAt(target);
+        icicle.GetComponent<Transform>().localPosition += offset;
         icicles[order] = icicle;
+        icicle.transform.parent = null;
     }
 
     private void ShootIcicle(Vector3 target, GameObject icicle)
     {
-        //icicle.transform.rotation = Quaternion.LookRotation(target);
         icicle.transform.LookAt(target);
-        icicle.transform.parent = null;
         icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward * 500);
     }
 }

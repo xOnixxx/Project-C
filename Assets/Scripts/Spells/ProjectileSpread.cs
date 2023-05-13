@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ProjectileSpread : Spell
 {
-    private ShootProjectile shooter;
     //public List<GameObject> spellParts;
-    public GameObject spell;
     public float radius;
+    public float delay;
 
     private GameObject[] icicles;
 
@@ -15,28 +14,13 @@ public class ProjectileSpread : Spell
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            RaycastHit closestHit;
-            Vector3 origin = cameraHolder.transform.position + new Vector3(0, 0.1f, 3);
-            //Debug.Log(origin);
-            Vector3 target;
-            if (Physics.Raycast(origin, cameraHolder.forward, out closestHit, Mathf.Infinity))
-            {
-                target = closestHit.point;
-            }
-            else
-            {
-                target = transform.position + cameraHolder.forward * 1000;
-            }
-            Cast(origin, target, 0);
-        }
+
     }
 
 
@@ -52,29 +36,35 @@ public class ProjectileSpread : Spell
         icicles= new GameObject[numberOfIcicles];
         for (int i = 0; i < numberOfIcicles; i++)
         {
-            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, 0), i);
+            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, 3), i);
             yield return new WaitForSeconds(0.1f);
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(delay);
         foreach (GameObject icicle in icicles)
         {
-            ShootIcicle(target, icicle);
+            if (icicle != null)
+            {
+                ShootIcicle(target, icicle);
+            }
         }
+
+
     }
 
     private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order)
     {
-        GameObject icicle = Instantiate(spell, cameraHolder.transform.position, cameraHolder.transform.rotation, cameraHolder.transform);
-        icicle.GetComponent<Transform>().localPosition = icicle.GetComponent<Transform>().localPosition + new Vector3(0,0,3) + offset;
+        GameObject icicle = Instantiate(spell, origin, Quaternion.identity, gameObject.transform);
+        icicle.GetComponent<Transform>().localPosition += offset;
+        icicle.transform.LookAt(target);
         icicles[order] = icicle;
+        icicle.transform.parent = null;
     }
 
     private void ShootIcicle(Vector3 target, GameObject icicle)
     {
         //icicle.transform.rotation = Quaternion.LookRotation(target);
         icicle.transform.LookAt(target);
-        icicle.transform.parent = null;
         icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward*500);
     }
 }

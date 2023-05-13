@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5150014418308163317}
+  - component: {fileID: 988404038577311232}
   m_Layer: 0
   m_Name: ProjectileSpread
   m_TagString: Untagged
@@ -30,3 +31,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &988404038577311232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713510779348668176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c789885f8ea994458381cc839e2d14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  dmgMultiplier: 0
+  dmgLayer: 0
+  spawnRate: 0
+  lifeTime: 0
+  changeCoef: 0
+  cooldown: 0
+  nodeNum: 0
+  cameraHolder: {fileID: 0}
+  spell: {fileID: 0}
+  radius: 0

@@ -51,6 +51,6 @@ MonoBehaviour:
   changeCoef: 0
   cooldown: 0
   nodeNum: 0
-  cameraHolder: {fileID: 0}
-  spell: {fileID: 0}
+  spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
   radius: 0
+  delay: 0

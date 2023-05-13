@@ -54,7 +54,7 @@ public class ProjectileSpread : Spell
 
     private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order)
     {
-        GameObject icicle = Instantiate(spell, origin, Quaternion.identity, gameObject.transform);
+        GameObject icicle = Instantiate(spell, origin, Quaternion.identity);
         icicle.GetComponent<Transform>().localPosition += offset;
         icicle.transform.LookAt(target);
         icicles[order] = icicle;

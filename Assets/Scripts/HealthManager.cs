@@ -18,6 +18,7 @@ public class HealthManager : MonoBehaviour
     public float invulnerabilityTime = 0.2f;
     public bool canBeInvulnerable = true;
     private bool isInvulnerable = false;
+    private bool alreadyTakingDoT = false;
     public Character charController;
 
     // Start is called before the first frame update
@@ -42,7 +43,11 @@ public class HealthManager : MonoBehaviour
                 //StartCoroutine(InvulnerabilityFrames());
             }
             currentHealth -= (damage - resist * damage);
-            StartCoroutine(DamageOverTime(0.2f, 1, 0, 20));
+            /*if (!alreadyTakingDoT)
+            {
+                alreadyTakingDoT = true;
+                StartCoroutine(DamageOverTime(0.2f, 1, 0, 20));
+            }*/
             if(currentHealth <= 0)
             {
                 currentHealth = 0;
@@ -75,6 +80,10 @@ public class HealthManager : MonoBehaviour
         if(depth < maxDepth)
         {
             StartCoroutine(DamageOverTime(tickRate, tickDamage, depth + 1, maxDepth));
+        }
+        else
+        {
+            alreadyTakingDoT = false;
         }
     }
 }

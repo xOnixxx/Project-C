@@ -12,6 +12,12 @@ public class GameHandler : MonoBehaviour
     public int meleeEnemyNumber = 20;
     public int rangedEnemyNumber = 10;
     public int levelsPassed = 0;
+    //656565 BASE HEX FOR SKYBOX
+    public Light generalLight;
+    public Color baseColorLight;
+    public Color baseColorSkybox;
+    //6F6F6F BASE HEX FOR FOG
+    public Color fogColor;
     public List<GameObject> meleeEnemyTypes = new List<GameObject>();
     public List<GameObject> rangedEnemyTypes = new List<GameObject>();
     private GameObject enemyParent;
@@ -23,8 +29,14 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RenderSettings.skybox.SetColor("_Tint", baseColorSkybox);
+        RenderSettings.fogColor = fogColor;
+        generalLight.color = baseColorLight;
         SpawnEnemies();
         particles = GetComponent<ParticleSystem>();
+        var particleMain = particles.main;
+        particleMain.startColor = new ParticleSystem.MinMaxGradient(fogColor);
+        particles.Play();
     }
 
     // Update is called once per frame
@@ -77,6 +89,9 @@ public class GameHandler : MonoBehaviour
             RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
             enemyBeh.target = player.transform;
             enemyBeh.spell = Instantiate(spellsForEnemy[Random.Range(0, spellsForEnemy.Count - 1)], Vector3.zero, Quaternion.identity,enemyParent.transform);
+            enemyBeh.spell.dmgLayer = 6;
+            enemyBeh.spell.dmgMultiplier = 1;
+            enemyBeh.spell.damage = 1;
         }
     }
 }

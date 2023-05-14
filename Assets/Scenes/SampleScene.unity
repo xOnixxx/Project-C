@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.02
   m_LinearFogStart: 30
   m_LinearFogEnd: 60
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.21176471, g: 0.22745098, b: 0.25882354, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1.03
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1779188073}
-  m_IndirectSpecularColor: {r: 0.015577037, g: 0.018146373, b: 0.044786014, a: 1}
+  m_IndirectSpecularColor: {r: 0.015564622, g: 0.01813193, b: 0.044750646, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -693,7 +693,7 @@ MonoBehaviour:
   resist: 0
   invulnerabilityTime: 0.2
   canBeInvulnerable: 1
-  charController: {fileID: 0}
+  charController: {fileID: 561764216}
 --- !u!23 &561764214
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7689,8 +7689,12 @@ MonoBehaviour:
   tergen: {fileID: 8860005460541269533}
   walls: {fileID: 8860005460541269532}
   meleeEnemyNumber: 0
-  rangedEnemyNumber: 1
+  rangedEnemyNumber: 0
   levelsPassed: 0
+  generalLight: {fileID: 1779188073}
+  baseColorLight: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 0}
+  baseColorSkybox: {r: 0.39607844, g: 0.39607844, b: 0.39607844, a: 0}
+  fogColor: {r: 0.43529412, g: 0.43529412, b: 0.43529412, a: 0}
   meleeEnemyTypes:
   - {fileID: 3907090797505001811, guid: 6e69a83aa3c2e3741b05ff7299f2b643, type: 3}
   rangedEnemyTypes:
@@ -7778,7 +7782,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8860005460541269534}
   serializedVersion: 7
-  lengthInSec: 5
+  lengthInSec: 25
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -7786,7 +7790,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -8022,7 +8026,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 150
+      scalar: 100
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8484,7 +8488,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 300
+      value: 100
       mode: 0
       spread: 0
       speed:
@@ -8713,7 +8717,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 100
+        scalar: 300
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -8763,8 +8767,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-      cycleCount: 0
-      repeatInterval: 25
+      cycleCount: 1
+      repeatInterval: 0.01
       probability: 1
   SizeModule:
     enabled: 0
@@ -9100,7 +9104,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 0, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

@@ -49,7 +49,7 @@ public class SpellManager : MonoBehaviour
         if (chargedSpellIndex > -1 && Input.GetButtonDown("Fire1"))
         {
             RaycastHit closestHit;
-            Vector3 origin = transform.position + new Vector3(0, 1, 0);
+            Vector3 origin = transform.position;
             Vector3 target;
             if (Physics.Raycast(origin, cameraHolder.forward, out closestHit, Mathf.Infinity))
             {

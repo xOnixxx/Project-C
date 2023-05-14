@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7486520006085425628}
+  - component: {fileID: 3977102722270241302}
   m_Layer: 0
   m_Name: SpawnerRain
   m_TagString: Untagged
@@ -30,3 +31,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3977102722270241302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884077018614233391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  dmgMultiplier: 0
+  dmgLayer: 0
+  spawnRate: 0
+  lifeTime: 0
+  changeCoef: 0
+  cooldown: 0
+  nodeNum: 0
+  speed: 0.1
+  spell: {fileID: 1348534342020629269, guid: d75bf3dee96bac949aab880c7c82f7a4, type: 3}
+  offset: {x: 0, y: 0, z: 0}

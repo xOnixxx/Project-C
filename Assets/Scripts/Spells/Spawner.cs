@@ -11,7 +11,7 @@ public class Spawner : ISpell
     public float speedProjectile;
     public float speedSpawner;
 
-    private ShootProjectile shooter;
+    protected ShootProjectile shooter;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,7 @@ public class Spawner : ISpell
         StartCoroutine(ShootRandom(origin, new Vector3(0,0,0), playerMultiplier));
     }
 
-    private IEnumerator ShootRandom(Vector3 origin, Vector3 target, float playerMultiplier)
+    public virtual IEnumerator ShootRandom(Vector3 origin, Vector3 target, float playerMultiplier)
     {
         while (true)
         {

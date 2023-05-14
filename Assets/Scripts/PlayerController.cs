@@ -14,7 +14,7 @@ public class PlayerController : Character
     //Character stats
     public bool inControl = true;
     private CharacterController character;
-    private Animator animator;
+    public PauseMenuUI pauser;
     public float gravity = 9.87f;
     public float speed = 6;
     public float sprintHorizontalSpeed = 10;
@@ -41,7 +41,6 @@ public class PlayerController : Character
     void Start()
     {
         Cursor.visible = false;
-        animator = GetComponent<Animator>();
         character = GetComponent<CharacterController>();
         spellManager = GetComponent<SpellManager>();
         spellManager.Hide();

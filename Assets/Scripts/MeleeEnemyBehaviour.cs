@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEnemyBehaviour : MonoBehaviour
+public class MeleeEnemyBehaviour : Character
 {
     private CharacterController character;
     public Transform target;

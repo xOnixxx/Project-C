@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedEnemyBehaviour : MonoBehaviour
+public class RangedEnemyBehaviour : Character
 {
     private CharacterController character;
     public Transform target;

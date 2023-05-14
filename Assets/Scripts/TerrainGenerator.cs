@@ -14,6 +14,7 @@ public class TerrainGenerator : MonoBehaviour
     public float noiseFrequency = 1;
     public int fineness = 4;
     public int Size = 100;
+    public int grassDensity = 16;
     private float[,] heightMap;
     private int[,] detailMap;
     private float maximumHeight;
@@ -103,7 +104,7 @@ public class TerrainGenerator : MonoBehaviour
         detail.prototypeTexture = grassTexture;
         details[0] = detail;
         terdata.detailPrototypes = details;
-        terdata.SetDetailResolution(heightMapResolution, 8);
+        terdata.SetDetailResolution(heightMapResolution, grassDensity);
         terdata.SetDetailLayer(0, 0, 0, detailMap);
 
         TerrainLayer[] terrainLayers = new TerrainLayer[1];

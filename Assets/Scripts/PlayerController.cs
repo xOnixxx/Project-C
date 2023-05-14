@@ -37,9 +37,6 @@ public class PlayerController : MonoBehaviour
     List<GameObject> spikes = new List<GameObject>();
 
     private SpellManager spellManager;
-
-    //DEBUG MODE PARAMETERS
-    private Emitter emitter;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,8 +44,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         character = GetComponent<CharacterController>();
         spellManager = GetComponent<SpellManager>();
-        //DEBUG MODE PARAMETERS
-        emitter = GetComponent<Emitter>();
+        spellManager.Hide();
     }
 
     // Update is called once per frame
@@ -147,22 +143,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        //DEBUG MODE
-        /*if(Input.GetButtonDown("Fire1"))
-        {
-            RaycastHit closestHit;
-            Vector3 origin = transform.position + new Vector3(0, 4, 0);
-            Vector3 target;
-            if (Physics.Raycast(origin, cameraHolder.forward, out closestHit, Mathf.Infinity))
-            {
-                target = closestHit.point;
-            }
-            else
-            {
-                target = transform.position + cameraHolder.forward * 1000;
-            }
-            emitter.Emit(target);
-        }*/
         if(Input.GetButtonDown("Fire2"))
         {
             if(state == State.Idle && canChangeMode)
@@ -179,6 +159,7 @@ public class PlayerController : MonoBehaviour
                 state = State.Idle;
                 inControl = true;
                 spellManager.enabled = false;
+                spellManager.Hide();
             }
         }
     }

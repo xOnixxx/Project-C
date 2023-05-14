@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpellManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class SpellManager : MonoBehaviour
 
 
     public List<ISpell> spells = new List<ISpell>();
+    public List<Sprite> sprites;
+    public Image chargedSpellImage;
+    public Text chargedSpellText;
     private int chargedSpellIndex = -2;
     public bool isCasting = false;
 
@@ -19,6 +23,7 @@ public class SpellManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Hide();
         for (int i = 0; i < spells.Count; i++)
         {
             spellStatus.Add(true);
@@ -60,6 +65,7 @@ public class SpellManager : MonoBehaviour
                 target = transform.position + cameraHolder.forward * 1000;
             }
             spells[chargedSpellIndex].Cast(origin, target,caster.successfulPops);
+            Hide();
             chargedSpellIndex = -2;
         }
         for (int i = 0; i < spells.Count; i++)
@@ -83,9 +89,22 @@ public class SpellManager : MonoBehaviour
             {
                 chargedSpellIndex = -2;
             }
+            else
+            {
+                chargedSpellImage.sprite = sprites[chargedSpellIndex];
+                chargedSpellImage.enabled = true;
+                //ADD TEXT TO UI
+                chargedSpellText.enabled = true;
+            }
             isCasting = false;
             player.enabled = true;
             Cursor.visible = false;
         }
     }
+
+    public void Hide()
+    {
+        chargedSpellImage.enabled = false;
+        chargedSpellText.enabled = false;
+    }    
 }

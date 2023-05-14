@@ -13,13 +13,10 @@ public class GameHandler : MonoBehaviour
     public int levelsPassed = 0;
     public List<GameObject> meleeEnemyTypes = new List<GameObject>();
     public List<GameObject> rangedEnemyTypes = new List<GameObject>();
-<<<<<<< HEAD
+
     public List<ISpell> spellsForEnemy = new List<ISpell>();
-=======
-    public List<Spell> spellsForEnemy = new List<Spell>();
     public int spawnPointsNumber = 4;
-    public float spawnDistance = 8;
->>>>>>> e7ffceb4f5942feaf258a4d67eeda338c330c7f0
+
     // Start is called before the first frame update
     void Start()
     {

@@ -16,6 +16,7 @@ public class GameHandler : MonoBehaviour
 
     public List<ISpell> spellsForEnemy = new List<ISpell>();
     public int spawnPointsNumber = 4;
+    public float spawnDistance = 8;
 
     // Start is called before the first frame update
     void Start()

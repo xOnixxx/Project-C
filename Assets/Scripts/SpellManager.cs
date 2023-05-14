@@ -75,7 +75,7 @@ public class SpellManager : MonoBehaviour
                 Cursor.visible = true;
                 player.enabled = false;
                 isCasting = true;
-                caster.StartCasting(spells[i].spawnRate, spells[i].lifeTime, spells[i].changeCoef, spells[i].nodeNum);
+                //caster.StartCasting(spells[i].spawnRate, spells[i].lifeTime, spells[i].changeCoef, spells[i].nodeNum);
                 chargedSpellIndex = i;
             }
         }  

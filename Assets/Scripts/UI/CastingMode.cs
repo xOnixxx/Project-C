@@ -10,10 +10,11 @@ public class CastingMode : MonoBehaviour
     public RectTransform particlePos;
     public Button node;
     public int successfulPops = 0;
-    private int maxDepth;
+    private List<Vector2> pointsOnScreen;
+    private List<float> lifetimes;
+    private List<float> spawnDelays;
     public bool finishedCasting = false;
     public float timeBeforeMiniGame = 0.5f;
-    private Vector2 lastButton = new Vector2(960, 540);
     // Start is called before the first frame update
     void Start()
     {
@@ -27,37 +28,35 @@ public class CastingMode : MonoBehaviour
         
     }
 
-    public void StartCasting(float spawnRate, float lifetime,float changeCoef, int maxd)
+    public void StartCasting(List<Vector2> pos, List<float> lifetime, List<float> spawns)
     {
+        pointsOnScreen = pos; lifetimes = lifetime; spawnDelays = spawns;
         successfulPops = 0;
-        maxDepth = maxd;
         finishedCasting = false;
-        StartCoroutine(StartMinigame(spawnRate, lifetime, changeCoef));
+        StartCoroutine(StartMinigame());
     }
 
-    private IEnumerator CreateButton(float spawnRate, float lifetime,float changeCoef, int depth)
+    private IEnumerator CreateButton(int depth)
     {
 
         Button button = Instantiate(node, Vector3.zero, Quaternion.identity, transform);
         RectTransform rect = button.GetComponent<RectTransform>();
         Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-        lastButton += Random.insideUnitCircle * 400;
-        lastButton = new Vector2(Mathf.Clamp(lastButton.x, 150f, 1770f), Mathf.Clamp(lastButton.y, 150f, 930f));
-        rect.anchoredPosition = lastButton;
+        rect.anchoredPosition = pointsOnScreen[depth];
         Text text = button.GetComponentInChildren<Text>();
         text.text = (depth + 1).ToString();
         text.color = color;
         button.onClick.AddListener(delegate { PopNode(button.gameObject); });
         button.image.color = color;
-        StartCoroutine(HandleButton(button.gameObject, lifetime));
-        yield return new WaitForSeconds(spawnRate);
-        if(depth < maxDepth - 1)
+        StartCoroutine(HandleButton(button.gameObject, lifetimes[depth]));
+        yield return new WaitForSeconds(spawnDelays[depth]);
+        if(depth < pointsOnScreen.Count - 1)
         {
-            StartCoroutine(CreateButton(spawnRate * changeCoef, lifetime * changeCoef,changeCoef, depth + 1));
+            StartCoroutine(CreateButton(depth + 1));
         }
         else
         {
-            StartCoroutine(FinishCasting(lifetime / 2));
+            StartCoroutine(FinishCasting(lifetimes[depth] / 2));
         }
     }
 
@@ -79,10 +78,10 @@ public class CastingMode : MonoBehaviour
         }
     }
 
-    private IEnumerator StartMinigame(float spawnRate, float lifetime, float changeCoef)
+    private IEnumerator StartMinigame()
     {
         yield return new WaitForSeconds(timeBeforeMiniGame);
-        StartCoroutine(CreateButton(spawnRate, lifetime, changeCoef, 0));
+        StartCoroutine(CreateButton(0));
     }
     private IEnumerator FinishCasting(float lastWait)
     {

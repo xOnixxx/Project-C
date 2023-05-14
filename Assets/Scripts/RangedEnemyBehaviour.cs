@@ -62,4 +62,9 @@ public class RangedEnemyBehaviour : Character
         canAttack = true;
         canMove = true;
     }
+
+    public override void Die()
+    {
+        Destroy(gameObject);
+    }
 }

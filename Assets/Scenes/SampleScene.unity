@@ -7506,11 +7506,22 @@ MonoBehaviour:
   damage: 40
   dmgMultiplier: 1
   dmgLayer: 7
-  spawnRate: 0.7
-  lifeTime: 1
-  changeCoef: 1
-  cooldown: 0
-  nodeNum: 3
+  element: 3
+  nodeCastPositions:
+  - {x: 700, y: 400}
+  - {x: 800, y: 600}
+  - {x: 900, y: 500}
+  - {x: 800, y: 450}
+  lifetimes:
+  - 1
+  - 1
+  - 0.7
+  - 0.7
+  spawnDelays:
+  - 1
+  - 1
+  - 0.5
+  - 1
   speed: 1
   spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
   radius: 1

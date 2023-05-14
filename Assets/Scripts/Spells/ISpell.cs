@@ -4,15 +4,23 @@ using UnityEngine;
 
 public abstract class ISpell : MonoBehaviour
 {
+    public enum Element
+    {
+        None,
+        Ice,
+        Fire,
+        Light,
+        Earth
+    }
+
     public float damage;
     public float dmgMultiplier;
     public int dmgLayer;
-
-    public float spawnRate;
-    public float lifeTime;
-    public float changeCoef;
-    public float cooldown;
-    public int nodeNum;
+    
+    public Element element;
+    public List<Vector2> nodeCastPositions = new List<Vector2>();
+    public List<float> lifetimes = new List<float>();
+    public List<float> spawnDelays = new List<float>();
 
     public float speed = 1;
     public GameObject spell;

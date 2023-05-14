@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    private enum Element
-    { 
-        None,
-        Ice,
-        Fire,
-        Light,
-        Earth
-    }
     public float maxHealth = 100;
     public float currentHealth = 100;
     public float resist = 0;
@@ -33,7 +25,7 @@ public class HealthManager : MonoBehaviour
         
     }
 
-    public void GetHit(float damage)
+    public void GetHit(float damage, ISpell.Element element)
     {
         if(!isInvulnerable)
         {
@@ -43,11 +35,32 @@ public class HealthManager : MonoBehaviour
                 //StartCoroutine(InvulnerabilityFrames());
             }
             currentHealth -= (damage - resist * damage);
-            /*if (!alreadyTakingDoT)
+            switch (element)
             {
-                alreadyTakingDoT = true;
-                StartCoroutine(DamageOverTime(0.2f, 1, 0, 20));
-            }*/
+                case ISpell.Element.None:
+                    break;
+                case ISpell.Element.Ice:
+                    if (!alreadyTakingDoT)
+                    {
+                        alreadyTakingDoT = true;
+                        StartCoroutine(DamageOverTime(0.2f, 1, 0, 5));
+                    }
+                    break;
+                case ISpell.Element.Fire:
+                    if (!alreadyTakingDoT)
+                    {
+                        alreadyTakingDoT = true;
+                        StartCoroutine(DamageOverTime(0.2f, 1, 0, 20));
+                    }
+                    break;
+                case ISpell.Element.Light:
+                    break;
+                case ISpell.Element.Earth:
+                    StartCoroutine(Stun(1));
+                    break;
+                default:
+                    break;
+            }
             if(currentHealth <= 0)
             {
                 currentHealth = 0;
@@ -58,7 +71,7 @@ public class HealthManager : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        charController.Die();
     }
 
     private IEnumerator InvulnerabilityFrames()
@@ -75,7 +88,7 @@ public class HealthManager : MonoBehaviour
     }
     private IEnumerator DamageOverTime(float tickRate, float tickDamage,int depth, int maxDepth)
     {
-        GetHit(tickDamage);
+        GetHit(tickDamage, ISpell.Element.None);
         yield return new WaitForSeconds(tickRate);
         if(depth < maxDepth)
         {

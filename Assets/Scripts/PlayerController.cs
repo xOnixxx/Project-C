@@ -182,5 +182,9 @@ public class PlayerController : Character
         yield return new WaitForSeconds(staminaRegenDelay);
         canRegen = true;
     }
-
+    public override void Die()
+    {
+        Destroy(spellManager);
+        Destroy(this);
+    }
 }

@@ -36,4 +36,8 @@ public class MeleeEnemyBehaviour : Character
             character.Move(movementSpeed * Time.deltaTime * transform.forward + gravityVec * Time.deltaTime);
         }
     }
+    public override void Die()
+    {
+        Destroy(gameObject);
+    }
 }

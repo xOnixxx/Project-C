@@ -13,6 +13,7 @@ public class CastingMode : MonoBehaviour
     private List<Vector2> pointsOnScreen;
     private List<float> lifetimes;
     private List<float> spawnDelays;
+    private Color color;
     public bool finishedCasting = false;
     public float timeBeforeMiniGame = 0.5f;
     // Start is called before the first frame update
@@ -28,8 +29,28 @@ public class CastingMode : MonoBehaviour
         
     }
 
-    public void StartCasting(List<Vector2> pos, List<float> lifetime, List<float> spawns)
+    public void StartCasting(List<Vector2> pos, List<float> lifetime, List<float> spawns, ISpell.Element element)
     {
+        switch (element)
+        {
+            case ISpell.Element.None:
+                color = Color.white;
+                break;
+            case ISpell.Element.Ice:
+                color = Color.blue;
+                break;
+            case ISpell.Element.Fire:
+                color = new Color(1,0.5f,0.16f);
+                break;
+            case ISpell.Element.Light:
+                color = new Color(0.98f,0.95f,0.64f);
+                break;
+            case ISpell.Element.Earth:
+                color = new Color(0.5f,0.28f,0.1f);
+                break;
+            default:
+                break;
+        }
         pointsOnScreen = pos; lifetimes = lifetime; spawnDelays = spawns;
         successfulPops = 0;
         finishedCasting = false;
@@ -41,7 +62,6 @@ public class CastingMode : MonoBehaviour
 
         Button button = Instantiate(node, Vector3.zero, Quaternion.identity, transform);
         RectTransform rect = button.GetComponent<RectTransform>();
-        Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         rect.anchoredPosition = pointsOnScreen[depth];
         Text text = button.GetComponentInChildren<Text>();
         text.text = (depth + 1).ToString();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class ParticleDestroy : MonoBehaviour
 {
@@ -47,13 +48,18 @@ public class ParticleDestroy : MonoBehaviour
 
     private IEnumerator Die(bool loud)
     {
-        if (loud)
+        if (loud && explosionEffect != null)
         {
-            foreach (ParticleSystem particle in explosionEffect)
+
+            for (int i = 0; i < explosionEffect.Length; i++)
             {
-                timeToExplode = particle.main.duration > timeToExplode ? particle.main.duration : timeToExplode;
-                particle.transform.parent = null;
-                particle.Play();
+                if (explosionEffect[i] != null)
+                {
+                    ParticleSystem particle = explosionEffect[i];
+                    timeToExplode = particle.main.duration > timeToExplode ? particle.main.duration : timeToExplode;
+                    particle.transform.parent = null;
+                    particle.Play();
+                }
             }
         }
 
@@ -63,11 +69,15 @@ public class ParticleDestroy : MonoBehaviour
         gameObject.GetComponent<MeshCollider>().enabled= false;
         yield return new WaitForSeconds(timeToExplode);
 
-        for(int i = 0; i < explosionEffect.Length; i++)
+        if (explosionEffect != null)
         {
-            Destroy(explosionEffect[i]);
-            Destroy(explosionEffectParents[i]);
+            for(int i = 0; i < explosionEffect.Length; i++)
+            {
+                Destroy(explosionEffect[i]);
+                Destroy(explosionEffectParents[i]);
+            }
         }
+
         Destroy(gameObject);
     }
 

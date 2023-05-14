@@ -14,7 +14,8 @@ public class Rain : Spawner
             {
                 for (int i = 0; i < burstAmount; i++)
                 {
-                    shooter.Cast(gameObject.transform.position, gameObject.transform.position + new Vector3(0,-1,0) , playerMultiplier);
+                    Vector3 randomSpawn = new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
+                    shooter.Cast(gameObject.transform.position + randomSpawn, gameObject.transform.position +  randomSpawn +new Vector3(0,-1,0) , playerMultiplier);
                 }
             }
         }

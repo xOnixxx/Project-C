@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 574370302664189128}
   - component: {fileID: -1672620178476794197}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MergeSpread
-  m_TagString: Untagged
+  m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,9 @@ MonoBehaviour:
   changeCoef: 0
   cooldown: 0
   nodeNum: 0
-  cameraHolder: {fileID: 0}
+  speed: 1
   spell: {fileID: 0}
+  BIGspell: {fileID: 0}
   radius: 0
+  delay: 0
+  bigSize: 0

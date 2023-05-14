@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8145881028557105830}
   - component: {fileID: -8167653782131612734}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shooter
-  m_TagString: Untagged
+  m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,6 @@ MonoBehaviour:
   changeCoef: 0
   cooldown: 0
   nodeNum: 0
-  cameraHolder: {fileID: 0}
-  spell: {fileID: 0}
   speed: 0
+  spell: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}

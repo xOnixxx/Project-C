@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3132252929338794860}
   - component: {fileID: 2064492165878372215}
   - component: {fileID: -3804166073021511884}
-  - component: {fileID: -8143742621771734011}
   m_Layer: 3
   m_Name: Rainer
   m_TagString: Spells
@@ -156,17 +155,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &-8143742621771734011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348534342020629269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46c3b72c06354d94995034634b13d74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionEffectParents: []
-  timeToDie: 5

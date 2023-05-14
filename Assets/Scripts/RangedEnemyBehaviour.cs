@@ -47,7 +47,7 @@ public class RangedEnemyBehaviour : MonoBehaviour
         {
             if (canAttack)
             {
-                spell.Cast(transform.position + transform.forward * 6 + new Vector3(0,1f,0),target.position,dmgMultiplier);
+                spell.Cast(transform.position + transform.forward + new Vector3(0,1f,0),target.position,dmgMultiplier);
                 canAttack = false;
                 canMove = false;
                 StartCoroutine(AttackRefresh());

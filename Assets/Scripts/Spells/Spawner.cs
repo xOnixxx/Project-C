@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Burst;
 using UnityEngine;
 
-public class Spawner : Spell
+public class Spawner : ISpell
 {
     public ShootProjectile shooterPrefab;
     public int burstAmount;

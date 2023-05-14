@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3287447832747562032}
   - component: {fileID: 624818418826276025}
   - component: {fileID: 7679657888172707457}
+  - component: {fileID: -8746671174418888609}
   m_Layer: 3
   m_Name: IcicleSpawnerSpell
   m_TagString: Spells
@@ -119,7 +120,7 @@ MonoBehaviour:
   changeCoef: 0
   cooldown: 0
   nodeNum: 0
-  cameraHolder: {fileID: 6527408018626428904}
+  speed: 1
   spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
   burstAmount: 10
@@ -154,3 +155,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39db75e8897d2140a3d170557ddcd88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8746671174418888609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961086595029234997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c3b72c06354d94995034634b13d74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffectParents: []
+  timeToDie: 300

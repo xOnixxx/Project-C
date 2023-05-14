@@ -6,7 +6,7 @@ public class RangedEnemyBehaviour : MonoBehaviour
 {
     private CharacterController character;
     public Transform target;
-    public Spell spell;
+    public ISpell spell;
     public float attackRange = 10;
     public float movementSpeed = 2;
     public float gravity = 9.87f;

@@ -13,7 +13,7 @@ public class GameHandler : MonoBehaviour
     public int levelsPassed = 0;
     public List<GameObject> meleeEnemyTypes = new List<GameObject>();
     public List<GameObject> rangedEnemyTypes = new List<GameObject>();
-    public List<Spell> spellsForEnemy = new List<Spell>();
+    public List<ISpell> spellsForEnemy = new List<ISpell>();
     // Start is called before the first frame update
     void Start()
     {

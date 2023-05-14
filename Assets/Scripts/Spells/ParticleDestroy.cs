@@ -7,6 +7,7 @@ public class ParticleDestroy : MonoBehaviour
     public GameObject[] explosionEffectParents;
     private ParticleSystem[] explosionEffect;
     private float timeToExplode = 0;
+    public float timeToDie;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class ParticleDestroy : MonoBehaviour
                 explosionEffect[i] = explosionEffectParents[i].GetComponent<ParticleSystem>();
             }
         }
+        TimedDeath();
     }
 
     // Update is called once per frame
@@ -67,5 +69,11 @@ public class ParticleDestroy : MonoBehaviour
             Destroy(explosionEffectParents[i]);
         }
         Destroy(gameObject);
+    }
+
+    private IEnumerator TimedDeath()
+    {
+        yield return new WaitForSeconds(timeToDie);
+        KillSilent();
     }
 }

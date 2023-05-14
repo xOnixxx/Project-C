@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileSpread : Spell
+public class ProjectileSpread : ISpell
 {
     //public List<GameObject> spellParts;
     public float radius;

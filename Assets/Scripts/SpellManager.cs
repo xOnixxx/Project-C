@@ -11,7 +11,7 @@ public class SpellManager : MonoBehaviour
     public List<bool> spellStatus = new List<bool>();
 
 
-    public List<Spell> spells = new List<Spell>();
+    public List<ISpell> spells = new List<ISpell>();
     private int chargedSpellIndex = -2;
     public bool isCasting = false;
 

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8871738411860463392}
   - component: {fileID: 8491338453218672101}
   - component: {fileID: 8691735451634361756}
-  - component: {fileID: 7081491975329761630}
   - component: {fileID: 5315976550444416208}
   m_Layer: 3
   m_Name: BIGIcicleSpell
@@ -147,20 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffectParents:
   - {fileID: 7575005500444439539, guid: 09aecb6bdeabcee4eb755b16b3cf17b5, type: 3}
---- !u!114 &7081491975329761630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6596034539029748773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df61dd0d58574e44f8b84553f7c6c54a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  dmgLayer: 0
+  timeToDie: 300
 --- !u!114 &5315976550444416208
 MonoBehaviour:
   m_ObjectHideFlags: 0

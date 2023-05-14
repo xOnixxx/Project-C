@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootProjectile : Spell
+public class ShootProjectile : ISpell
 {
     public Vector3 offset;
 

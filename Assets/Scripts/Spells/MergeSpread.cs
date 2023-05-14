@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MergeSpread : Spell
+public class MergeSpread : ISpell
 {
     public GameObject BIGspell;
 

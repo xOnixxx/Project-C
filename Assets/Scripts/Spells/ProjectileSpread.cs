@@ -36,7 +36,7 @@ public class ProjectileSpread : ISpell
         icicles= new GameObject[numberOfIcicles];
         for (int i = 0; i < numberOfIcicles; i++)
         {
-            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, 3), i);
+            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, 0), i);
             yield return new WaitForSeconds(0.1f);
         }
 
@@ -55,7 +55,7 @@ public class ProjectileSpread : ISpell
     private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order)
     {
         GameObject icicle = Instantiate(spell, origin, Quaternion.identity);
-        icicle.GetComponent<Transform>().localPosition += offset;
+        icicle.GetComponent<Transform>().position += offset;
         icicle.transform.LookAt(target);
         icicles[order] = icicle;
         icicle.transform.parent = null;

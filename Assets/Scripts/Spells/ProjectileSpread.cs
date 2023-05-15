@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class ProjectileSpread : ISpell
 {
     //public List<GameObject> spellParts;
     public float radius;
-    public float delay;
+    public float delayBeforeShooting;
+    public float delayBetweenShots;
+    public float delayBetweenSpawn;
+
+    public bool wait;
+
+    public int minNumShots;
+    public int maxNumShots;
 
     private GameObject[] icicles;
     private GameObject anchor;
@@ -36,33 +44,44 @@ public class ProjectileSpread : ISpell
         anchor = new GameObject();
         anchor.transform.position = origin;
         anchor.transform.LookAt(target);
-        int numberOfIcicles = Random.Range(3, 8);
+        int numberOfIcicles = Random.Range(minNumShots, maxNumShots);
         icicles= new GameObject[numberOfIcicles];
-        for (int i = 0; i < numberOfIcicles; i++)
-        {
-            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, 0), i);
-            yield return new WaitForSeconds(0.1f);
-        }
 
-        yield return new WaitForSeconds(delay);
-        foreach (GameObject icicle in icicles)
-        {
-            if (icicle != null)
-            {
-                ShootIcicle(target, icicle);
-            }
-        }
+        StartCoroutine(Spawn(origin, target, numberOfIcicles));
+        yield return new WaitForSeconds(delayBeforeShooting*numberOfIcicles);
 
         Destroy(anchor);
     }
 
-    private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order)
+    private IEnumerator Spawn(Vector3 origin, Vector3 target, int numberOfShots)
+    {
+        for (int i = 0; i < numberOfShots; i++)
+        {
+            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfShots * 2 * Mathf.PI) * radius, Mathf.Cos((float)i / numberOfShots * 2 * Mathf.PI) * radius, 0), i, numberOfShots);
+            yield return new WaitForSeconds(delayBetweenSpawn);
+        }
+    }
+
+    private IEnumerator Shoot(Vector3 target, GameObject projectile, int order, int numOfProjectiles)
+    {
+        yield return new WaitForSeconds(delayBetweenShots + delayBeforeShooting);
+        if (wait)
+        {
+            yield return new WaitForSeconds(delayBeforeShooting*((float)numOfProjectiles-(float)order));
+        }
+        ShootIcicle(target, projectile);
+    }
+
+
+    private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order, int numOfProjectiles)
     {
         GameObject icicle = Instantiate(spell, origin, Quaternion.identity, anchor.transform);
         icicle.GetComponent<Transform>().localPosition += offset;
         icicle.transform.LookAt(target);
         icicles[order] = icicle;
         icicle.transform.parent = null;
+    
+        StartCoroutine(Shoot(target, icicle, order, numOfProjectiles));
     }
 
     private void ShootIcicle(Vector3 target, GameObject icicle)
@@ -70,5 +89,6 @@ public class ProjectileSpread : ISpell
         //icicle.transform.rotation = Quaternion.LookRotation(target);
         icicle.transform.LookAt(target);
         icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward*500*speed);
+
     }
 }

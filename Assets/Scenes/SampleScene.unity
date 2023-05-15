@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNumber: {fileID: 1291103548}
-  levelInfo: {fileID: 192611299}
   infoSource: {fileID: 8860005460541269535}
 --- !u!1001 &86201385
 PrefabInstance:
@@ -517,8 +516,9 @@ GameObject:
   - component: {fileID: 192611298}
   - component: {fileID: 192611300}
   - component: {fileID: 192611299}
+  - component: {fileID: 192611301}
   m_Layer: 5
-  m_Name: LevelInfo
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,8 +540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -250}
-  m_SizeDelta: {x: 300, y: 400}
+  m_AnchoredPosition: {x: -300, y: -450}
+  m_SizeDelta: {x: 500, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192611299
 MonoBehaviour:
@@ -565,18 +565,53 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e6fad6138d5dca845a3ea73ed7f63ea7, type: 3}
-    m_FontSize: 30
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Welcome
+
+    In this game you will face many enemies
+
+    Your weapons
+    are magic
+
+    Your mission is simple, kill all enemies in the level
+
+
+    To
+    cast spells you need to enter casting mode
+
+    To do that with pressing the
+    right mouse button
+
+    Be careful, you cannot move while casting
+
+    Then choose
+    one spell out of three and pop nodes as they appear on the screen
+
+    After
+    finishing the sequence you will have, hopefully, charged that spell and can cast
+    it with clicking left mouse button
+
+    To leave the casting mode press right
+    mosue button again
+
+    Keep in mind that this will lose your spell charge
+
+
+
+    Try
+    out different spells and see what you like
+
+    Good luck and have fun'
 --- !u!222 &192611300
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -585,6 +620,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192611297}
   m_CullTransparentMesh: 1
+--- !u!114 &192611301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192611297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c641c7b3807f5e94d977dc569c96410d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &197924929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1794,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
         m_MethodName: StartGameplay
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 192611301}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9423,6 +9482,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8860005460541269535}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
         m_MethodName: StartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 192611301}
+        m_TargetAssemblyTypeName: TutorialUI, Assembly-CSharp
+        m_MethodName: Die
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

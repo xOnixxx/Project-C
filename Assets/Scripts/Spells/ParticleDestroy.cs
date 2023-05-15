@@ -26,6 +26,7 @@ public class ParticleDestroy : MonoBehaviour
     {
         
     }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -48,16 +49,19 @@ public class ParticleDestroy : MonoBehaviour
 
     private IEnumerator Die(bool loud)
     {
+
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<MeshCollider>().enabled = false;
         if (loud && explosionEffect != null)
         {
-
             for (int i = 0; i < explosionEffect.Length; i++)
             {
                 if (explosionEffect[i] != null)
                 {
                     ParticleSystem particle = explosionEffect[i];
                     timeToExplode = particle.main.duration > timeToExplode ? particle.main.duration : timeToExplode;
-                    particle.transform.parent = null;
+                    Debug.Log(timeToExplode);
+
                     particle.Play();
                 }
             }
@@ -69,14 +73,6 @@ public class ParticleDestroy : MonoBehaviour
         gameObject.GetComponent<MeshCollider>().enabled= false;
         yield return new WaitForSeconds(timeToExplode);
 
-        if (explosionEffect != null)
-        {
-            for(int i = 0; i < explosionEffect.Length; i++)
-            {
-                Destroy(explosionEffect[i]);
-                Destroy(explosionEffectParents[i]);
-            }
-        }
 
         Destroy(gameObject);
     }
@@ -86,4 +82,5 @@ public class ParticleDestroy : MonoBehaviour
         yield return new WaitForSeconds(timeToDie);
         KillSilent();
     }
+    
 }

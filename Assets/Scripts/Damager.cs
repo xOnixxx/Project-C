@@ -6,7 +6,6 @@ public class Damager : MonoBehaviour
 {
     public float damage = 10;
     public int damageLayer = 7;
-    public bool destroyObject = true;
     public ISpell.Element element = ISpell.Element.None;
     // Start is called before the first frame update
     void Start()
@@ -34,10 +33,6 @@ public class Damager : MonoBehaviour
             {
                 health.GetHit(damage,element);
             }
-        }
-        if (destroyObject)
-        {
-            Destroy(gameObject);
         }
     }
     

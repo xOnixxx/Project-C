@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   damageLayer: 6
-  destroyObject: 1
+  element: 0
 --- !u!1001 &177676226004066005
 PrefabInstance:
   m_ObjectHideFlags: 0

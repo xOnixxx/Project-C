@@ -9,6 +9,7 @@ public class ProjectileSpread : ISpell
     public float delay;
 
     private GameObject[] icicles;
+    private GameObject anchor;
 
     //TEMP
     // Start is called before the first frame update
@@ -32,6 +33,9 @@ public class ProjectileSpread : ISpell
 
     public IEnumerator RevolverCast(Vector3 origin, Vector3 target, float Multiplier)
     {
+        anchor = new GameObject();
+        anchor.transform.position = origin;
+        anchor.transform.LookAt(target);
         int numberOfIcicles = Random.Range(3, 8);
         icicles= new GameObject[numberOfIcicles];
         for (int i = 0; i < numberOfIcicles; i++)
@@ -49,13 +53,13 @@ public class ProjectileSpread : ISpell
             }
         }
 
-
+        Destroy(anchor);
     }
 
     private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order)
     {
-        GameObject icicle = Instantiate(spell, origin, Quaternion.identity);
-        icicle.GetComponent<Transform>().position += offset;
+        GameObject icicle = Instantiate(spell, origin, Quaternion.identity, anchor.transform);
+        icicle.GetComponent<Transform>().localPosition += offset;
         icicle.transform.LookAt(target);
         icicles[order] = icicle;
         icicle.transform.parent = null;

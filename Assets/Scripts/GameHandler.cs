@@ -26,6 +26,16 @@ public class GameHandler : MonoBehaviour
     public int spawnPointsNumber = 4;
     public float spawnDistance = 8;
 
+    public Texture2D levelTexture;
+    public Texture2D groundTexture;
+    public TreeInstance[] trees;
+
+    public ISpell[] allowedPlayerEl;
+    public ISpell[] allowedEnemyEl;
+    public Dictionary<ISpell.Element, float> elementalDmgUp;
+    public int numOfObstacles;
+    public int numOfEnemies;
+
     // Start is called before the first frame update
     void Start()
     {

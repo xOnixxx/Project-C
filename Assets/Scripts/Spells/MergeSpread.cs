@@ -58,7 +58,7 @@ public class MergeSpread : ISpell
         yield return new WaitForSeconds(delay);
         foreach (GameObject icicle in icicles)
         {
-            icicle.GetComponent<ParticleDestroy>().KillSilent();
+            //icicle.GetComponent<ParticleDestroy>().KillSilent();
         }
         ShootIcicle(target, BIGicicle);
 

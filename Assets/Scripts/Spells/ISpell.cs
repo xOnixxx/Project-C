@@ -16,8 +16,10 @@ public abstract class ISpell : MonoBehaviour
     public float damage;
     public float dmgMultiplier;
     public int dmgLayer;
-    
-    public Element element;
+
+    public string spellName;
+    public Element element = Element.None;
+    public Sprite spellSprite;
     public List<Vector2> nodeCastPositions = new List<Vector2>();
     public List<float> lifetimes = new List<float>();
     public List<float> spawnDelays = new List<float>();

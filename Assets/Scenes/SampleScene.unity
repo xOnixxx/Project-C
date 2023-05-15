@@ -7636,6 +7636,22 @@ PrefabInstance:
       propertyPath: dmgMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6825612099236389983, guid: 541751d40ab238f46bdba64f9c17b654, type: 3}
+      propertyPath: lifetimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825612099236389983, guid: 541751d40ab238f46bdba64f9c17b654, type: 3}
+      propertyPath: nodeCastPositions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825612099236389983, guid: 541751d40ab238f46bdba64f9c17b654, type: 3}
+      propertyPath: nodeCastPositions.Array.data[0].x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825612099236389983, guid: 541751d40ab238f46bdba64f9c17b654, type: 3}
+      propertyPath: nodeCastPositions.Array.data[0].y
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541751d40ab238f46bdba64f9c17b654, type: 3}
 --- !u!4 &1646788557 stripped

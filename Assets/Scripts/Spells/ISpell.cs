@@ -27,6 +27,8 @@ public abstract class ISpell : MonoBehaviour
     public float speed = 1;
     public GameObject spell;
 
+    protected GameObject anchor;
+
     public abstract void Cast(Vector3 origin, Vector3 target, float playerMultiplier);
 
 }

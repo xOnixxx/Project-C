@@ -17,7 +17,6 @@ public class ProjectileSpread : ISpell
     public int maxNumShots;
 
     private GameObject[] icicles;
-    private GameObject anchor;
 
     //TEMP
     // Start is called before the first frame update

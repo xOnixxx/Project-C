@@ -16,7 +16,7 @@ public class Rain : Spawner
                 {
                     yield return new WaitForSeconds(Random.value);
                     Vector3 randomSpawn = new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
-                    shooter.Cast(gameObject.transform.position + randomSpawn, gameObject.transform.position +  randomSpawn +new Vector3(0,-1,0) , playerMultiplier);
+                    shooter.Cast(gameObject.transform.position + randomSpawn, gameObject.transform.position +  randomSpawn +new Vector3(0,-1,0) + gameObject.transform.forward.normalized , playerMultiplier);
                 }
             }
         }

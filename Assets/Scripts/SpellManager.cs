@@ -9,7 +9,6 @@ public class SpellManager : MonoBehaviour
     public CastingMode caster;
     //Spell stats
     public Transform cameraHolder;
-    public List<bool> spellStatus = new List<bool>();
 
 
     public List<ISpell> spells = new List<ISpell>();
@@ -24,10 +23,6 @@ public class SpellManager : MonoBehaviour
     void Start()
     {
         Hide();
-        for (int i = 0; i < spells.Count; i++)
-        {
-            spellStatus.Add(true);
-        }
     }
 
     // Update is called once per frame
@@ -41,12 +36,6 @@ public class SpellManager : MonoBehaviour
         {
             CheckForCasting();
         }
-    }
-
-    private IEnumerator Cooldown(float delay, int indexChanged)
-    {
-        yield return new WaitForSeconds(delay);
-        spellStatus[indexChanged] = !spellStatus[indexChanged];
     }
 
     public void CheckForCasting()
@@ -64,7 +53,7 @@ public class SpellManager : MonoBehaviour
             {
                 target = transform.position + cameraHolder.forward * 1000;
             }
-            spells[chargedSpellIndex].Cast(origin + 2 * transform.forward, target,caster.successfulPops);
+            spells[chargedSpellIndex].Cast(origin + 2 * transform.forward, target,caster.successfulPops / spells[chargedSpellIndex].nodeCastPositions.Count);
             Hide();
             chargedSpellIndex = -2;
         }
@@ -93,7 +82,7 @@ public class SpellManager : MonoBehaviour
             {
                 chargedSpellImage.sprite = sprites[chargedSpellIndex];
                 chargedSpellImage.enabled = true;
-                //ADD TEXT TO UI
+                chargedSpellText.text = spells[chargedSpellIndex].spellName + "charged (" + caster.successfulPops / spells[chargedSpellIndex].nodeCastPositions.Count + ")";
                 chargedSpellText.enabled = true;
             }
             isCasting = false;

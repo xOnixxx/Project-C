@@ -48,7 +48,7 @@ MonoBehaviour:
   dmgLayer: 7
   spellName: Ice Revolver
   element: 1
-  spellSprite: {fileID: 21300000, guid: 8b4c73ea375d8c24fbc3a65a2ab07d3d, type: 3}
+  spellSprite: {fileID: 21300000, guid: c790324ee76bcd746b5478d2a8d8bed3, type: 3}
   nodeCastPositions:
   - {x: 1340, y: 900}
   - {x: 1540, y: 740}

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour
 {
+    private bool currentlyPlaying = false;
     public GameObject player;
     private SpellManager spellManager;
     public float levelRange = 1000;
@@ -51,7 +52,11 @@ public class GameHandler : MonoBehaviour
     public Image choice2Border;
     public Button choice2;
     public Text choice2Text;
+    public Image overlay;
+    public Text tooltip;
+    public Text count;
 
+    public Button advancer;
     public Button starter;
 
     public List<Image> spellImages = new List<Image>();
@@ -59,6 +64,7 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentlyPlaying = false;
         for (int i = 0; i < spellImages.Count; i++)
         {
             spellImages[i].enabled = false;
@@ -69,6 +75,7 @@ public class GameHandler : MonoBehaviour
         particleMain.startColor = new ParticleSystem.MinMaxGradient(fogColor);
         particles.Play();
         ChangeShowStatus(true);
+        advancer.gameObject.SetActive(false);
         starter.gameObject.SetActive(false);
         StartLevel();
     }
@@ -76,10 +83,14 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //CheckForEnemyCount();
     }
 
     public void ChangeShowStatus(bool changer)
     {
+        tooltip.enabled = changer;
+        count.enabled = changer;
+        overlay.enabled = changer;
         choice1.gameObject.SetActive(changer);
         choice1Border.enabled = changer;
         choice1Text.enabled = changer;
@@ -89,13 +100,16 @@ public class GameHandler : MonoBehaviour
     }
     public void StartLevel()
     {
+        spellManager.enabled = false;
+        advancer.gameObject.SetActive(false);
         player.GetComponent<PlayerController>().enabled = false;
         Cursor.visible = true;
         for (int i = pickedSpells.Count - 1; i >= 0; i--)
         {
             Destroy(pickedSpells[i].gameObject);
         }
-        pickedSpells = new List<ISpell>();
+        pickedSpells.Clear();
+        pickedSpellIndexes.Clear();
         //hazard.Revert(this);
         SetDefaultSettings();
         //PICK A HAZARD
@@ -110,6 +124,7 @@ public class GameHandler : MonoBehaviour
 
     public void GenerateSpellChoice()
     {
+        count.text = (pickedSpells.Count + 1) + "/" + spellImages.Count;
         firstSpell = Random.Range(0, allowedPlayerEl.Length - 1);
         while (pickedSpellIndexes.Contains(firstSpell))
         {
@@ -168,6 +183,7 @@ public class GameHandler : MonoBehaviour
         CharacterController character = player.GetComponent<CharacterController>();
         character.enabled = true;
         starter.gameObject.SetActive(false);
+        currentlyPlaying = true;
     }
 
     public void SetDefaultSettings()
@@ -232,18 +248,12 @@ public class GameHandler : MonoBehaviour
 
     public void CheckForEnemyCount()
     {
-        if(currentEnemyNumber == 0)
+        if(currentlyPlaying && currentEnemyNumber == 0)
         {
-
+            Cursor.visible = true;
+            currentlyPlaying = false;
+            player.GetComponent<PlayerController>().enabled = false;
+            advancer.gameObject.SetActive(true);
         }
-    }
-
-    public void LevelEnd()
-    {
-
-    }
-    public void GenerateLevel()
-    {
-
     }
 }

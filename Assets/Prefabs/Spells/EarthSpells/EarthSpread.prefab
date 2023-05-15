@@ -48,7 +48,7 @@ MonoBehaviour:
   dmgLayer: 7
   spellName: Earth Revolver
   element: 4
-  spellSprite: {fileID: 21300000, guid: c02012a10124acd40ba26606fee45baa, type: 3}
+  spellSprite: {fileID: 21300000, guid: 17207093563529540ab7368b7a3260cf, type: 3}
   nodeCastPositions:
   - {x: 1440, y: 150}
   - {x: 1560, y: 250}

@@ -9,12 +9,14 @@ public class PauseMenuUI : MonoBehaviour
     public Text pauseText;
     public Button resume;
     public Button toMenu;
+    public Image pauseOverlay;
     private bool paused = false;
     public float baseTimeScale = 1;
     // Start is called before the first frame update
     void Start()
     {
         pauseText.enabled = false;
+        pauseOverlay.enabled = false;
         resume.gameObject.SetActive(false);
         toMenu.gameObject.SetActive(false);
     }
@@ -60,6 +62,7 @@ public class PauseMenuUI : MonoBehaviour
     {
         paused = !paused;
         AudioListener.pause = paused;
+        pauseOverlay.enabled = paused;
         pauseText.enabled = paused;
         resume.gameObject.SetActive(paused);
         toMenu.gameObject.SetActive(paused);

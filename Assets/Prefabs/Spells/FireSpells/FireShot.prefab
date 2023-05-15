@@ -183,6 +183,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2826757475852415143}
     m_Modifications:
+    - target: {fileID: 2616943086590047185, guid: 753e2835000514d40b80e57fa31d23f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 266536631488d6e47880c73ade4b889f, type: 2}
     - target: {fileID: 7047779619525882883, guid: 753e2835000514d40b80e57fa31d23f6, type: 3}
       propertyPath: m_Name
       value: IcicleIdle

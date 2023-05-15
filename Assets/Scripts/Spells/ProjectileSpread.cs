@@ -64,11 +64,10 @@ public class ProjectileSpread : ISpell
 
     private IEnumerator Shoot(Vector3 target, GameObject projectile, int order, int numOfProjectiles)
     {
-        yield return new WaitForSeconds(delayBetweenShots + delayBeforeShooting);
-        if (wait)
-        {
-            yield return new WaitForSeconds(delayBeforeShooting*((float)numOfProjectiles-(float)order));
-        }
+        //yield return new WaitForSeconds(delayBetweenShots + delayBeforeShooting);
+        if (wait){yield return new WaitForSeconds(delayBeforeShooting*((float)numOfProjectiles-(float)order) + delayBetweenShots);}
+
+        else { yield return new WaitForSeconds(delayBetweenShots + delayBeforeShooting); }
         ShootIcicle(target, projectile);
     }
 

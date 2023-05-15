@@ -625,7 +625,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 561764218}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -75, y: 0, z: 0}
 --- !u!23 &366118712
 MeshRenderer:
@@ -1012,6 +1012,7 @@ Transform:
   m_LocalPosition: {x: 50, y: 10, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 604517668}
   - {fileID: 1305973754}
   - {fileID: 989056378}
   - {fileID: 366118711}
@@ -1044,11 +1045,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604517667}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8860005460541269536}
-  m_RootOrder: 2
+  m_Father: {fileID: 561764218}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619214838
 GameObject:
@@ -1235,7 +1236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 561764218}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -60, y: 140, z: 0}
 --- !u!23 &747706693
 MeshRenderer:
@@ -1331,7 +1332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 561764218}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -65, y: 230, z: 0}
 --- !u!23 &793652092
 MeshRenderer:
@@ -1974,7 +1975,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 561764218}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &989056380
 Camera:
@@ -7320,7 +7321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 561764218}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &1305973755
 AudioListener:
@@ -8274,11 +8275,6 @@ MonoBehaviour:
   - {fileID: 988404038577311232, guid: 50bddc4c19900524ba28826c574b661c, type: 3}
   spawnPointsNumber: 20
   spawnDistance: 8
---- !u!4 &8860005460541269536 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8860005461996174526, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
-  m_PrefabInstance: {fileID: 8860005460541269531}
-  m_PrefabAsset: {fileID: 0}
 --- !u!199 &8860005460541269537
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -8535,7 +8531,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

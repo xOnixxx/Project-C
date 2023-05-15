@@ -540,8 +540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -300, y: -450}
-  m_SizeDelta: {x: 500, y: 800}
+  m_AnchoredPosition: {x: -300, y: -500}
+  m_SizeDelta: {x: 550, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192611299
 MonoBehaviour:
@@ -601,15 +601,31 @@ MonoBehaviour:
     finishing the sequence you will have, hopefully, charged that spell and can cast
     it with clicking left mouse button
 
-    To leave the casting mode press right
-    mosue button again
+    Missing nodes will decrease damage done
 
-    Keep in mind that this will lose your spell charge
+    To
+    leave the casting mode press right mosue button
+
+    Keep in mind that this will
+    lose your spell charge
+
+    The spells can be of 4 elements
+
+    Fire deals low
+    damage at impact but high over time
+
+    Ice deals medium damage at impact and
+    a little more over time
+
+    Light is very quick and deals high damage, but is
+    tricky to cast and fairly random
+
+    Earth is slow to cast and move, but deals
+    high damage and stuns enemies
 
 
-
-    Try
-    out different spells and see what you like
+    Try out different spells and see what you
+    like
 
     Good luck and have fun'
 --- !u!222 &192611300
@@ -1802,9 +1818,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 192611301}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 192611297}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

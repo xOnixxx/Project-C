@@ -7,14 +7,12 @@ public class WallGenerator : MonoBehaviour
     public GameObject wall;
     private Vector3 centre;
     public int numVertices = 4;
-    public float xSize = 10;
-    public float zSize = 10;
+    public float radius = 10;
     public float height = 10;
     private List<GameObject> wallInstances = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-        GenerateWalls();
     }
 
     // Update is called once per frame
@@ -23,9 +21,6 @@ public class WallGenerator : MonoBehaviour
         
     }
 
-    public void ShrinkWalls()
-    {
-    }
 
     public void GenerateWalls()
     {
@@ -36,7 +31,6 @@ public class WallGenerator : MonoBehaviour
         wallInstances.Clear();
         centre = GetComponentInParent<Transform>().position;
         Vector3[] polygonVertices = new Vector3[numVertices];
-        float radius = Mathf.Min(xSize, zSize);
         for (int i = 0; i < numVertices; i++)
         {
             polygonVertices[i] = new Vector3(Mathf.Sin((float)i / numVertices * 2 * Mathf.PI) * radius, 0, Mathf.Cos((float)i/numVertices * 2 * Mathf.PI) * radius) + centre;
@@ -53,7 +47,7 @@ public class WallGenerator : MonoBehaviour
             collider = newWall.GetComponent<Collider>();
             if(collider != null)
             {
-                collider.transform.localScale = new Vector3(xSize * 2, 2, height + 1);
+                collider.transform.localScale = new Vector3(radius * 2, 2, height + 1);
             }
             wallInstances.Add(newWall);
         }
@@ -65,7 +59,7 @@ public class WallGenerator : MonoBehaviour
         collider = newWall.GetComponent<Collider>();
         if (collider != null)
         {
-            collider.transform.localScale = new Vector3(xSize * 2, 2, height + 1);
+            collider.transform.localScale = new Vector3(radius * 2, 2, height + 1);
         }
         wallInstances.Add(newWall);
         newWall = Instantiate(wall, centre + new Vector3(0,height,0), Quaternion.identity, transform);
@@ -74,7 +68,7 @@ public class WallGenerator : MonoBehaviour
         collider = newWall.GetComponent<Collider>();
         if (collider != null)
         {
-            collider.transform.localScale = new Vector3(xSize*2, 2, xSize * 2);
+            collider.transform.localScale = new Vector3(radius*2, 2, radius * 2);
         }
         wallInstances.Add(newWall);
     }

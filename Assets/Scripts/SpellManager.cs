@@ -12,7 +12,6 @@ public class SpellManager : MonoBehaviour
 
 
     public List<ISpell> spells = new List<ISpell>();
-    public List<Sprite> sprites;
     public Image chargedSpellImage;
     public Text chargedSpellText;
     private int chargedSpellIndex = -2;
@@ -80,7 +79,7 @@ public class SpellManager : MonoBehaviour
             }
             else
             {
-                chargedSpellImage.sprite = sprites[chargedSpellIndex];
+                chargedSpellImage.sprite = spells[chargedSpellIndex].spellSprite;
                 chargedSpellImage.enabled = true;
                 chargedSpellText.text = spells[chargedSpellIndex].spellName + " charged (" + ((float)caster.successfulPops / spells[chargedSpellIndex].nodeCastPositions.Count).ToString("##.##") + ")";
                 chargedSpellText.enabled = true;

@@ -46,11 +46,12 @@ MonoBehaviour:
   damage: 0
   dmgMultiplier: 0
   dmgLayer: 0
-  spawnRate: 0
-  lifeTime: 0
-  changeCoef: 0
-  cooldown: 0
-  nodeNum: 0
+  spellName: y
+  element: 0
+  spellSprite: {fileID: 0}
+  nodeCastPositions: []
+  lifetimes: []
+  spawnDelays: []
   speed: 0
   spell: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}

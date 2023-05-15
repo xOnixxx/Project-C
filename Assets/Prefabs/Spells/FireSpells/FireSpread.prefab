@@ -48,7 +48,7 @@ MonoBehaviour:
   dmgLayer: 7
   spellName: Fire Revolver
   element: 2
-  spellSprite: {fileID: 0}
+  spellSprite: {fileID: 21300000, guid: 66a7cd839ddafdb4bb415dd3bc965578, type: 3}
   nodeCastPositions:
   - {x: 350, y: 640}
   - {x: 480, y: 600}

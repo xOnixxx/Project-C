@@ -48,7 +48,7 @@ MonoBehaviour:
   dmgLayer: 7
   spellName: Light Revolver
   element: 3
-  spellSprite: {fileID: 0}
+  spellSprite: {fileID: 21300000, guid: 3c219f6a247ebc34a971d83414faa65a, type: 3}
   nodeCastPositions:
   - {x: 175, y: 175}
   - {x: 450, y: 250}

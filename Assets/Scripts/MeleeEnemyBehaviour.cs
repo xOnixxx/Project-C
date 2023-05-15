@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MeleeEnemyBehaviour : Character
 {
+    public GameHandler handler;
     private CharacterController character;
     public Transform target;
     public float movementSpeed = 2;
@@ -38,6 +39,7 @@ public class MeleeEnemyBehaviour : Character
     }
     public override void Die()
     {
+        handler.currentEnemyNumber--;
         Destroy(gameObject);
     }
 }

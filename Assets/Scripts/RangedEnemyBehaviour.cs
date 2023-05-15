@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RangedEnemyBehaviour : Character
 {
+    public GameHandler handler;
     private CharacterController character;
     public Transform target;
     public ISpell spell;
@@ -65,6 +66,7 @@ public class RangedEnemyBehaviour : Character
 
     public override void Die()
     {
+        handler.currentEnemyNumber--;
         Destroy(gameObject);
     }
 }

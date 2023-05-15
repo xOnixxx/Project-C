@@ -67,4 +67,9 @@ MonoBehaviour:
   speed: 2
   spell: {fileID: 7268181049600962120, guid: fc134ccdfb52297419aea10fc8d823d0, type: 3}
   radius: 0.5
-  delay: 0
+  delayBeforeShooting: 0.2
+  delayBetweenShots: 0.4
+  delayBetweenSpawn: 0.1
+  wait: 0
+  minNumShots: 2
+  maxNumShots: 6

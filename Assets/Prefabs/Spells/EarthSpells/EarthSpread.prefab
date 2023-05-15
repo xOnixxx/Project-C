@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c789885f8ea994458381cc839e2d14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 25
   dmgMultiplier: 1
   dmgLayer: 7
   spellName: Earth Revolver
@@ -73,4 +73,9 @@ MonoBehaviour:
   speed: 1
   spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
   radius: 1.5
-  delay: 1
+  delayBeforeShooting: 0.3
+  delayBetweenShots: 0
+  delayBetweenSpawn: 0.3
+  wait: 1
+  minNumShots: 3
+  maxNumShots: 5

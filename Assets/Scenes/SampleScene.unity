@@ -181,6 +181,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1698620711}
     m_Modifications:
+    - target: {fileID: 988404038577311232, guid: 15c08fee7849fa44b8423716dc5b6ad9, type: 3}
+      propertyPath: delayBetweenSpawn
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5150014418308163317, guid: 15c08fee7849fa44b8423716dc5b6ad9, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -663,6 +667,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1698620711}
     m_Modifications:
+    - target: {fileID: 988404038577311232, guid: 466fe9dcdfcb4df44bcbbb84f0ef980f, type: 3}
+      propertyPath: delayBetweenSpawn
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 988404038577311232, guid: 466fe9dcdfcb4df44bcbbb84f0ef980f, type: 3}
+      propertyPath: delayBeforeShooting
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5150014418308163317, guid: 466fe9dcdfcb4df44bcbbb84f0ef980f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1079,7 +1091,6 @@ MonoBehaviour:
   player: {fileID: 561764216}
   caster: {fileID: 967845162}
   cameraHolder: {fileID: 1305973754}
-  spellStatus: 
   spells:
   - {fileID: 569315902}
   - {fileID: 86201387}
@@ -1377,7 +1388,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 350, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &690534298
 MonoBehaviour:
@@ -1401,7 +1412,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e6fad6138d5dca845a3ea73ed7f63ea7, type: 3}
-    m_FontSize: 30
+    m_FontSize: 26
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -8206,7 +8217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162.5, y: -162.5}
+  m_AnchoredPosition: {x: 200, y: -200}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979913413

@@ -53,7 +53,7 @@ public class SpellManager : MonoBehaviour
             {
                 target = transform.position + cameraHolder.forward * 1000;
             }
-            spells[chargedSpellIndex].Cast(origin + 2 * transform.forward, target,caster.successfulPops / spells[chargedSpellIndex].nodeCastPositions.Count);
+            spells[chargedSpellIndex].Cast(origin + 2 * transform.forward, target,(float)caster.successfulPops / spells[chargedSpellIndex].nodeCastPositions.Count);
             Hide();
             chargedSpellIndex = -2;
         }
@@ -82,7 +82,7 @@ public class SpellManager : MonoBehaviour
             {
                 chargedSpellImage.sprite = sprites[chargedSpellIndex];
                 chargedSpellImage.enabled = true;
-                chargedSpellText.text = spells[chargedSpellIndex].spellName + "charged (" + caster.successfulPops / spells[chargedSpellIndex].nodeCastPositions.Count + ")";
+                chargedSpellText.text = spells[chargedSpellIndex].spellName + " charged (" + ((float)caster.successfulPops / spells[chargedSpellIndex].nodeCastPositions.Count).ToString("##.##") + ")";
                 chargedSpellText.enabled = true;
             }
             isCasting = false;

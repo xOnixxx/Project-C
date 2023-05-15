@@ -45,7 +45,7 @@ public class EnviromentalHazards : MonoBehaviour
         game.numOfObstacles = numOfObstacles;
         game.numOfEnemies = numOfEnemies;
 
-    }
+    } 
 
     public void Revert(GameHandler game)
     {

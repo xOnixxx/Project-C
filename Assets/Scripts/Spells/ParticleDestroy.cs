@@ -60,8 +60,6 @@ public class ParticleDestroy : MonoBehaviour
                 {
                     ParticleSystem particle = explosionEffect[i];
                     timeToExplode = particle.main.duration > timeToExplode ? particle.main.duration : timeToExplode;
-                    Debug.Log(timeToExplode);
-
                     particle.Play();
                 }
             }

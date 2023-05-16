@@ -64,6 +64,6 @@ MonoBehaviour:
   size: 1.5
   speed: 8
   burnTicks: 25
-  burnDamagePerTick: 2
+  burnDamagePerTick: 1.5
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 7268181049600962120, guid: fc134ccdfb52297419aea10fc8d823d0, type: 3}

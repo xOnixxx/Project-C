@@ -46,7 +46,7 @@ public class ProjectileSpread : ISpell
         icicles= new GameObject[numberOfIcicles];
 
         StartCoroutine(Spawn(origin, target, numberOfIcicles));
-        yield return new WaitForSeconds(delayBeforeShooting*numberOfIcicles);
+        yield return new WaitForSeconds(delayBeforeShooting*numberOfIcicles + delayBetweenSpawn*numberOfIcicles + delayBetweenShots*numberOfIcicles + 1);
 
         Destroy(anchor);
     }
@@ -75,7 +75,7 @@ public class ProjectileSpread : ISpell
         GameObject icicle = Instantiate(spell, origin, Quaternion.identity, anchor.transform);
         icicle.GetComponent<Transform>().localPosition += offset;
         icicle.transform.LookAt(target);
-        icicles[order] = icicle;
+        //icicles[order] = icicle;
         icicle.transform.parent = null;
     
         StartCoroutine(Shoot(target, icicle, order, numOfProjectiles));

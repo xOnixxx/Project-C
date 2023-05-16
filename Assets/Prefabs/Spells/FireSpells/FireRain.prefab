@@ -50,11 +50,26 @@ MonoBehaviour:
   element: 2
   spellSprite: {fileID: 21300000, guid: 100f8637ebe395a44b64722b9fc691f8, type: 3}
   nodeCastPositions:
-  - {x: 500, y: 500}
+  - {x: 150, y: 800}
+  - {x: 100, y: 900}
+  - {x: 650, y: 650}
+  - {x: 600, y: 700}
+  - {x: 800, y: 800}
+  - {x: 750, y: 850}
   lifetimes:
   - 1
-  spawnDelays:
+  - 0.3
   - 1
+  - 0.3
+  - 1
+  - 0.3
+  spawnDelays:
+  - 0.6
+  - 0.5
+  - 0.6
+  - 0.5
+  - 0.6
+  - 0.5
   size: 5
   speed: 1
   burnTicks: 20

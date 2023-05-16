@@ -51,7 +51,7 @@ public class ParticleDestroy : MonoBehaviour
     {
 
         gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<MeshCollider>().enabled = false;
+        gameObject.GetComponent<Collider>().enabled = false;
         if (loud && explosionEffect != null)
         {
             for (int i = 0; i < explosionEffect.Length; i++)
@@ -68,7 +68,7 @@ public class ParticleDestroy : MonoBehaviour
         
 
         gameObject.GetComponent<MeshRenderer>().enabled= false;
-        gameObject.GetComponent<MeshCollider>().enabled= false;
+        gameObject.GetComponent<Collider>().enabled= false;
         yield return new WaitForSeconds(timeToExplode);
 
 

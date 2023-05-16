@@ -9848,6 +9848,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1598440921, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: tree.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598440921, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: tree.Array.data[0]
+      value: 
+      objectReference: {fileID: 7494923444958524680, guid: 38edc740fa5e2a54cbe2db5bf212b13a, type: 3}
+    - target: {fileID: 1598440921, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: tree.Array.data[1]
+      value: 
+      objectReference: {fileID: 6293968330257669792, guid: 26196d5941d3a0045ae09000bf7b01ad, type: 3}
     - target: {fileID: 8860005460541269535, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
       propertyPath: count
       value: 

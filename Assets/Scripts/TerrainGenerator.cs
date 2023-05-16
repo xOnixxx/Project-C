@@ -7,7 +7,7 @@ public class TerrainGenerator : MonoBehaviour
     //Must be power of 2 + 1
     public Texture2D groundTexture;
     public Texture2D grassTexture;
-    public GameObject tree;
+    public GameObject[] tree;
     public int treeAmount = 200;
     public int heightMapResolution = 33;
     public float roughness = 1;
@@ -78,10 +78,12 @@ public class TerrainGenerator : MonoBehaviour
         terdata.SetHeights(0, 0, heightMap);
         DetailPrototype[] details= new DetailPrototype[1];
         DetailPrototype detail = new DetailPrototype();
-        TreePrototype[] trees = new TreePrototype[1];
-        TreePrototype treeProto = new TreePrototype();
-        trees[0] = treeProto;
-        treeProto.prefab = tree;
+        TreePrototype[] trees = new TreePrototype[tree.Length];
+        for (int i = 0; i < tree.Length; i++)
+        {
+            trees[i] = new TreePrototype();
+            trees[i].prefab = tree[i];
+        }
         terdata.treePrototypes = trees;
         TreeInstance[] treeinstances = new TreeInstance[treeAmount];
         for (int i = 0; i < treeAmount; i++)
@@ -90,7 +92,7 @@ public class TerrainGenerator : MonoBehaviour
             TreeInstance testTree = new TreeInstance()
             {
                 position = new Vector3(Size / 2 - random.x * Size / 2, 0, Size / 2 - random.y * Size / 2) / Size,
-                prototypeIndex = 0,
+                prototypeIndex = Random.Range(0,tree.Length),
                 widthScale = 1f,
                 heightScale = 1f,
                 color = Color.white,

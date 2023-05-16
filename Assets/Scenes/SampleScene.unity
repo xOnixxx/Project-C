@@ -9530,7 +9530,7 @@ PrefabInstance:
     - target: {fileID: 3012021396529263855, guid: 9d386347cbfe3954d92d22891b03def8, type: 3}
       propertyPath: attacker
       value: 
-      objectReference: {fileID: 90706702814896089, guid: 3f95d2f3175dd32499b8f0d1910efa0a, type: 3}
+      objectReference: {fileID: 3352391364750035280, guid: 443eca02ef0c32a44a9c0b2abb0cc5d0, type: 3}
     - target: {fileID: 3012021396529263855, guid: 9d386347cbfe3954d92d22891b03def8, type: 3}
       propertyPath: attackRange
       value: 30

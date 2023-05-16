@@ -42,11 +42,11 @@ public class ProjectileSpread : ISpell
         anchor = new GameObject();
         anchor.transform.position = origin;
         anchor.transform.LookAt(target);
-        int numberOfIcicles = Random.Range(minNumShots, maxNumShots);
-        icicles= new GameObject[numberOfIcicles];
+        int numberOfShots = Random.Range(minNumShots, maxNumShots);
+        icicles= new GameObject[numberOfShots];
 
-        StartCoroutine(Spawn(origin, target, numberOfIcicles));
-        yield return new WaitForSeconds(delayBeforeShooting*numberOfIcicles + delayBetweenSpawn*numberOfIcicles + delayBetweenShots*numberOfIcicles + 1);
+        StartCoroutine(Spawn(origin, target, numberOfShots));
+        yield return new WaitForSeconds(delayBeforeShooting*numberOfShots + delayBetweenSpawn*numberOfShots + delayBetweenShots*numberOfShots + 1);
 
         Destroy(anchor);
     }
@@ -72,20 +72,22 @@ public class ProjectileSpread : ISpell
 
     private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order, int numOfProjectiles)
     {
-        GameObject icicle = Instantiate(spell, origin, Quaternion.identity, anchor.transform);
-        icicle.GetComponent<Transform>().localPosition += offset;
-        icicle.transform.LookAt(target);
-        //icicles[order] = icicle;
-        icicle.transform.parent = null;
-    
-        StartCoroutine(Shoot(target, icicle, order, numOfProjectiles));
+        GameObject projectile = Instantiate(spell, origin, Quaternion.identity, anchor.transform);
+        projectile.GetComponent<Transform>().localPosition += offset;
+        projectile.transform.LookAt(target);
+        projectile.transform.parent = null;
+        if (projectile.GetComponent<Damager>() != null)
+        {
+            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer, burnTicks, burnDamagePerTick);
+        }
+        StartCoroutine(Shoot(target, projectile, order, numOfProjectiles));
     }
 
-    private void ShootIcicle(Vector3 target, GameObject icicle)
+    private void ShootIcicle(Vector3 target, GameObject projectile)
     {
         //icicle.transform.rotation = Quaternion.LookRotation(target);
-        icicle.transform.LookAt(target);
-        icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward*500*speed);
+        projectile.transform.LookAt(target);
+        projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward*500*speed);
 
     }
 }

@@ -59,5 +59,7 @@ MonoBehaviour:
   - {fileID: 62759941938052225, guid: f90aaf1f87d5c0e4f85a1008c06166cd, type: 3}
   - {fileID: 62759941938052225, guid: 6e96d78961be13744b5a1e355d3c6164, type: 3}
   - {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
+  elementalDmgUp:
+  - {fileID: 0}
   numOfObstacles: 0
   numOfEnemies: 0

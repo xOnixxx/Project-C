@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4893437428656495881}
   - component: {fileID: 8863678146203048533}
+  - component: {fileID: 6781259945071838285}
   m_Layer: 3
   m_Name: EarthMerge
   m_TagString: Spells
@@ -59,7 +60,21 @@ MonoBehaviour:
   speed: 1
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 0}
-  BIGspell: {fileID: 0}
+  bigSize: 0
   radius: 0
   delay: 0
-  bigSize: 0
+--- !u!114 &6781259945071838285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349508065810109170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cbf43348150d6e44a4ffcb4446038fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  damageLayer: 7
+  element: 0

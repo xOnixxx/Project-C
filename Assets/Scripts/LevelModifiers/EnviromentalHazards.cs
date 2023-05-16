@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public class dmgMod : MonoBehaviour
+{
+    public ISpell.Element element;
+    public float multiplier;
+}
 public class EnviromentalHazards : MonoBehaviour
 {
 
@@ -11,7 +15,7 @@ public class EnviromentalHazards : MonoBehaviour
     
     public ISpell[] allowedPlayerEl;
     public ISpell[] allowedEnemyEl;
-    public Dictionary<ISpell.Element, float> elementalDmgUp;
+    public List<dmgMod> elementalDmgUp;
     public int numOfObstacles;
     public int numOfEnemies;
 
@@ -21,7 +25,7 @@ public class EnviromentalHazards : MonoBehaviour
 
     private ISpell[] allowedPlayerElOG;
     private ISpell[] allowedEnemyElOG;
-    private Dictionary<ISpell.Element, float> elementalDmgUpOG;
+    private List<dmgMod> elementalDmgUpOG;
     private int numOfObstaclesOG;
     private int numOfEnemiesOG;
 

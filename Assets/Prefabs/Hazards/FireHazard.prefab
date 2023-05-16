@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6982478345618187784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4473076956749496106}
+  - component: {fileID: -217789873057328922}
+  m_Layer: 0
+  m_Name: FireHazard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4473076956749496106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982478345618187784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-217789873057328922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982478345618187784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d08422179140b4fb6fd81732651eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTexture: {fileID: 2800000, guid: 466da0875c466a5479e8bd896be49024, type: 3}
+  groundTexture: {fileID: 2800000, guid: f51c976299a205e459acfa5e5110af0b, type: 3}
+  allowedPlayerEl:
+  - {fileID: 800005721535123891, guid: a64f4635380d9b14ebad955155e0465f, type: 3}
+  - {fileID: 62759941938052225, guid: 6f73910cbd15bdc46b6734c2cb072dcb, type: 3}
+  - {fileID: 62759941938052225, guid: e54d1260c67c26f4eba741f06f267300, type: 3}
+  - {fileID: 62759941938052225, guid: f90aaf1f87d5c0e4f85a1008c06166cd, type: 3}
+  - {fileID: 62759941938052225, guid: 876d334809e348c47867112f60a296c7, type: 3}
+  - {fileID: 988404038577311232, guid: 466fe9dcdfcb4df44bcbbb84f0ef980f, type: 3}
+  - {fileID: 800005721535123891, guid: 9ee5b227e15901d448b42e03220d549e, type: 3}
+  - {fileID: 8078911858458276985, guid: 82e4173c8596c104bb912664ebff86ee, type: 3}
+  - {fileID: 8078911858458276985, guid: f4cbdbef45906f74283a2a391f3f4ebd, type: 3}
+  - {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
+  - {fileID: 8078911858458276985, guid: dab93b474d75401409f5353e9bbc06ef, type: 3}
+  - {fileID: 988404038577311232, guid: 2e2d4d37a989e7b4e8e491098026d39c, type: 3}
+  allowedEnemyEl:
+  - {fileID: 800005721535123891, guid: a64f4635380d9b14ebad955155e0465f, type: 3}
+  - {fileID: 62759941938052225, guid: 6f73910cbd15bdc46b6734c2cb072dcb, type: 3}
+  - {fileID: 62759941938052225, guid: e54d1260c67c26f4eba741f06f267300, type: 3}
+  - {fileID: 62759941938052225, guid: f90aaf1f87d5c0e4f85a1008c06166cd, type: 3}
+  - {fileID: 62759941938052225, guid: 876d334809e348c47867112f60a296c7, type: 3}
+  - {fileID: 988404038577311232, guid: 466fe9dcdfcb4df44bcbbb84f0ef980f, type: 3}
+  numOfObstacles: 0
+  numOfEnemies: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static EnviromentalHazards;
 
 public class GameHandler : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class GameHandler : MonoBehaviour
     public ISpell[] allowedPlayerEl;
     private List<ISpell> pickedSpells = new List<ISpell>();
     public ISpell[] allowedEnemyEl;
-    public Dictionary<ISpell.Element, float> elementalDmgUp;
+    public List<dmgMod> elementalDmgUp;
     public int numOfObstacles;
     public int numOfEnemies;
 

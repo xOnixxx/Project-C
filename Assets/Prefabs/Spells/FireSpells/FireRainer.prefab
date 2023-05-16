@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2064492165878372215}
   - component: {fileID: -3804166073021511884}
   m_Layer: 3
-  m_Name: Rainer
+  m_Name: FireRainer
   m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b9ddf0aa3d9ece4eadb03398f95e502, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,13 +112,16 @@ MonoBehaviour:
   damage: 10
   dmgMultiplier: 1
   dmgLayer: 7
-  spawnRate: 1
-  lifeTime: 2
-  changeCoef: 0.7
-  cooldown: 0
-  nodeNum: 3
+  spellName: 
+  element: 4
+  spellSprite: {fileID: 0}
+  nodeCastPositions: []
+  lifetimes: []
+  spawnDelays: []
+  size: 1
   speed: 1
-  spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
+  offset: {x: 0, y: 0, z: 0}
+  spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
   burstAmount: 10
   burstInterval: 1

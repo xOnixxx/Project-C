@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class MergeSpread : ISpell
 {
-    public GameObject BIGspell;
 
+    public float bigSize = 5;
     public float radius;
     public float delay;
-    public float bigSize;
 
     private GameObject[] icicles;
 
@@ -51,9 +50,10 @@ public class MergeSpread : ISpell
         {
             icicle.GetComponent<ProjectileMove>().SmoothMove(move, new Vector3(0,0,5), 100);
         }
-        GameObject BIGicicle = Instantiate(BIGspell, origin, Quaternion.identity, gameObject.transform);
+        GameObject BIGicicle = Instantiate(spell, origin, Quaternion.identity, gameObject.transform);
         BIGicicle.transform.localScale = new Vector3(bigSize,bigSize,bigSize);
         BIGicicle.transform.LookAt(target);
+        BIGicicle.transform.localScale *= bigSize;
         BIGicicle.transform.parent = null;
         yield return new WaitForSeconds(delay);
         foreach (GameObject icicle in icicles)

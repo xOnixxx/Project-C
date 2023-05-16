@@ -5,7 +5,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ProjectileSpread : ISpell
 {
-    //public List<GameObject> spellParts;
     public float radius;
     public float delayBeforeShooting;
     public float delayBetweenShots;

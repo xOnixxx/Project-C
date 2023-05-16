@@ -24,10 +24,13 @@ public abstract class ISpell : MonoBehaviour
     public List<float> lifetimes = new List<float>();
     public List<float> spawnDelays = new List<float>();
 
+    public float size = 1;
     public float speed = 1;
+    public Vector3 offset = Vector3.zero;
     public GameObject spell;
 
     protected GameObject anchor;
+    
 
     public abstract void Cast(Vector3 origin, Vector3 target, float playerMultiplier);
 

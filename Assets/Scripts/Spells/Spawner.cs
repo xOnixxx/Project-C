@@ -21,6 +21,8 @@ public class Spawner : ISpell
         shooter.dmgMultiplier = dmgMultiplier;
         shooter.dmgLayer = dmgLayer;
         shooter.speed = speedProjectile;
+        shooter.size = size;
+        shooter.speed = speed;
         Vector3 origin = gameObject.transform.position;
         gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * speedSpawner);
         Cast(origin, new Vector3(0, 0, 0), dmgMultiplier); 

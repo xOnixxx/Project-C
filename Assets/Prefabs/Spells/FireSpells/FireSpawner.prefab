@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7679657888172707457}
   - component: {fileID: -8746671174418888609}
   m_Layer: 3
-  m_Name: IcicleSpawnerSpell
+  m_Name: FireSpawner
   m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b0d49f7c864a19f4b863cb3b85b4b31d, type: 2}
+  - {fileID: 2100000, guid: 7b9ddf0aa3d9ece4eadb03398f95e502, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,13 +115,16 @@ MonoBehaviour:
   damage: 0
   dmgMultiplier: 0
   dmgLayer: 0
-  spawnRate: 0
-  lifeTime: 0
-  changeCoef: 0
-  cooldown: 0
-  nodeNum: 0
+  spellName: 
+  element: 0
+  spellSprite: {fileID: 0}
+  nodeCastPositions: []
+  lifetimes: []
+  spawnDelays: []
+  size: 0.5
   speed: 1
-  spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
+  offset: {x: 0, y: 0, z: 0}
+  spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
   burstAmount: 10
   burstInterval: 1

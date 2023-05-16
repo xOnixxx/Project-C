@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShootProjectile : ISpell
 {
-    public Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +22,16 @@ public class ShootProjectile : ISpell
         anchor = new GameObject();
         anchor.transform.position = origin;
         anchor.transform.LookAt(target);
-        GameObject icicle = Instantiate(spell, origin, Quaternion.identity, anchor.transform);
-        icicle.transform.localPosition += offset; 
-        if (icicle.GetComponent<Damager>() != null )
+        GameObject projectile = Instantiate(spell, origin, Quaternion.identity, anchor.transform);
+        projectile.transform.localPosition += offset;
+        projectile.transform.localScale *= size;
+        if (projectile.GetComponent<Damager>() != null )
         {
-            icicle.GetComponent<Damager>().SetDamager(damage, dmgLayer);
+            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer);
         }
-        icicle.transform.parent= null;    
-        icicle.transform.LookAt(target);
-        icicle.GetComponent<Rigidbody>().AddForce(icicle.transform.forward * speed * 100);
+        projectile.transform.parent= null;    
+        projectile.transform.LookAt(target);
+        projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * speed * 100);
 
         Destroy(anchor);
     }

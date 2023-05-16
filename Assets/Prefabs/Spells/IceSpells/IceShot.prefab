@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2826757475852415143}
-  - component: {fileID: -7878741156877632355}
   - component: {fileID: 752451165058600098}
   - component: {fileID: 8258092043349649029}
   - component: {fileID: -4302440382555079347}
@@ -18,7 +17,7 @@ GameObject:
   - component: {fileID: 8543947317683162813}
   - component: {fileID: 6935468916398400358}
   m_Layer: 3
-  m_Name: IcicleSpell
+  m_Name: IceShot
   m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,20 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &-7878741156877632355
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7268181049600962120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: dc447c8898dbf4f4b8f9577c22d22fe2, type: 3}
 --- !u!33 &752451165058600098
 MeshFilter:
   m_ObjectHideFlags: 0

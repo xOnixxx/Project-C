@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4314918619710577448}
   - component: {fileID: -6986181105132956806}
   m_Layer: 3
-  m_Name: LightParticle
+  m_Name: LightShot
   m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

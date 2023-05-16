@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7556488060213622816}
   - component: {fileID: 4314918619710577448}
   - component: {fileID: -6986181105132956806}
+  - component: {fileID: -545581629299592453}
   m_Layer: 3
   m_Name: LightShot
   m_TagString: Spells
@@ -114,6 +115,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &-545581629299592453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828371057168701643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cbf43348150d6e44a4ffcb4446038fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  damageLayer: 7
+  element: 0
 --- !u!1001 &5030636635572503947
 PrefabInstance:
   m_ObjectHideFlags: 0

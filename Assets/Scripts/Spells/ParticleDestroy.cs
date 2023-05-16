@@ -59,7 +59,7 @@ public class ParticleDestroy : MonoBehaviour
                 if (explosionEffect[i] != null)
                 {
                     ParticleSystem particle = explosionEffect[i];
-                    timeToExplode = particle.main.duration > timeToExplode ? particle.main.duration : timeToExplode;
+                    timeToExplode = (particle.main.startLifetimeMultiplier + particle.main.duration) > timeToExplode ? (particle.main.startLifetimeMultiplier + particle.main.duration) : timeToExplode;
                     particle.Play();
                 }
             }

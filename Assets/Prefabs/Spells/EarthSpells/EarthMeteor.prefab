@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   dmgMultiplier: 0
-  dmgLayer: 0
+  dmgLayer: 
   spellName: Earth Meteor
   element: 4
   spellSprite: {fileID: 0}
@@ -55,7 +55,9 @@ MonoBehaviour:
   - 1
   spawnDelays:
   - 1
-  size: 1
+  size: 5
   speed: 5
-  offset: {x: 0, y: 20, z: 5}
-  spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
+  burnTicks: 0
+  burnDamagePerTick: 0
+  offset: {x: 0, y: 30, z: 5}
+  spell: {fileID: 7268181049600962120, guid: dce75c919aa747446a619c094217b979, type: 3}

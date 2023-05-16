@@ -56,8 +56,16 @@ MonoBehaviour:
   spawnDelays:
   - 1
   size: 5
+<<<<<<< HEAD
   speed: 5
   burnTicks: 0
   burnDamagePerTick: 0
   offset: {x: 0, y: 20, z: 5}
   spell: {fileID: 7268181049600962120, guid: fc134ccdfb52297419aea10fc8d823d0, type: 3}
+=======
+  speed: 3
+  burnTicks: 0
+  burnDamagePerTick: 0
+  offset: {x: 0, y: 30, z: 5}
+  spell: {fileID: 7268181049600962120, guid: 85ec7201b6eda72459bda1db3993618b, type: 3}
+>>>>>>> 5c0dbe4425e6d60258d18d43ee72e09e401d8200

@@ -39,38 +39,42 @@ public class MergeSpread : ISpell
         icicles = new GameObject[numberOfIcicles];
         for (int i = 0; i < numberOfIcicles; i++)
         {
-            MakeIcicle(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, 0), i);
+            MakeProjectile(origin, target, new Vector3(Mathf.Sin((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, Mathf.Cos((float)i / numberOfIcicles * 2 * Mathf.PI) * radius, 0), i);
             yield return new WaitForSeconds(0.1f);
         }
 
         yield return new WaitForSeconds(0.5f);
 
         Func<float, float, float, float> move = (x, origin, target) => ((1 - (float)Math.Pow(1 - x, 5))*target)+origin;
-        foreach (GameObject icicle in icicles)
+        foreach (GameObject smallProjectile in icicles)
         {
-            icicle.GetComponent<ProjectileMove>().SmoothMove(move, new Vector3(0,0,5), 100);
+            smallProjectile.GetComponent<ProjectileMove>().SmoothMove(move, new Vector3(0,0,5), 100);
         }
-        GameObject BIGicicle = Instantiate(spell, origin, Quaternion.identity, gameObject.transform);
-        BIGicicle.transform.localScale = new Vector3(bigSize,bigSize,bigSize);
-        BIGicicle.transform.LookAt(target);
-        BIGicicle.transform.localScale *= bigSize;
-        BIGicicle.transform.parent = null;
+        GameObject projectile = Instantiate(spell, origin, Quaternion.identity, gameObject.transform);
+        projectile.transform.localScale = new Vector3(bigSize,bigSize,bigSize);
+        projectile.transform.LookAt(target);
+        projectile.transform.localScale *= bigSize;
+        if (projectile.GetComponent<Damager>() != null)
+        {
+            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer, burnTicks, burnDamagePerTick);
+        }
+        projectile.transform.parent = null;
         yield return new WaitForSeconds(delay);
         foreach (GameObject icicle in icicles)
         {
             //icicle.GetComponent<ParticleDestroy>().KillSilent();
         }
-        ShootIcicle(target, BIGicicle);
+        ShootIcicle(target, projectile);
 
     }
 
-    private void MakeIcicle(Vector3 origin, Vector3 target, Vector3 offset, int order)
+    private void MakeProjectile(Vector3 origin, Vector3 target, Vector3 offset, int order)
     {
-        GameObject icicle = Instantiate(spell, origin, Quaternion.identity);
-        icicle.transform.LookAt(target);
-        icicle.GetComponent<Transform>().localPosition += offset;
-        icicles[order] = icicle;
-        icicle.transform.parent = null;
+        GameObject projectile = Instantiate(spell, origin, Quaternion.identity);
+        projectile.transform.LookAt(target);
+        projectile.GetComponent<Transform>().localPosition += offset;
+        icicles[order] = projectile;
+        projectile.transform.parent = null;
     }
 
     private void ShootIcicle(Vector3 target, GameObject icicle)

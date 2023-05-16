@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   dmgMultiplier: 0
-  dmgLayer: 0
+  dmgLayer: 07000000
   spellName: Earth Globe
   element: 4
   spellSprite: {fileID: 0}

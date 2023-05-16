@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   dmgMultiplier: 0
-  dmgLayer: 0
+  dmgLayer: 0600000007000000
   spellName: Light Rain
   element: 3
   spellSprite: {fileID: 0}

@@ -25,7 +25,7 @@ public class HealthManager : MonoBehaviour
         
     }
 
-    public void GetHit(float damage, ISpell.Element element)
+    public void GetHit(float damage, ISpell.Element element, int burnTicks, float burnDamage)
     {
         if(!isInvulnerable)
         {
@@ -50,7 +50,7 @@ public class HealthManager : MonoBehaviour
                     if (!alreadyTakingDoT)
                     {
                         alreadyTakingDoT = true;
-                        StartCoroutine(DamageOverTime(0.2f, 1, 0, 20));
+                        StartCoroutine(DamageOverTime(0.2f, burnDamage, 0, burnTicks));
                     }
                     break;
                 case ISpell.Element.Light:
@@ -88,7 +88,7 @@ public class HealthManager : MonoBehaviour
     }
     private IEnumerator DamageOverTime(float tickRate, float tickDamage,int depth, int maxDepth)
     {
-        GetHit(tickDamage, ISpell.Element.None);
+        GetHit(tickDamage, ISpell.Element.None,0,0);
         yield return new WaitForSeconds(tickRate);
         if(depth < maxDepth)
         {

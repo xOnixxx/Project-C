@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   dmgMultiplier: 0
-  dmgLayer: 0
+  dmgLayer: 0600000007000000
   spellName: Earth Rain
   element: 4
   spellSprite: {fileID: 0}

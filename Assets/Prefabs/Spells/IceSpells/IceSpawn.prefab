@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   dmgMultiplier: 0
-  dmgLayer: 0
+  dmgLayer: 07000000
   spellName: Ice Globe
   element: 1
   spellSprite: {fileID: 0}
@@ -57,5 +57,7 @@ MonoBehaviour:
   - 1
   size: 5
   speed: 1
+  burnTicks: 10
+  burnDamagePerTick: 1
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 7961086595029234997, guid: 334908e70d21d354091cdbf48167d449, type: 3}

@@ -43,19 +43,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
-  dmgLayer: 0
+  damage: 25
+  dmgMultiplier: 1
+  dmgLayer: 07000000
   spellName: Ice Shot
   element: 1
   spellSprite: {fileID: 0}
   nodeCastPositions:
-  - {x: 500, y: 500}
+  - {x: 1600, y: 750}
+  - {x: 1450, y: 900}
+  - {x: 1300, y: 750}
+  - {x: 1450, y: 600}
   lifetimes:
   - 1
+  - 0.5
+  - 0.5
+  - 0.5
   spawnDelays:
   - 1
-  size: 5
-  speed: 1
+  - 0.5
+  - 0.5
+  - 0.5
+  size: 1
+  speed: 5
+  burnTicks: 30
+  burnDamagePerTick: 0.5
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}

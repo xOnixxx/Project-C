@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffectParents:
-  - {fileID: 0}
+  - {fileID: 2489119100689504291}
   timeToDie: 300
 --- !u!114 &8543947317683162813
 MonoBehaviour:
@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 2616943086590047185, guid: 753e2835000514d40b80e57fa31d23f6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b9ddf0aa3d9ece4eadb03398f95e502, type: 2}
+      objectReference: {fileID: 2100000, guid: 266536631488d6e47880c73ade4b889f, type: 2}
     - target: {fileID: 2616943086590047185, guid: 753e2835000514d40b80e57fa31d23f6, type: 3}
       propertyPath: m_VertexStreams.Array.size
       value: 6
@@ -296,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 857461676398738517, guid: 6c63d1e2dda9afc4b8457de12cf10cf6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b9ddf0aa3d9ece4eadb03398f95e502, type: 2}
+      objectReference: {fileID: 2100000, guid: 266536631488d6e47880c73ade4b889f, type: 2}
     - target: {fileID: 857461676398738517, guid: 6c63d1e2dda9afc4b8457de12cf10cf6, type: 3}
       propertyPath: m_VertexStreams.Array.size
       value: 6
@@ -419,6 +419,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c63d1e2dda9afc4b8457de12cf10cf6, type: 3}
+--- !u!1 &2489119100689504291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5430997111978625234, guid: 6c63d1e2dda9afc4b8457de12cf10cf6, type: 3}
+  m_PrefabInstance: {fileID: 7626256334829408497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8160438929670669021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1795340049909174828, guid: 6c63d1e2dda9afc4b8457de12cf10cf6, type: 3}

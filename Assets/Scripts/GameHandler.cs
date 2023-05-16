@@ -126,12 +126,12 @@ public class GameHandler : MonoBehaviour
     public void GenerateSpellChoice()
     {
         count.text = (pickedSpells.Count + 1) + "/" + spellImages.Count;
-        firstSpell = Random.Range(0, allowedPlayerEl.Length - 1);
+        firstSpell = Random.Range(0, allowedPlayerEl.Length);
         while (pickedSpellIndexes.Contains(firstSpell))
         {
             firstSpell = Random.Range(0, allowedPlayerEl.Length - 1);
         }
-        secondSpell = Random.Range(0, allowedPlayerEl.Length - 1);
+        secondSpell = Random.Range(0, allowedPlayerEl.Length);
         while (secondSpell == firstSpell || pickedSpellIndexes.Contains(secondSpell))
         {
             secondSpell = Random.Range(0, allowedPlayerEl.Length - 1);
@@ -240,7 +240,7 @@ public class GameHandler : MonoBehaviour
             RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
             enemyBeh.target = player.transform;
             enemyBeh.spell = Instantiate(spellsForEnemy[Random.Range(0, spellsForEnemy.Count - 1)], Vector3.zero, Quaternion.identity,enemyParent.transform);
-            enemyBeh.spell.dmgLayer = 6;
+            enemyBeh.spell.dmgLayer.Add(6);
             enemyBeh.spell.dmgMultiplier = 1;
             enemyBeh.spell.damage = 1;
         }

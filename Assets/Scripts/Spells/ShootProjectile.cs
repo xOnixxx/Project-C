@@ -27,7 +27,7 @@ public class ShootProjectile : ISpell
         projectile.transform.localScale *= size;
         if (projectile.GetComponent<Damager>() != null )
         {
-            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer);
+            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer,burnTicks,burnDamagePerTick);
         }
         projectile.transform.parent= null;    
         projectile.transform.LookAt(target);

@@ -9928,6 +9928,22 @@ PrefabInstance:
       propertyPath: spellImages.Array.data[2]
       value: 
       objectReference: {fileID: 619214840}
+    - target: {fileID: 8860005460541269535, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: allowedPlayerEl.Array.data[2]
+      value: 
+      objectReference: {fileID: 62759941938052225, guid: c40dfeb7fe68ef64687aec79543d56f5, type: 3}
+    - target: {fileID: 8860005460541269535, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: allowedPlayerEl.Array.data[3]
+      value: 
+      objectReference: {fileID: 62759941938052225, guid: f90aaf1f87d5c0e4f85a1008c06166cd, type: 3}
+    - target: {fileID: 8860005460541269535, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: allowedPlayerEl.Array.data[4]
+      value: 
+      objectReference: {fileID: 62759941938052225, guid: 6e96d78961be13744b5a1e355d3c6164, type: 3}
+    - target: {fileID: 8860005460541269535, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: allowedPlayerEl.Array.data[5]
+      value: 
+      objectReference: {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
     - target: {fileID: 8860005461996174526, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
       propertyPath: m_RootOrder
       value: 0

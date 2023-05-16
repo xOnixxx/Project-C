@@ -15,7 +15,7 @@ public abstract class ISpell : MonoBehaviour
 
     public float damage;
     public float dmgMultiplier;
-    public int dmgLayer;
+    public List<int> dmgLayer = new List<int>();
 
     public string spellName;
     public Element element = Element.None;
@@ -26,6 +26,8 @@ public abstract class ISpell : MonoBehaviour
 
     public float size = 1;
     public float speed = 1;
+    public int burnTicks = 0;
+    public float burnDamagePerTick = 0;
     public Vector3 offset = Vector3.zero;
     public GameObject spell;
 

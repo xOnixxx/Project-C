@@ -43,19 +43,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
-  dmgLayer: 0
+  damage: 50
+  dmgMultiplier: 1
+  dmgLayer: 07000000
   spellName: Light Shot
   element: 3
   spellSprite: {fileID: 0}
   nodeCastPositions:
-  - {x: 500, y: 500}
+  - {x: 540, y: 500}
+  - {x: 600, y: 350}
+  - {x: 480, y: 350}
+  - {x: 540, y: 200}
   lifetimes:
-  - 1
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
   spawnDelays:
-  - 1
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
   size: 1
-  speed: 1
+  speed: 30
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 5828371057168701643, guid: 63ba36a914d8499439d15b5da9395ba5, type: 3}

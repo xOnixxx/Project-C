@@ -239,10 +239,10 @@ public class GameHandler : MonoBehaviour
                 new Vector3(randomXZ.x, tergen.roughness, randomXZ.y) + transform.position, Quaternion.identity, enemyParent.transform);
             RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
             enemyBeh.target = player.transform;
-            enemyBeh.spell = Instantiate(spellsForEnemy[Random.Range(0, spellsForEnemy.Count - 1)], Vector3.zero, Quaternion.identity,enemyParent.transform);
+            /*enemyBeh.spell = Instantiate(spellsForEnemy[Random.Range(0, spellsForEnemy.Count - 1)], Vector3.zero, Quaternion.identity,enemyParent.transform);
             enemyBeh.spell.dmgLayer.Add(6);
             enemyBeh.spell.dmgMultiplier = 1;
-            enemyBeh.spell.damage = 1;
+            enemyBeh.spell.damage = 1;*/
         }
         currentEnemyNumber = meleeEnemyNumber + rangedEnemyNumber;
     }

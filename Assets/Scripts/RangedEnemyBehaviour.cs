@@ -5,9 +5,10 @@ using UnityEngine;
 public class RangedEnemyBehaviour : Character
 {
     public GameHandler handler;
+    public AttackerAbstract attacker;
     private CharacterController character;
     public Transform target;
-    public ISpell spell;
+    public List<ISpell> spell;
     public float attackRange = 10;
     public float movementSpeed = 2;
     public float gravity = 9.87f;
@@ -40,7 +41,7 @@ public class RangedEnemyBehaviour : Character
         Vector3 forwardMovement = new Vector3(0,0,0);
         RaycastHit hit;
         Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity); 
-        if (canMove && Vector3.Distance(transform.position, target.position) > attackRange || hit.collider.gameObject.layer != 6)
+        if (canMove && (Vector3.Distance(transform.position, target.position) > attackRange || hit.collider.gameObject.layer != 6))
         {
             forwardMovement = transform.forward;
         }
@@ -48,7 +49,7 @@ public class RangedEnemyBehaviour : Character
         {
             if (canAttack)
             {
-                spell.Cast(transform.position + transform.forward + new Vector3(0,1f,0),target.position,dmgMultiplier);
+                attacker.Attack(spell[Random.Range(0,spell.Count)],transform,target,dmgMultiplier);
                 canAttack = false;
                 canMove = false;
                 StartCoroutine(AttackRefresh());

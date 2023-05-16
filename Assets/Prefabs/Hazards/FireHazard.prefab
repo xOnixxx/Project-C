@@ -65,5 +65,6 @@ MonoBehaviour:
   - {fileID: 62759941938052225, guid: f90aaf1f87d5c0e4f85a1008c06166cd, type: 3}
   - {fileID: 62759941938052225, guid: 876d334809e348c47867112f60a296c7, type: 3}
   - {fileID: 988404038577311232, guid: 466fe9dcdfcb4df44bcbbb84f0ef980f, type: 3}
+  elementalDmgUp: []
   numOfObstacles: 0
   numOfEnemies: 0

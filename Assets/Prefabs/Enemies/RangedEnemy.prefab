@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4604492908094955234}
   - component: {fileID: 8569345180623800305}
   - component: {fileID: 1489746197736886591}
-  - component: {fileID: 905558020781758548}
   - component: {fileID: 3012021396529263855}
   - component: {fileID: 8148518775036239273}
   - component: {fileID: 8691976275799239924}
@@ -100,24 +99,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &905558020781758548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3785073729319328507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d0df524f78ed34e81f9d0fc6f4b17f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToEmit: {fileID: 1445790442987350313, guid: 351f9456e68859b46b2c7182449c8ce8, type: 3}
-  bulletSpeed: 1000
-  currentSpread: 0
-  bulletsperShot: 1
-  canShoot: 1
-  attackDelay: 0.3
 --- !u!114 &3012021396529263855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,8 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada69072d6a833247921720fcfb8d211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handler: {fileID: 0}
   target: {fileID: 0}
-  spell: {fileID: 0}
+  spell:
+  - {fileID: 0}
   attackRange: 10
   movementSpeed: 2
   gravity: 9.87
@@ -174,3 +157,4 @@ MonoBehaviour:
   resist: 0
   invulnerabilityTime: 0.2
   canBeInvulnerable: 0
+  charController: {fileID: 0}

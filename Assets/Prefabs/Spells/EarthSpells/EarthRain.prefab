@@ -57,5 +57,7 @@ MonoBehaviour:
   - 1
   size: 1
   speed: 1
-  offset: {x: 0, y: 0, z: 0}
+  burnTicks: 0
+  burnDamagePerTick: 0
+  offset: {x: 0, y: 10, z: 10}
   spell: {fileID: 1348534342020629269, guid: d83e413b8155f6441b0b000b12cb595d, type: 3}

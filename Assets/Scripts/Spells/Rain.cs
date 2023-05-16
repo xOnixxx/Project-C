@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rain : Spawner
 {
-
+    public float area;
 
     public override IEnumerator ShootRandom(Vector3 origin, Vector3 target, float playerMultiplier)
     {
@@ -15,7 +15,7 @@ public class Rain : Spawner
                 for (int i = 0; i < burstAmount; i++)
                 {
                     yield return new WaitForSeconds(Random.value);
-                    Vector3 randomSpawn = new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
+                    Vector3 randomSpawn = new Vector3(Random.Range(-area, area), 0, Random.Range(-area, area));
                     shooter.Cast(gameObject.transform.position + randomSpawn, gameObject.transform.position +  randomSpawn +new Vector3(0,-1,0) + gameObject.transform.forward.normalized , playerMultiplier);
                 }
             }

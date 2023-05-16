@@ -102,10 +102,6 @@ public class PlayerController : Character
     }
     private void CheckActions()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            gameMaster.Restart();
-        }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = !Cursor.visible;

@@ -25,6 +25,7 @@ public class GameHandler : MonoBehaviour
     public Color fogColor;
     public List<GameObject> meleeEnemyTypes = new List<GameObject>();
     public List<GameObject> rangedEnemyTypes = new List<GameObject>();
+    public List<GameObject> bossTypes = new List<GameObject>();
     private GameObject enemyParent;
 
     public List<ISpell> spellsForEnemy = new List<ISpell>();
@@ -33,18 +34,17 @@ public class GameHandler : MonoBehaviour
 
     public Texture2D levelTexture;
     public Texture2D groundTexture;
-    public TreeInstance[] trees;
+    public GameObject[] trees;
 
     public ISpell[] allowedPlayerEl;
     private List<ISpell> pickedSpells = new List<ISpell>();
-    public ISpell[] allowedEnemyEl;
     public List<dmgMod> elementalDmgUp;
     public int numOfObstacles;
-    public int numOfEnemies;
 
     public int firstSpell;
     public int secondSpell;
     public List<int> pickedSpellIndexes;
+
     //UI ELEMENTS
     public PauseMenuUI pauser;
     public Image choice1Border;
@@ -61,6 +61,8 @@ public class GameHandler : MonoBehaviour
     public Button starter;
 
     public List<Image> spellImages = new List<Image>();
+    private EnviromentalHazards pickedHazard;
+    public List<EnviromentalHazards> possibleHazards = new List<EnviromentalHazards>();
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +80,8 @@ public class GameHandler : MonoBehaviour
         ChangeShowStatus(true);
         advancer.gameObject.SetActive(false);
         starter.gameObject.SetActive(false);
+        pickedHazard = possibleHazards[Random.Range(0, possibleHazards.Count)];
+        pickedHazard.Modify(this);
         StartLevel();
     }
 
@@ -103,22 +107,32 @@ public class GameHandler : MonoBehaviour
     {
         spellManager.enabled = false;
         advancer.gameObject.SetActive(false);
-        player.GetComponent<PlayerController>().enabled = false;
-        Cursor.visible = true;
-        for (int i = pickedSpells.Count - 1; i >= 0; i--)
+        if (levelsPassed + 1 % 3 == 0)
         {
-            Destroy(pickedSpells[i].gameObject);
+            player.GetComponent<PlayerController>().enabled = false;
+            Cursor.visible = true;
+            for (int i = pickedSpells.Count - 1; i >= 0; i--)
+            {
+                Destroy(pickedSpells[i].gameObject);
+            }
+            pickedSpells.Clear();
+            pickedSpellIndexes.Clear();
+            pickedHazard.Revert(this);
+            SetDefaultSettings();
+            pickedHazard = possibleHazards[Random.Range(0, possibleHazards.Count)];
+            pickedHazard.Modify(this);
         }
-        pickedSpells.Clear();
-        pickedSpellIndexes.Clear();
-        //hazard.Revert(this);
-        SetDefaultSettings();
-        //PICK A HAZARD
-        //hazard.Modify(this);
         Restart();
         //UI - picking spells
-        ChangeShowStatus(true);
-        GenerateSpellChoice();
+        if (levelsPassed % 3 == 0)
+        {
+            ChangeShowStatus(true);
+            GenerateSpellChoice();
+        }
+        else
+        {
+            starter.gameObject.SetActive(true);
+        }
         //UI - Ready to play
 
     }
@@ -129,12 +143,12 @@ public class GameHandler : MonoBehaviour
         firstSpell = Random.Range(0, allowedPlayerEl.Length);
         while (pickedSpellIndexes.Contains(firstSpell))
         {
-            firstSpell = Random.Range(0, allowedPlayerEl.Length - 1);
+            firstSpell = Random.Range(0, allowedPlayerEl.Length);
         }
         secondSpell = Random.Range(0, allowedPlayerEl.Length);
         while (secondSpell == firstSpell || pickedSpellIndexes.Contains(secondSpell))
         {
-            secondSpell = Random.Range(0, allowedPlayerEl.Length - 1);
+            secondSpell = Random.Range(0, allowedPlayerEl.Length);
         }
         choice1.image.sprite = allowedPlayerEl[firstSpell].spellSprite;
         choice1Text.text = allowedPlayerEl[firstSpell].spellName;
@@ -177,7 +191,14 @@ public class GameHandler : MonoBehaviour
 
     public void StartGameplay()
     {
-        SpawnEnemies();
+        if (levelsPassed % 3 == 2 && levelsPassed > 0)
+        {
+            SpawnBoss();
+        }
+        else
+        {
+            SpawnEnemies();
+        }
         spellManager.spells = pickedSpells;
         Cursor.visible = false;
         player.GetComponent<PlayerController>().enabled = true;
@@ -194,8 +215,8 @@ public class GameHandler : MonoBehaviour
         generalLight.color = baseColorLight;
         tergen.roughness = Random.Range(1, 20);
         tergen.fineness = Random.Range(4, 20);
-        tergen.noiseFrequency = Random.Range(1, 10);
-        walls.radius = tergen.Size / 2 * 3;
+        tergen.noiseFrequency = Random.Range(1, 8);
+        walls.radius = tergen.Size;
         walls.height = 60;
     }
     public void Restart()
@@ -220,33 +241,46 @@ public class GameHandler : MonoBehaviour
         List<Vector2> spawnPoints = new List<Vector2>();
         for (int i = 0; i < spawnPointsNumber; i++)
         {
-            spawnPoints.Add((Random.Range(0f,1f) < 0.5f ? -1 : 1) * tergen.Size * new Vector2(Random.Range(0.4f,1f),Random.Range(0.4f,1f)) / 2);
+            spawnPoints.Add((Random.Range(0f,1f) < 0.5f ? -1 : 1) * tergen.Size / 4 * 3 * new Vector2(Random.Range(0.4f,1f),Random.Range(0.4f,1f)) / 2);
         }
         enemyParent = new GameObject("EnemyParent");
         enemyParent.transform.parent = transform;
         //RANDOM BASED, FOR ENVIRONMENT SPECIAL REMAKE SCRIPT
         for (int i = 0; i < meleeEnemyNumber; i++)
         {
-            Vector2 randomXZ = Random.insideUnitCircle * spawnDistance + spawnPoints[Random.Range(0,spawnPoints.Count - 1)];
-            GameObject enemy = Instantiate(meleeEnemyTypes[Random.Range(0, meleeEnemyTypes.Count - 1)],
-                new Vector3(randomXZ.x, tergen.roughness, randomXZ.y) + transform.position, Quaternion.identity,enemyParent.transform);
-            enemy.GetComponent<MeleeEnemyBehaviour>().target = player.transform;
+            Vector2 randomXZ = Random.insideUnitCircle * spawnDistance + spawnPoints[Random.Range(0, spawnPoints.Count)];
+            GameObject enemy = Instantiate(meleeEnemyTypes[Random.Range(0, meleeEnemyTypes.Count)],
+                new Vector3(randomXZ.x, tergen.roughness, randomXZ.y) + transform.position, Quaternion.identity, enemyParent.transform);
+            MeleeEnemyBehaviour melee = enemy.GetComponent<MeleeEnemyBehaviour>();
+            melee.handler = this;
+            melee.target = player.transform;
+            enemy.GetComponent<HealthManager>().charController = melee;
+
         }
         for (int i = 0; i < rangedEnemyNumber; i++)
         {
-            Vector2 randomXZ = Random.insideUnitCircle * spawnDistance + spawnPoints[Random.Range(0, spawnPoints.Count - 1)];
-            GameObject enemy = Instantiate(rangedEnemyTypes[Random.Range(0, rangedEnemyTypes.Count - 1)],
+            Vector2 randomXZ = Random.insideUnitCircle * spawnDistance + spawnPoints[Random.Range(0, spawnPoints.Count)];
+            GameObject enemy = Instantiate(rangedEnemyTypes[Random.Range(0, rangedEnemyTypes.Count)],
                 new Vector3(randomXZ.x, tergen.roughness, randomXZ.y) + transform.position, Quaternion.identity, enemyParent.transform);
             RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
+            enemyBeh.handler = this;
             enemyBeh.target = player.transform;
-            /*enemyBeh.spell = Instantiate(spellsForEnemy[Random.Range(0, spellsForEnemy.Count - 1)], Vector3.zero, Quaternion.identity,enemyParent.transform);
-            enemyBeh.spell.dmgLayer.Add(6);
-            enemyBeh.spell.dmgMultiplier = 1;
-            enemyBeh.spell.damage = 1;*/
+            enemy.GetComponent<HealthManager>().charController = enemyBeh;
         }
         currentEnemyNumber = meleeEnemyNumber + rangedEnemyNumber;
     }
-
+    public void SpawnBoss()
+    {
+        Vector2 spawn = (Random.Range(0f, 1f) < 0.5f ? -1 : 1) * tergen.Size * new Vector2(Random.Range(0.4f, 1f), Random.Range(0.4f, 1f)) / 2;
+        Vector2 randomXZ = Random.insideUnitCircle * spawnDistance + spawn;
+        GameObject enemy = Instantiate(bossTypes[Random.Range(0, bossTypes.Count)],
+            new Vector3(randomXZ.x, tergen.roughness + 5, randomXZ.y) + transform.position, Quaternion.identity, enemyParent.transform);
+        RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
+        enemyBeh.handler = this;
+        enemyBeh.target = player.transform;
+        enemy.GetComponent<HealthManager>().charController = enemyBeh;
+        currentEnemyNumber = 1;
+    }
     public void CheckForEnemyCount()
     {
         if(currentlyPlaying && currentEnemyNumber == 0)

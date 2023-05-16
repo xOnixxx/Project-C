@@ -45,8 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundTexture: {fileID: 2800000, guid: 36d7fb85a779bba4ebfe7ff66eed335d, type: 3}
   grassTexture: {fileID: 2800000, guid: 1d92176f1114aa249a1325cb6d52eec0, type: 3}
-  tree: {fileID: 7494923444958524680, guid: 38edc740fa5e2a54cbe2db5bf212b13a, type: 3}
-  treeAmount: 200
+  tree:
+  - {fileID: 7494923444958524680, guid: 38edc740fa5e2a54cbe2db5bf212b13a, type: 3}
+  treeAmount: 0
   heightMapResolution: 129
   roughness: 12
   noiseFrequency: 3
@@ -4978,7 +4979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  levelRange: 1000
+  levelRange: 0
   tergen: {fileID: 1598440921}
   walls: {fileID: 8860005461638597278}
   meleeEnemyNumber: 0
@@ -4993,20 +4994,22 @@ MonoBehaviour:
   - {fileID: 3907090797505001811, guid: 6e69a83aa3c2e3741b05ff7299f2b643, type: 3}
   rangedEnemyTypes:
   - {fileID: 3785073729319328507, guid: 4153eecd1859d954985baec15669fc6a, type: 3}
+  bossTypes: []
   spellsForEnemy:
   - {fileID: 988404038577311232, guid: 50bddc4c19900524ba28826c574b661c, type: 3}
   spawnPointsNumber: 20
   spawnDistance: 8
   levelTexture: {fileID: 2800000, guid: 1d92176f1114aa249a1325cb6d52eec0, type: 3}
   groundTexture: {fileID: 2800000, guid: 36d7fb85a779bba4ebfe7ff66eed335d, type: 3}
+  trees: []
   allowedPlayerEl:
   - {fileID: 988404038577311232, guid: 15c08fee7849fa44b8423716dc5b6ad9, type: 3}
   - {fileID: 988404038577311232, guid: 466fe9dcdfcb4df44bcbbb84f0ef980f, type: 3}
-  - {fileID: 988404038577311232, guid: da8d7f52d865c734f9a69c4cd6410753, type: 3}
+  - {fileID: 62759941938052225, guid: e54d1260c67c26f4eba741f06f267300, type: 3}
+  - {fileID: 62759941938052225, guid: 6f73910cbd15bdc46b6734c2cb072dcb, type: 3}
+  - {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
   - {fileID: 988404038577311232, guid: 2e2d4d37a989e7b4e8e491098026d39c, type: 3}
-  - {fileID: 3977102722270241302, guid: 55f267187340a244a846894f5a2173a7, type: 3}
-  - {fileID: 6825612099236389983, guid: 541751d40ab238f46bdba64f9c17b654, type: 3}
-  allowedEnemyEl: []
+  elementalDmgUp: []
   numOfObstacles: 0
   numOfEnemies: 0
   firstSpell: 0
@@ -5019,8 +5022,14 @@ MonoBehaviour:
   choice2Border: {fileID: 0}
   choice2: {fileID: 0}
   choice2Text: {fileID: 0}
+  overlay: {fileID: 0}
+  tooltip: {fileID: 0}
+  count: {fileID: 0}
+  advancer: {fileID: 0}
   starter: {fileID: 0}
   spellImages:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  possibleHazards:
+  - {fileID: 9089322193870377998, guid: 01b7b03d728a24d4fa00a458798bcd2e, type: 3}

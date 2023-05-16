@@ -11,56 +11,79 @@ public class EnviromentalHazards : MonoBehaviour
 
     public Texture2D levelTexture;
     public Texture2D groundTexture;
-    public TreeInstance[] trees;
+    public GameObject[] trees;
     
     public ISpell[] allowedPlayerEl;
-    public ISpell[] allowedEnemyEl;
     public List<dmgMod> elementalDmgUp;
     public int numOfObstacles;
-    public int numOfEnemies;
+    public int numOfMeleeEnemies;
+    public int numOfRangedEnemies;
+    public int numOfTrees;
+
+    public List<GameObject> meleeEnemyTypes;
+    public List<GameObject> rangedEnemyTypes;
+    public List<GameObject> bossTypes;
 
     private Texture2D levelTextureOG;
     private Texture2D groundTextureOG;
-    private TreeInstance[] treesOG;
+    private GameObject[] treesOG;
 
     private ISpell[] allowedPlayerElOG;
-    private ISpell[] allowedEnemyElOG;
     private List<dmgMod> elementalDmgUpOG;
     private int numOfObstaclesOG;
-    private int numOfEnemiesOG;
+    private int numOfMeleeEnemiesOG;
+    private int numOfRangedEnemiesOG;
+    private int numOfTreesOG;
+
+    private List<GameObject> meleeEnemyTypesOG;
+    private List<GameObject> rangedEnemyTypesOG;
+    private List<GameObject> bossTypesOG;
 
     public void Modify(GameHandler game)
     {
-        groundTextureOG = game.groundTexture;
-        levelTextureOG = game.levelTexture;
-        treesOG = game.trees;
+        groundTextureOG = game.tergen.groundTexture;
+        levelTextureOG = game.tergen.grassTexture;
+        treesOG = game.tergen.tree;
         allowedPlayerElOG = game.allowedPlayerEl;
-        allowedEnemyElOG = game.allowedEnemyEl;
         elementalDmgUpOG = game.elementalDmgUp;
         numOfObstaclesOG = game.numOfObstacles;
-        numOfEnemiesOG = game.numOfEnemies;
+        numOfMeleeEnemiesOG = game.meleeEnemyNumber;
+        numOfRangedEnemiesOG = game.rangedEnemyNumber;
+        numOfTreesOG = game.tergen.treeAmount;
 
-        game.groundTexture = groundTexture;
-        game.levelTexture = levelTexture;
-        game.trees = trees;
+        meleeEnemyTypesOG = game.meleeEnemyTypes;
+        rangedEnemyTypesOG = game.rangedEnemyTypes;
+        bossTypesOG = game.bossTypes;
+
+        game.tergen.groundTexture = groundTexture;
+        game.tergen.grassTexture = levelTexture;
+        game.tergen.tree = trees;
         game.allowedPlayerEl = allowedPlayerEl;
-        game.allowedEnemyEl = allowedEnemyEl;
         game.elementalDmgUp = elementalDmgUp;
         game.numOfObstacles = numOfObstacles;
-        game.numOfEnemies = numOfEnemies;
+        game.meleeEnemyNumber = numOfMeleeEnemies;
+        game.rangedEnemyNumber = numOfRangedEnemies;
+        game.tergen.treeAmount = numOfTrees;
 
+        game.meleeEnemyTypes = meleeEnemyTypes;
+        game.rangedEnemyTypes = rangedEnemyTypes;
+        game.bossTypes = bossTypes;
     } 
 
     public void Revert(GameHandler game)
     {
-        game.groundTexture = groundTextureOG;
-        game.levelTexture = levelTextureOG;
-        game.trees = treesOG;
+        game.tergen.groundTexture = groundTextureOG;
+        game.tergen.grassTexture = levelTextureOG;
+        game.tergen.tree = treesOG;
         game.allowedPlayerEl = allowedPlayerElOG;
-        game.allowedEnemyEl = allowedEnemyElOG;
         game.elementalDmgUp = elementalDmgUpOG;
         game.numOfObstacles = numOfObstaclesOG;
-        game.numOfEnemies = numOfEnemiesOG;
+        game.meleeEnemyNumber = numOfMeleeEnemiesOG;
+        game.rangedEnemyNumber = numOfRangedEnemiesOG;
+        game.tergen.treeAmount = numOfTreesOG;
+        game.meleeEnemyTypes = meleeEnemyTypesOG;
+        game.rangedEnemyTypes = rangedEnemyTypesOG;
+        game.bossTypes = bossTypesOG;
     }
 
     // Start is called before the first frame update

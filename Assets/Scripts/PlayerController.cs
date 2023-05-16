@@ -184,6 +184,7 @@ public class PlayerController : Character
     }
     public override void Die()
     {
+        pauser.ShowDeathScreen();
         Destroy(spellManager);
         Destroy(this);
     }

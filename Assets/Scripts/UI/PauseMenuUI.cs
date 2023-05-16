@@ -10,11 +10,15 @@ public class PauseMenuUI : MonoBehaviour
     public Button resume;
     public Button toMenu;
     public Image pauseOverlay;
+
+    public Text dieMessage;
+
     private bool paused = false;
     public float baseTimeScale = 1;
     // Start is called before the first frame update
     void Start()
     {
+        dieMessage.enabled = false;
         pauseText.enabled = false;
         pauseOverlay.enabled = false;
         resume.gameObject.SetActive(false);
@@ -71,5 +75,11 @@ public class PauseMenuUI : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void ShowDeathScreen()
+    {
+        dieMessage.enabled = true;
+        toMenu.gameObject.SetActive(true);
     }
 }

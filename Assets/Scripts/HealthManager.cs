@@ -11,12 +11,21 @@ public class HealthManager : MonoBehaviour
     public bool canBeInvulnerable = true;
     private bool isInvulnerable = false;
     private bool alreadyTakingDoT = false;
+    private bool isPlayer;
     public Character charController;
+    public HurtUI hurtImages;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(charController is PlayerController)
+        {
+            isPlayer = true;
+        }
+        else
+        {
+            isPlayer = false;
+        }
     }
 
     // Update is called once per frame
@@ -43,19 +52,35 @@ public class HealthManager : MonoBehaviour
                     if (!alreadyTakingDoT)
                     {
                         alreadyTakingDoT = true;
-                        StartCoroutine(DamageOverTime(0.2f, 1, 0, 5));
+                        if(isPlayer)
+                        {
+                            StartCoroutine(hurtImages.ShowHurtScreen(0, burnTicks * 0.2f + 0.3f));
+                        }
+                        StartCoroutine(DamageOverTime(0.2f, burnDamage, 0, burnTicks));
                     }
                     break;
                 case ISpell.Element.Fire:
                     if (!alreadyTakingDoT)
                     {
+                        if (isPlayer)
+                        {
+                            StartCoroutine(hurtImages.ShowHurtScreen(1, burnTicks * 0.2f + 0.3f));
+                        }
                         alreadyTakingDoT = true;
-                        StartCoroutine(DamageOverTime(0.2f, burnDamage, 0, burnTicks));
+                        StartCoroutine(DamageOverTime(0.2f ,burnDamage, 0, burnTicks));
                     }
                     break;
                 case ISpell.Element.Light:
+                    if (isPlayer)
+                    {
+                        StartCoroutine(hurtImages.ShowHurtScreen(2, 0.3f));
+                    }
                     break;
                 case ISpell.Element.Earth:
+                    if (isPlayer)
+                    {
+                        StartCoroutine(hurtImages.ShowHurtScreen(3, 1.3f));
+                    }
                     StartCoroutine(Stun(1));
                     break;
                 default:
@@ -86,13 +111,13 @@ public class HealthManager : MonoBehaviour
         yield return new WaitForSeconds(stunLength);
         charController.enabled = true;
     }
-    private IEnumerator DamageOverTime(float tickRate, float tickDamage,int depth, int maxDepth)
+    private IEnumerator DamageOverTime(float tickRate,float tickDamage,int depth, int maxDepth)
     {
         GetHit(tickDamage, ISpell.Element.None,0,0);
         yield return new WaitForSeconds(tickRate);
         if(depth < maxDepth)
         {
-            StartCoroutine(DamageOverTime(tickRate, tickDamage, depth + 1, maxDepth));
+            StartCoroutine(DamageOverTime(tickRate ,tickDamage, depth + 1, maxDepth));
         }
         else
         {

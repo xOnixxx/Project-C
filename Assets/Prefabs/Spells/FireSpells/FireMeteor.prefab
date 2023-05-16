@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
-  dmgLayer: 
+  damage: 1
+  dmgMultiplier: 1
+  dmgLayer: 0600000007000000
   spellName: Fire Meteor
   element: 2
   spellSprite: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   - 1
   size: 5
   speed: 3
-  burnTicks: 0
-  burnDamagePerTick: 0
+  burnTicks: 30
+  burnDamagePerTick: 1
   offset: {x: 0, y: 30, z: 5}
   spell: {fileID: 7268181049600962120, guid: 85ec7201b6eda72459bda1db3993618b, type: 3}

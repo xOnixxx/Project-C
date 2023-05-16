@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4314918619710577448}
   - component: {fileID: -6986181105132956806}
   - component: {fileID: -545581629299592453}
+  - component: {fileID: 6885933349048180001}
   m_Layer: 3
   m_Name: LightShot
   m_TagString: Spells
@@ -128,8 +129,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  damageLayer: 7
+  damageLayer: 
+  burnTicks: 0
+  burnDamage: 0
   element: 0
+--- !u!114 &6885933349048180001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828371057168701643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c3b72c06354d94995034634b13d74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffectParents:
+  - {fileID: 4970883597124139392}
+  timeToDie: 0
 --- !u!1001 &5030636635572503947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +158,14 @@ PrefabInstance:
     - target: {fileID: 84522854724140043, guid: 8c34fdeeb3843ee49ac9ba5f7361011d, type: 3}
       propertyPath: m_Name
       value: LightEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153539815745249931, guid: 8c34fdeeb3843ee49ac9ba5f7361011d, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153539815745249931, guid: 8c34fdeeb3843ee49ac9ba5f7361011d, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8602877492015034399, guid: 8c34fdeeb3843ee49ac9ba5f7361011d, type: 3}
       propertyPath: m_RootOrder
@@ -187,6 +213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c34fdeeb3843ee49ac9ba5f7361011d, type: 3}
+--- !u!1 &4970883597124139392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 84522854724140043, guid: 8c34fdeeb3843ee49ac9ba5f7361011d, type: 3}
+  m_PrefabInstance: {fileID: 5030636635572503947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3653516758119085460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8602877492015034399, guid: 8c34fdeeb3843ee49ac9ba5f7361011d, type: 3}

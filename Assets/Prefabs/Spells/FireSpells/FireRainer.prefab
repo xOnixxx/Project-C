@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3132252929338794860}
   - component: {fileID: 2064492165878372215}
   - component: {fileID: -3804166073021511884}
+  - component: {fileID: -3104743053666982200}
   m_Layer: 3
   m_Name: FireRainer
   m_TagString: Spells
@@ -123,7 +124,7 @@ MonoBehaviour:
   burnTicks: 0
   burnDamagePerTick: 0
   offset: {x: 0, y: 0, z: 0}
-  spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
+  spell: {fileID: 7268181049600962120, guid: fc134ccdfb52297419aea10fc8d823d0, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
   burstAmount: 50
   burstInterval: 1
@@ -146,3 +147,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &-3104743053666982200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348534342020629269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c3b72c06354d94995034634b13d74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffectParents: []
+  timeToDie: 10

@@ -59,9 +59,5 @@ MonoBehaviour:
   speed: 1
   burnTicks: 0
   burnDamagePerTick: 0
-<<<<<<< HEAD
-  offset: {x: 0, y: 0, z: 0}
-=======
   offset: {x: 0, y: 10, z: 10}
->>>>>>> b5ad94b5a9eb948bc5ae73733d95f9fb1053f040
   spell: {fileID: 1348534342020629269, guid: ca99653e585e4bc46812637f5f6d4e98, type: 3}

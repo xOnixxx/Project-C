@@ -100,12 +100,14 @@ public class CastingMode : MonoBehaviour
 
     private IEnumerator StartMinigame()
     {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(timeBeforeMiniGame);
         StartCoroutine(CreateButton(0));
     }
     private IEnumerator FinishCasting(float lastWait)
     {
         yield return new WaitForSeconds(lastWait);
+        Time.timeScale = 1f;
         finishedCasting = true;
     }
 }

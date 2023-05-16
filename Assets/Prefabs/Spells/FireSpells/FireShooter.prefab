@@ -48,7 +48,7 @@ MonoBehaviour:
   dmgLayer: 07000000
   spellName: Fire Shot
   element: 2
-  spellSprite: {fileID: 0}
+  spellSprite: {fileID: 21300000, guid: 653db886f838d3e4cbd6e25d4c268c99, type: 3}
   nodeCastPositions:
   - {x: 600, y: 600}
   - {x: 500, y: 700}

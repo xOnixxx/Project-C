@@ -48,7 +48,7 @@ MonoBehaviour:
   dmgLayer: 06000000
   spellName: Ice Rain
   element: 1
-  spellSprite: {fileID: 0}
+  spellSprite: {fileID: 21300000, guid: fa7a440297e19be4e84a7803499c50ae, type: 3}
   nodeCastPositions:
   - {x: 500, y: 500}
   lifetimes:

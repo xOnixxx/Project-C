@@ -48,7 +48,7 @@ MonoBehaviour:
   dmgLayer: 0600000007000000
   spellName: Fire Meteor
   element: 2
-  spellSprite: {fileID: 0}
+  spellSprite: {fileID: 21300000, guid: 818ececdaba1e3143a52cce8e8d97b47, type: 3}
   nodeCastPositions:
   - {x: 500, y: 500}
   lifetimes:

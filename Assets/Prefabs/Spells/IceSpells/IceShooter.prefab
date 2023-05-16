@@ -48,7 +48,7 @@ MonoBehaviour:
   dmgLayer: 07000000
   spellName: Ice Shot
   element: 1
-  spellSprite: {fileID: 0}
+  spellSprite: {fileID: 21300000, guid: dba7bdcc334af2c4084a6c7f66cdfd33, type: 3}
   nodeCastPositions:
   - {x: 1600, y: 750}
   - {x: 1450, y: 900}

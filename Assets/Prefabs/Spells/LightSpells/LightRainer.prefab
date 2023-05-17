@@ -114,17 +114,17 @@ MonoBehaviour:
   dmgMultiplier: 1
   dmgLayer: 
   spellName: 
-  element: 0
+  element: 3
   spellSprite: {fileID: 0}
   nodeCastPositions: []
   lifetimes: []
   spawnDelays: []
   size: 1
-  speed: 0.1
+  speed: 1
   burnTicks: 0
   burnDamagePerTick: 0
   offset: {x: 0, y: 0, z: 0}
-  spell: {fileID: 7268181049600962120, guid: b08d57a73857bf94498720b6638f44eb, type: 3}
+  spell: {fileID: 5828371057168701643, guid: 63ba36a914d8499439d15b5da9395ba5, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
   burstAmount: 50
   burstInterval: 1

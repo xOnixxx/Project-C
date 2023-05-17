@@ -161,7 +161,7 @@ MonoBehaviour:
   damageLayer: 
   burnTicks: 0
   burnDamage: 0
-  element: 0
+  element: 2
 --- !u!1001 &2653415046326668606
 PrefabInstance:
   m_ObjectHideFlags: 0

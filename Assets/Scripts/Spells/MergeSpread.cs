@@ -56,7 +56,7 @@ public class MergeSpread : ISpell
         projectile.transform.localScale *= bigSize;
         if (projectile.GetComponent<Damager>() != null)
         {
-            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer, burnTicks, burnDamagePerTick);
+            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer, element, burnTicks, burnDamagePerTick);
         }
         projectile.transform.parent = null;
         yield return new WaitForSeconds(delay);

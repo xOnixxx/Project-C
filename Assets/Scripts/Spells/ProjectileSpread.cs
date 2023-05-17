@@ -78,7 +78,7 @@ public class ProjectileSpread : ISpell
         projectile.transform.parent = null;
         if (projectile.GetComponent<Damager>() != null)
         {
-            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer, burnTicks, burnDamagePerTick);
+            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer, element, burnTicks, burnDamagePerTick);
         }
         StartCoroutine(Shoot(target, projectile, order, numOfProjectiles));
     }

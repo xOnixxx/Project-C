@@ -158,8 +158,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageLayer: 6
-  element: 0
+  damageLayer: 
+  burnTicks: 0
+  burnDamage: 0
+  element: 2
 --- !u!1001 &6848548799389767074
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,8 +20,9 @@ public class Damager : MonoBehaviour
         
     }
 
-    public void SetDamager(float damage, List<int> damageLayer, int burnTicks = 0, float burnDamage = 0)
+    public void SetDamager(float damage, List<int> damageLayer, ISpell.Element element, int burnTicks = 0, float burnDamage = 0)
     {
+        this.element= element;
         this.damage = damage;
         for (int i = 0; i < damageLayer.Count; i++)
         {

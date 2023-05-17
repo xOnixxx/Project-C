@@ -132,7 +132,7 @@ MonoBehaviour:
   damageLayer: 
   burnTicks: 0
   burnDamage: 0
-  element: 0
+  element: 3
 --- !u!114 &6885933349048180001
 MonoBehaviour:
   m_ObjectHideFlags: 0

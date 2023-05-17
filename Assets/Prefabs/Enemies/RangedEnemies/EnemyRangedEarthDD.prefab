@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7434549059834186363}
   - component: {fileID: 2320703240312219477}
   - component: {fileID: 2019719277588884910}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyRangedEarthDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,9 @@ MonoBehaviour:
   attacker: {fileID: 3352391364750035280, guid: 443eca02ef0c32a44a9c0b2abb0cc5d0, type: 3}
   target: {fileID: 0}
   spell:
-  - {fileID: 62759941938052225, guid: 13cb18df3232aeb409eddba516f01d9e, type: 3}
+  - {fileID: 62759941938052225, guid: 69bb22834fa661547ac82ffd19e3c3e9, type: 3}
   attackRange: 20
-  movementSpeed: 1
+  movementSpeed: 1.5
   gravity: 9.87
   canMove: 1
   canAttack: 1

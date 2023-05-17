@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -5281970048613883868}
   - component: {fileID: 6143999936460692571}
   - component: {fileID: 5739413445553350014}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyMeeleEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handler: {fileID: 0}
   target: {fileID: 0}
-  movementSpeed: 4
+  movementSpeed: 2.5
   gravity: 9.87
   attackRange: 1.5
   damage: 10

@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
+  damage: 10
+  dmgMultiplier: 1
   dmgLayer: 07000000
   spellName: Ice Globe
   element: 1
@@ -79,8 +79,8 @@ MonoBehaviour:
   - 0.4
   - 0.4
   - 1
-  size: 5
-  speed: 1
+  size: 1
+  speed: 2
   burnTicks: 10
   burnDamagePerTick: 1
   offset: {x: 0, y: 0, z: 0}

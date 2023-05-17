@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
+  damage: 20
+  dmgMultiplier: 1
   dmgLayer: 0600000007000000
   spellName: Light Rain
   element: 3
@@ -74,5 +74,5 @@ MonoBehaviour:
   speed: 1
   burnTicks: 0
   burnDamagePerTick: 0
-  offset: {x: 0, y: 10, z: 10}
+  offset: {x: 0, y: 40, z: 10}
   spell: {fileID: 1348534342020629269, guid: ca99653e585e4bc46812637f5f6d4e98, type: 3}

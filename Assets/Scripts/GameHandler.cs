@@ -107,7 +107,9 @@ public class GameHandler : MonoBehaviour
     {
         spellManager.enabled = false;
         advancer.gameObject.SetActive(false);
-        if (levelsPassed + 1 % 3 == 0)
+        Restart();
+        //UI - picking spells
+        if (levelsPassed % 3 == 0)
         {
             player.GetComponent<PlayerController>().enabled = false;
             Cursor.visible = true;
@@ -121,11 +123,6 @@ public class GameHandler : MonoBehaviour
             SetDefaultSettings();
             pickedHazard = possibleHazards[Random.Range(0, possibleHazards.Count)];
             pickedHazard.Modify(this);
-        }
-        Restart();
-        //UI - picking spells
-        if (levelsPassed % 3 == 0)
-        {
             ChangeShowStatus(true);
             GenerateSpellChoice();
         }
@@ -214,11 +211,11 @@ public class GameHandler : MonoBehaviour
         RenderSettings.skybox.SetColor("_Tint", baseColorSkybox);
         RenderSettings.fogColor = fogColor;
         generalLight.color = baseColorLight;
-        tergen.roughness = Random.Range(1, 20);
+        tergen.roughness = Random.Range(1, 6);
         tergen.fineness = Random.Range(4, 20);
         tergen.noiseFrequency = Random.Range(1, 8);
         walls.radius = tergen.Size;
-        walls.height = 60;
+        walls.height = 80;
     }
     public void Restart()
     {
@@ -274,6 +271,8 @@ public class GameHandler : MonoBehaviour
     }
     public void SpawnBoss()
     {
+        enemyParent = new GameObject("EnemyParent");
+        enemyParent.transform.parent = transform;
         Vector2 spawn = (Random.Range(0f, 1f) < 0.5f ? -1 : 1) * tergen.Size * new Vector2(Random.Range(0.4f, 1f), Random.Range(0.4f, 1f)) / 2;
         Vector2 randomXZ = Random.insideUnitCircle * spawnDistance + spawn;
         GameObject enemy = Instantiate(bossTypes[Random.Range(0, bossTypes.Count)],

@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
+  damage: 10
+  dmgMultiplier: 1
   dmgLayer: 0600000007000000
   spellName: Earth Rain
   element: 4
@@ -83,5 +83,5 @@ MonoBehaviour:
   speed: 1
   burnTicks: 0
   burnDamagePerTick: 0
-  offset: {x: 0, y: 10, z: 10}
+  offset: {x: 0, y: 40, z: 10}
   spell: {fileID: 1348534342020629269, guid: d83e413b8155f6441b0b000b12cb595d, type: 3}

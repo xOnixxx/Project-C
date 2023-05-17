@@ -52,8 +52,8 @@ MonoBehaviour:
   nodeCastPositions: []
   lifetimes: []
   spawnDelays: []
-  size: 1.5
-  speed: 5
+  size: 1
+  speed: 4
   burnTicks: 30
   burnDamagePerTick: 0.5
   offset: {x: 0, y: 0, z: 0}

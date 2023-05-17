@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
-  dmgLayer: 07000000
+  damage: 25
+  dmgMultiplier: 1
+  dmgLayer: 0600000007000000
   spellName: Light Globe
   element: 3
   spellSprite: {fileID: 21300000, guid: 8ebbbba662e706a48afa851ab77a924a, type: 3}
@@ -80,7 +80,7 @@ MonoBehaviour:
   - 0.4
   - 0.4
   size: 1
-  speed: 1
+  speed: 2
   burnTicks: 0
   burnDamagePerTick: 0
   offset: {x: 0, y: 0, z: 0}

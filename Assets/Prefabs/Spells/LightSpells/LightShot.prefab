@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffectParents:
   - {fileID: 4970883597124139392}
-  timeToDie: 0
+  timeToDie: 300
 --- !u!1001 &5030636635572503947
 PrefabInstance:
   m_ObjectHideFlags: 0

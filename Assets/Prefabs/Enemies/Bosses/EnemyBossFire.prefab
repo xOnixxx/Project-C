@@ -16,8 +16,12 @@ GameObject:
   - component: {fileID: 5357141016190459817}
   - component: {fileID: 3135471292296922683}
   - component: {fileID: 7930332154821342851}
+<<<<<<< HEAD
   - component: {fileID: -4348470938907926608}
   m_Layer: 0
+=======
+  m_Layer: 7
+>>>>>>> 7ddc9865b4285c5196cc1a2e077d23367894c41c
   m_Name: EnemyBossFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 5874924541936657879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 5129995133772651272}
   m_Father: {fileID: 0}

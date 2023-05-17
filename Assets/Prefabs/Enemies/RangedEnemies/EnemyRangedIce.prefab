@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2300334262627431607}
   - component: {fileID: -2598330824859462826}
   - component: {fileID: 4607149135327165192}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyRangedIce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,9 @@ MonoBehaviour:
   attacker: {fileID: 4376884352683884224, guid: 5886f4a00a2c1b5459821c0a1712e798, type: 3}
   target: {fileID: 0}
   spell:
-  - {fileID: 62759941938052225, guid: 13cb18df3232aeb409eddba516f01d9e, type: 3}
+  - {fileID: 62759941938052225, guid: d5aa2d498157a42439ff528cfb8d1453, type: 3}
   attackRange: 20
-  movementSpeed: 1
+  movementSpeed: 1.5
   gravity: 9.87
   canMove: 1
   canAttack: 1

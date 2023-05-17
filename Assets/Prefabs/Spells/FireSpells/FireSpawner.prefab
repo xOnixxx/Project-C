@@ -112,25 +112,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566c46f6864f03441ae54097b31d80e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
-  dmgLayer: 
+  damage: 5
+  dmgMultiplier: 1
+  dmgLayer: 0600000007000000
   spellName: 
-  element: 0
+  element: 2
   spellSprite: {fileID: 0}
   nodeCastPositions: []
   lifetimes: []
   spawnDelays: []
   size: 0.5
   speed: 1
-  burnTicks: 0
-  burnDamagePerTick: 0
+  burnTicks: 20
+  burnDamagePerTick: 1
   offset: {x: 0, y: 0, z: 0}
-  spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
+  spell: {fileID: 7268181049600962120, guid: fc134ccdfb52297419aea10fc8d823d0, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
   burstAmount: 10
   burstInterval: 1
-  speedProjectile: 100
+  speedProjectile: 10
   speedSpawner: 100
 --- !u!54 &624818418826276025
 Rigidbody:

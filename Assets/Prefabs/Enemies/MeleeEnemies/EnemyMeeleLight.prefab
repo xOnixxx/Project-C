@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4384436114494703965}
   - component: {fileID: 5030671325057242630}
   - component: {fileID: 3239456375873794041}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyMeeleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handler: {fileID: 0}
   target: {fileID: 0}
-  movementSpeed: 4
+  movementSpeed: 2.5
   gravity: 9.87
   attackRange: 1.5
   damage: 15

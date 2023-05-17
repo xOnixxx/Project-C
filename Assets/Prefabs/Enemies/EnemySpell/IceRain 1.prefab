@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4893437428656495881}
   - component: {fileID: 62759941938052225}
   m_Layer: 3
-  m_Name: IceRain
+  m_Name: IceRain 1
   m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,42 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
-  dmgLayer: 0600000007000000
+  damage: 2
+  dmgMultiplier: 1
+  dmgLayer: 06000000
   spellName: Ice Rain
   element: 1
   spellSprite: {fileID: 21300000, guid: fa7a440297e19be4e84a7803499c50ae, type: 3}
-  nodeCastPositions:
-  - {x: 1100, y: 900}
-  - {x: 1100, y: 600}
-  - {x: 1100, y: 700}
-  - {x: 1400, y: 850}
-  - {x: 1400, y: 650}
-  - {x: 1400, y: 550}
-  - {x: 1600, y: 1000}
-  - {x: 1600, y: 700}
-  - {x: 1600, y: 800}
-  lifetimes:
-  - 1
-  - 0.6
-  - 0.3
-  - 0.75
-  - 0.6
-  - 0.3
-  - 0.75
-  - 0.6
-  - 0.3
-  spawnDelays:
-  - 0.5
-  - 0.4
-  - 0.75
-  - 0.5
-  - 0.4
-  - 0.75
-  - 0.5
-  - 0.4
-  - 1
+  nodeCastPositions: []
+  lifetimes: []
+  spawnDelays: []
   size: 5
   speed: 1
   burnTicks: 10

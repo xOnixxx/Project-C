@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6542670407188332397}
   - component: {fileID: 7882398341326483656}
   - component: {fileID: 5370279560614265858}
+  - component: {fileID: 2333331898832661093}
+  - component: {fileID: 7201441812569130498}
   m_Layer: 0
   m_Name: EnemyBossFire
   m_TagString: Untagged
@@ -92,3 +94,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2333331898832661093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874924541936657879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  currentHealth: 1000
+  resist: 0
+  invulnerabilityTime: 0.2
+  canBeInvulnerable: 0
+  charController: {fileID: 7201441812569130498}
+  hurtImages: {fileID: 0}
+--- !u!114 &7201441812569130498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874924541936657879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada69072d6a833247921720fcfb8d211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 0}
+  attacker: {fileID: 3352391364750035280, guid: 443eca02ef0c32a44a9c0b2abb0cc5d0, type: 3}
+  target: {fileID: 0}
+  spell:
+  - {fileID: 62759941938052225, guid: cdf1a5e4111a1dc4d99d224aa9a60e0d, type: 3}
+  - {fileID: 988404038577311232, guid: e356cdca5638ac54a9a7e6be9d48752d, type: 3}
+  - {fileID: 62759941938052225, guid: 13cb18df3232aeb409eddba516f01d9e, type: 3}
+  attackRange: 40
+  movementSpeed: 1
+  gravity: 9.87
+  canMove: 1
+  canAttack: 1
+  dmgMultiplier: 1
+  attackDelay: 5

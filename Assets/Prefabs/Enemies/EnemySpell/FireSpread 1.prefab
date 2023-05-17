@@ -52,7 +52,7 @@ MonoBehaviour:
   nodeCastPositions: []
   lifetimes: []
   spawnDelays: []
-  size: 1
+  size: 5
   speed: 4
   burnTicks: 20
   burnDamagePerTick: 1

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6542670407188332397}
   - component: {fileID: 7882398341326483656}
   - component: {fileID: 5370279560614265858}
+  - component: {fileID: 4907649727826365066}
+  - component: {fileID: 3291016369657062586}
   m_Layer: 0
   m_Name: EnemyBossIEL
   m_TagString: Untagged
@@ -92,3 +94,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4907649727826365066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874924541936657879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  currentHealth: 1000
+  resist: 0
+  invulnerabilityTime: 0.2
+  canBeInvulnerable: 0
+  charController: {fileID: 3291016369657062586}
+  hurtImages: {fileID: 0}
+--- !u!114 &3291016369657062586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874924541936657879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada69072d6a833247921720fcfb8d211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 0}
+  attacker: {fileID: 4376884352683884224, guid: 5886f4a00a2c1b5459821c0a1712e798, type: 3}
+  target: {fileID: 0}
+  spell:
+  - {fileID: 62759941938052225, guid: 69bb22834fa661547ac82ffd19e3c3e9, type: 3}
+  - {fileID: 988404038577311232, guid: 3f6ec1519cb413d418454a9407827cde, type: 3}
+  - {fileID: 8078911858458276985, guid: ddd5125ca062f9544af4aaedcf98ec41, type: 3}
+  attackRange: 40
+  movementSpeed: 1
+  gravity: 9.87
+  canMove: 1
+  canAttack: 1
+  dmgMultiplier: 1
+  attackDelay: 5

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6542670407188332397}
   - component: {fileID: 7882398341326483656}
   - component: {fileID: 5370279560614265858}
+  - component: {fileID: 6392270863497105602}
+  - component: {fileID: 953390468731471525}
   m_Layer: 0
   m_Name: EnemyBossEarth
   m_TagString: Untagged
@@ -92,3 +94,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6392270863497105602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874924541936657879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  currentHealth: 1000
+  resist: 0
+  invulnerabilityTime: 0.2
+  canBeInvulnerable: 0
+  charController: {fileID: 953390468731471525}
+  hurtImages: {fileID: 0}
+--- !u!114 &953390468731471525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874924541936657879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada69072d6a833247921720fcfb8d211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 0}
+  attacker: {fileID: 3352391364750035280, guid: 443eca02ef0c32a44a9c0b2abb0cc5d0, type: 3}
+  target: {fileID: 0}
+  spell:
+  - {fileID: 62759941938052225, guid: 69bb22834fa661547ac82ffd19e3c3e9, type: 3}
+  - {fileID: 988404038577311232, guid: 28b295038133d9b4e9e611ad6bb4ae75, type: 3}
+  - {fileID: -4600260682615596345, guid: ecec5f64516319e4d86c0a5d13cb9a2a, type: 3}
+  attackRange: 40
+  movementSpeed: 1
+  gravity: 9.87
+  canMove: 1
+  canAttack: 1
+  dmgMultiplier: 1
+  attackDelay: 5

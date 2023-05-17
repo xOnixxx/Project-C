@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4893437428656495881}
-  - component: {fileID: 62759941938052225}
+  - component: {fileID: 8078911858458276985}
   m_Layer: 3
-  m_Name: IceRain
+  m_Name: LightSpawn 1
   m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &62759941938052225
+--- !u!114 &8078911858458276985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,45 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
-  dmgLayer: 0600000007000000
-  spellName: Ice Rain
-  element: 1
-  spellSprite: {fileID: 21300000, guid: fa7a440297e19be4e84a7803499c50ae, type: 3}
-  nodeCastPositions:
-  - {x: 1100, y: 900}
-  - {x: 1100, y: 600}
-  - {x: 1100, y: 700}
-  - {x: 1400, y: 850}
-  - {x: 1400, y: 650}
-  - {x: 1400, y: 550}
-  - {x: 1600, y: 1000}
-  - {x: 1600, y: 700}
-  - {x: 1600, y: 800}
-  lifetimes:
-  - 1
-  - 0.6
-  - 0.3
-  - 0.75
-  - 0.6
-  - 0.3
-  - 0.75
-  - 0.6
-  - 0.3
-  spawnDelays:
-  - 0.5
-  - 0.4
-  - 0.75
-  - 0.5
-  - 0.4
-  - 0.75
-  - 0.5
-  - 0.4
-  - 1
-  size: 5
-  speed: 1
-  burnTicks: 10
-  burnDamagePerTick: 1
-  offset: {x: 0, y: 10, z: 10}
-  spell: {fileID: 1348534342020629269, guid: d75bf3dee96bac949aab880c7c82f7a4, type: 3}
+  damage: 10
+  dmgMultiplier: 1
+  dmgLayer: 06000000
+  spellName: Light Globe
+  element: 3
+  spellSprite: {fileID: 21300000, guid: 8ebbbba662e706a48afa851ab77a924a, type: 3}
+  nodeCastPositions: []
+  lifetimes: []
+  spawnDelays: []
+  size: 1
+  speed: 20
+  burnTicks: 0
+  burnDamagePerTick: 0
+  offset: {x: 0, y: 0, z: 0}
+  spell: {fileID: 7961086595029234997, guid: 27fdee649980fd5418e905e2ff28f760, type: 3}

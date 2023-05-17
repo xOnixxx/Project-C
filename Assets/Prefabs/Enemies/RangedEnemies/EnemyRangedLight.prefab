@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6755337332309754791}
   - component: {fileID: 7642639450212469762}
   - component: {fileID: 5617373430679468232}
+  - component: {fileID: 749474949028911612}
+  - component: {fileID: 3801303344630195867}
   m_Layer: 0
   m_Name: EnemyRangedLight
   m_TagString: Untagged
@@ -86,3 +88,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &749474949028911612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265658475245885725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  resist: 0
+  invulnerabilityTime: 0.2
+  canBeInvulnerable: 0
+  charController: {fileID: 3801303344630195867}
+  hurtImages: {fileID: 0}
+--- !u!114 &3801303344630195867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265658475245885725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada69072d6a833247921720fcfb8d211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 0}
+  attacker: {fileID: 4376884352683884224, guid: 5886f4a00a2c1b5459821c0a1712e798, type: 3}
+  target: {fileID: 0}
+  spell:
+  - {fileID: 8078911858458276985, guid: f8be487258d943e45b55399c596aabc7, type: 3}
+  attackRange: 20
+  movementSpeed: 1
+  gravity: 9.87
+  canMove: 1
+  canAttack: 1
+  dmgMultiplier: 1
+  attackDelay: 2

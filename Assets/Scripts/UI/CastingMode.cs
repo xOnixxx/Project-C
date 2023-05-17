@@ -100,7 +100,7 @@ public class CastingMode : MonoBehaviour
 
     private IEnumerator StartMinigame()
     {
-        Time.timeScale = 0.5f;
+        //Time.timeScale = 0.5f;
         yield return new WaitForSeconds(timeBeforeMiniGame);
         StartCoroutine(CreateButton(0));
     }

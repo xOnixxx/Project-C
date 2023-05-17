@@ -88,7 +88,7 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CheckForEnemyCount();
+        CheckForEnemyCount();
     }
 
     public void ChangeShowStatus(bool changer)
@@ -228,7 +228,7 @@ public class GameHandler : MonoBehaviour
         transform.position = new Vector3(Random.Range(-levelRange, levelRange), 0, Random.Range(-levelRange, levelRange));
         tergen.GenerateNewTerrain();
         walls.GenerateWalls();
-        player.transform.position = transform.position + new Vector3(0, tergen.roughness + 1, 0);
+        player.transform.position = transform.position + new Vector3(0, tergen.roughness + 2, 0);
         ParticleSystem.ShapeModule particleShape = particles.shape;
         particleShape.radius = tergen.Size;
         var particleMain = particles.main;

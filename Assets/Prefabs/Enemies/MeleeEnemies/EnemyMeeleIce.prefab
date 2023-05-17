@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6907648781208554281}
   - component: {fileID: 7526427995495957644}
   - component: {fileID: 5735273838896705606}
+  - component: {fileID: 8540812304176604903}
+  - component: {fileID: 5994313032657787683}
   m_Layer: 0
   m_Name: EnemyMeeleIce
   m_TagString: Untagged
@@ -84,3 +86,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8540812304176604903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095399286829797779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e8b13d30f65a449a7bfffeb45a1c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 0}
+  target: {fileID: 0}
+  movementSpeed: 4
+  gravity: 9.87
+  attackRange: 1.5
+  damage: 5
+  element: 1
+  burnDamage: 1
+  burnTicks: 10
+--- !u!114 &5994313032657787683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095399286829797779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  resist: 0
+  invulnerabilityTime: 0.2
+  canBeInvulnerable: 0
+  charController: {fileID: 8540812304176604903}
+  hurtImages: {fileID: 0}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3907090797505001811
+--- !u!1 &6265658475245885725
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6852956706135992581}
-  - component: {fileID: 2460714587699851991}
-  - component: {fileID: 5068529526280012977}
-  - component: {fileID: 7529301703437032915}
-  - component: {fileID: 2195332880520472236}
-  - component: {fileID: 1762830174337836908}
-  - component: {fileID: 8161534868163938035}
-  m_Layer: 7
-  m_Name: MeleeEnemyIce
+  - component: {fileID: 6755337332309754791}
+  - component: {fileID: 7642639450212469762}
+  - component: {fileID: 5617373430679468232}
+  - component: {fileID: 4790915539970302291}
+  - component: {fileID: 1822129566814729234}
+  m_Layer: 0
+  m_Name: EnemyRangedEarthDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6852956706135992581
+--- !u!4 &6755337332309754791
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907090797505001811}
+  m_GameObject: {fileID: 6265658475245885725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.97034, y: 3.8504417, z: 95.10646}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2460714587699851991
+--- !u!33 &7642639450212469762
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907090797505001811}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5068529526280012977
+  m_GameObject: {fileID: 6265658475245885725}
+  m_Mesh: {fileID: 6690141603448424749, guid: 860ceb166d58b0b4bbe6c107caf39dda, type: 3}
+--- !u!23 &5617373430679468232
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907090797505001811}
+  m_GameObject: {fileID: 6265658475245885725}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +61,12 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2dccc76a7ec942d4da9dcb88b85ffef9, type: 2}
+  - {fileID: 2100000, guid: a17bad54c03c2984aa43d5c9ef36023a, type: 2}
+  - {fileID: 2100000, guid: a17bad54c03c2984aa43d5c9ef36023a, type: 2}
+  - {fileID: 2100000, guid: 474d52fa577011143abfa914f3a666e5, type: 2}
+  - {fileID: 2100000, guid: a17bad54c03c2984aa43d5c9ef36023a, type: 2}
+  - {fileID: 2100000, guid: 474d52fa577011143abfa914f3a666e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,66 +88,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7529301703437032915
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907090797505001811}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &2195332880520472236
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907090797505001811}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1762830174337836908
+--- !u!114 &4790915539970302291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907090797505001811}
+  m_GameObject: {fileID: 6265658475245885725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e8b13d30f65a449a7bfffeb45a1c3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ada69072d6a833247921720fcfb8d211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 0}
+  attacker: {fileID: 3352391364750035280, guid: 443eca02ef0c32a44a9c0b2abb0cc5d0, type: 3}
   target: {fileID: 0}
-  movementSpeed: 2
+  spell:
+  - {fileID: 62759941938052225, guid: 13cb18df3232aeb409eddba516f01d9e, type: 3}
+  attackRange: 20
+  movementSpeed: 1
   gravity: 9.87
-  attackRange: 1.5
-  damage: 10
-  element: 1
-  burnDamage: 1
-  burnTicks: 10
---- !u!114 &8161534868163938035
+  canMove: 1
+  canAttack: 1
+  dmgMultiplier: 1
+  attackDelay: 2
+--- !u!114 &1822129566814729234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907090797505001811}
+  m_GameObject: {fileID: 6265658475245885725}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
@@ -155,5 +129,5 @@ MonoBehaviour:
   resist: 0
   invulnerabilityTime: 0.2
   canBeInvulnerable: 0
-  charController: {fileID: 1762830174337836908}
+  charController: {fileID: 4790915539970302291}
   hurtImages: {fileID: 0}

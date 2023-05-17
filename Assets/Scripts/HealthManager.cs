@@ -8,12 +8,13 @@ public class HealthManager : MonoBehaviour
     public float currentHealth = 100;
     public float resist = 0;
     public float invulnerabilityTime = 0.2f;
-    public bool canBeInvulnerable = true;
+    public bool canBeInvulnerable = false;
     private bool isInvulnerable = false;
     private bool alreadyTakingDoT = false;
     private bool isPlayer;
     public Character charController;
     public HurtUI hurtImages;
+    private ParticleSystem particles;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class HealthManager : MonoBehaviour
         }
         else
         {
+            particles = GetComponent<ParticleSystem>();
             isPlayer = false;
         }
     }
@@ -44,6 +46,10 @@ public class HealthManager : MonoBehaviour
                 //StartCoroutine(InvulnerabilityFrames());
             }
             currentHealth -= (damage - resist * damage);
+            if(!isPlayer)
+            {
+                particles.Play();
+            }
             switch (element)
             {
                 case ISpell.Element.None:

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6982478345618187784
+--- !u!1 &2786806341869943653
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4473076956749496106}
-  - component: {fileID: -217789873057328922}
+  - component: {fileID: 2786806341869943659}
+  - component: {fileID: 2786806341869943658}
   m_Layer: 0
-  m_Name: FireHazard
+  m_Name: IceHazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4473076956749496106
+--- !u!4 &2786806341869943659
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6982478345618187784}
+  m_GameObject: {fileID: 2786806341869943653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,38 +31,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-217789873057328922
+--- !u!114 &2786806341869943658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6982478345618187784}
+  m_GameObject: {fileID: 2786806341869943653}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9d08422179140b4fb6fd81732651eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTexture: {fileID: 2800000, guid: 466da0875c466a5479e8bd896be49024, type: 3}
-  groundTexture: {fileID: 2800000, guid: f51c976299a205e459acfa5e5110af0b, type: 3}
+  levelTexture: {fileID: 2800000, guid: ee6bfaeda2683fa4ba0995b05bf91de1, type: 3}
+  groundTexture: {fileID: 2800000, guid: 872f1e03e18768343ad87012fcea3d52, type: 3}
   trees:
   - {fileID: 1767654333338078013, guid: 4101a64506a307546a2221c9aa6b0740, type: 3}
   allowedPlayerEl:
-  - {fileID: 62759941938052225, guid: 6f73910cbd15bdc46b6734c2cb072dcb, type: 3}
-  - {fileID: 62759941938052225, guid: e54d1260c67c26f4eba741f06f267300, type: 3}
-  - {fileID: 62759941938052225, guid: f90aaf1f87d5c0e4f85a1008c06166cd, type: 3}
-  - {fileID: 62759941938052225, guid: 876d334809e348c47867112f60a296c7, type: 3}
-  - {fileID: 988404038577311232, guid: 466fe9dcdfcb4df44bcbbb84f0ef980f, type: 3}
-  - {fileID: 8078911858458276985, guid: 82e4173c8596c104bb912664ebff86ee, type: 3}
-  - {fileID: 8078911858458276985, guid: f4cbdbef45906f74283a2a391f3f4ebd, type: 3}
+  - {fileID: 62759941938052225, guid: e61a81166ed623244ab79f19c3dfb72b, type: 3}
+  - {fileID: 62759941938052225, guid: e3be9fcf391eeb742a8ab1b9d694ff67, type: 3}
+  - {fileID: 62759941938052225, guid: 6e96d78961be13744b5a1e355d3c6164, type: 3}
+  - {fileID: 62759941938052225, guid: 6a8d07dd53fcc634ab8cde70189ef633, type: 3}
+  - {fileID: 988404038577311232, guid: da8d7f52d865c734f9a69c4cd6410753, type: 3}
   - {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
-  - {fileID: 8078911858458276985, guid: dab93b474d75401409f5353e9bbc06ef, type: 3}
   - {fileID: 988404038577311232, guid: 2e2d4d37a989e7b4e8e491098026d39c, type: 3}
+  - {fileID: -4600260682615596345, guid: 06a44222c0a75c742887f39af0fb45f4, type: 3}
+  - {fileID: -2802946992431128660, guid: e2b7ab126504af54f8fefb928fa6d13e, type: 3}
+  - {fileID: 988404038577311232, guid: 15c08fee7849fa44b8423716dc5b6ad9, type: 3}
+  - {fileID: 62759941938052225, guid: c40dfeb7fe68ef64687aec79543d56f5, type: 3}
   elementalDmgUp: []
   numOfObstacles: 0
-  numOfMeleeEnemies: 5
-  numOfRangedEnemies: 15
-  numOfTrees: 30
+  numOfMeleeEnemies: 0
+  numOfRangedEnemies: 20
+  numOfTrees: 100
   meleeEnemyTypes:
   - {fileID: 0}
   rangedEnemyTypes:

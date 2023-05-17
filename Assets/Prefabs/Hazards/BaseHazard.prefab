@@ -71,11 +71,11 @@ MonoBehaviour:
   - {fileID: 988404038577311232, guid: 2e2d4d37a989e7b4e8e491098026d39c, type: 3}
   elementalDmgUp: []
   numOfObstacles: 0
-  numOfMeleeEnemies: 5
+  numOfMeleeEnemies: 10
   numOfRangedEnemies: 5
-  numOfTrees: 100
+  numOfTrees: 200
   meleeEnemyTypes:
-  - {fileID: 3907090797505001811, guid: 6e69a83aa3c2e3741b05ff7299f2b643, type: 3}
+  - {fileID: 3907090797505001811, guid: aa8b134f796df934988dfea66d165512, type: 3}
   rangedEnemyTypes:
   - {fileID: 3785073729319328507, guid: 4153eecd1859d954985baec15669fc6a, type: 3}
   bossTypes:

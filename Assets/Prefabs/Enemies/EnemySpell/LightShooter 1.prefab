@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4893437428656495881}
-  - component: {fileID: 62759941938052225}
+  - component: {fileID: 8078911858458276985}
   m_Layer: 3
-  m_Name: FireShooter 1
+  m_Name: LightShooter 1
   m_TagString: Spells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &62759941938052225
+--- !u!114 &8078911858458276985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,18 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 25
   dmgMultiplier: 1
   dmgLayer: 06000000
-  spellName: Fire Shot
-  element: 2
-  spellSprite: {fileID: 21300000, guid: 653db886f838d3e4cbd6e25d4c268c99, type: 3}
+  spellName: Light Shot
+  element: 3
+  spellSprite: {fileID: 21300000, guid: 81c559035f78f3f41a99de6e477e6505, type: 3}
   nodeCastPositions: []
   lifetimes: []
   spawnDelays: []
-  size: 1.5
-  speed: 5
-  burnTicks: 30
-  burnDamagePerTick: 0.5
+  size: 1
+  speed: 10
+  burnTicks: 0
+  burnDamagePerTick: 0
   offset: {x: 0, y: 0, z: 0}
-  spell: {fileID: 7268181049600962120, guid: fc134ccdfb52297419aea10fc8d823d0, type: 3}
+  spell: {fileID: 5828371057168701643, guid: 63ba36a914d8499439d15b5da9395ba5, type: 3}

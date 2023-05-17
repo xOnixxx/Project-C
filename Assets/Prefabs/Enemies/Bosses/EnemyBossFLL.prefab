@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5370279560614265858}
   - component: {fileID: 7035664183363801568}
   - component: {fileID: 4121039603335213331}
+  - component: {fileID: 9212576761705070642}
   m_Layer: 0
   m_Name: EnemyBossFLL
   m_TagString: Untagged
@@ -139,3 +140,21 @@ MonoBehaviour:
   canAttack: 1
   dmgMultiplier: 1
   attackDelay: 5
+--- !u!143 &9212576761705070642
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874924541936657879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.5
+  m_Radius: 0.6
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1.1, z: 0}

@@ -9,6 +9,8 @@ public class ParticleDestroy : MonoBehaviour
     private ParticleSystem[] explosionEffect;
     private float timeToExplode = 0;
     public float timeToDie;
+
+    protected bool isFragile = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class ParticleDestroy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Spells")
+        if (collision.gameObject.tag != "Spells" && isFragile)
         {
             KillLoud();
         }

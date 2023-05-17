@@ -54,6 +54,7 @@ public class MeleeEnemyBehaviour : Character
     public override void Die()
     {
         handler.currentEnemyNumber--;
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.GetComponent<EnemyDestroy>().KillLoud();
     }
 }

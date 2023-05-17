@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5357141016190459817}
   - component: {fileID: 3135471292296922683}
   - component: {fileID: 7930332154821342851}
+  - component: {fileID: -4348470938907926608}
   m_Layer: 0
   m_Name: EnemyBossFire
   m_TagString: Untagged
@@ -4991,6 +4992,21 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-4348470938907926608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874924541936657879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25e6079021c744f92cbcb6ea25eddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffectParents:
+  - {fileID: 6639652842226060163}
+  timeToDie: 0
 --- !u!1001 &1446644033694372424
 PrefabInstance:
   m_ObjectHideFlags: 0

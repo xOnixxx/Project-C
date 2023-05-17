@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7882398341326483656}
   - component: {fileID: 5370279560614265858}
   m_Layer: 0
-  m_Name: EnemyBoss (3)
+  m_Name: EnemyBossFLL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,17 +60,17 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 474d52fa577011143abfa914f3a666e5, type: 2}
-  - {fileID: 2100000, guid: fdd8df63b61955b4290044f9a15b83ad, type: 2}
+  - {fileID: 2100000, guid: df9ec44e0d141634ea2eb2ff15e07132, type: 2}
   - {fileID: 2100000, guid: 474d52fa577011143abfa914f3a666e5, type: 2}
-  - {fileID: 2100000, guid: f4adfb51db4510f41ae24315b5435e92, type: 2}
-  - {fileID: 2100000, guid: fdd8df63b61955b4290044f9a15b83ad, type: 2}
-  - {fileID: 2100000, guid: fdd8df63b61955b4290044f9a15b83ad, type: 2}
-  - {fileID: 2100000, guid: 9d79c7889751bf14894f5676cf5167c1, type: 2}
-  - {fileID: 2100000, guid: 14848f5112aa48c4abdbe6a5b69109a5, type: 2}
-  - {fileID: 2100000, guid: 14848f5112aa48c4abdbe6a5b69109a5, type: 2}
   - {fileID: 2100000, guid: 90fd37d0327a3ee4ca1a2c336ae611e8, type: 2}
   - {fileID: 2100000, guid: df9ec44e0d141634ea2eb2ff15e07132, type: 2}
   - {fileID: 2100000, guid: df9ec44e0d141634ea2eb2ff15e07132, type: 2}
+  - {fileID: 2100000, guid: f4adfb51db4510f41ae24315b5435e92, type: 2}
+  - {fileID: 2100000, guid: fdd8df63b61955b4290044f9a15b83ad, type: 2}
+  - {fileID: 2100000, guid: fdd8df63b61955b4290044f9a15b83ad, type: 2}
+  - {fileID: 2100000, guid: f4adfb51db4510f41ae24315b5435e92, type: 2}
+  - {fileID: 2100000, guid: fdd8df63b61955b4290044f9a15b83ad, type: 2}
+  - {fileID: 2100000, guid: fdd8df63b61955b4290044f9a15b83ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
+  damage: 200
+  dmgMultiplier: 1
   dmgLayer: 0600000007000000
   spellName: Light Meteor
   element: 3
@@ -68,7 +68,7 @@ MonoBehaviour:
   - 0.6
   - 0.4
   size: 5
-  speed: 3
+  speed: 15
   burnTicks: 0
   burnDamagePerTick: 0
   offset: {x: 0, y: 30, z: 5}

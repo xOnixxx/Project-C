@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
+  damage: 1
+  dmgMultiplier: 1
   dmgLayer: 07000000
   spellName: Fire Rain
   element: 2
@@ -76,9 +76,9 @@ MonoBehaviour:
   - 1
   - 0.5
   - 1
-  size: 5
-  speed: 1
+  size: 1
+  speed: 2
   burnTicks: 20
-  burnDamagePerTick: 1
+  burnDamagePerTick: 2
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 7961086595029234997, guid: 8c94944449f305e4883e0b432f5deb0e, type: 3}

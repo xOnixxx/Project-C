@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -745476543640455372}
   - component: {fileID: 3611229536899892588}
   - component: {fileID: -1821903672958333613}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyRangedFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   spell:
   - {fileID: 62759941938052225, guid: 13cb18df3232aeb409eddba516f01d9e, type: 3}
   attackRange: 20
-  movementSpeed: 1
+  movementSpeed: 1.5
   gravity: 9.87
   canMove: 1
   canAttack: 1

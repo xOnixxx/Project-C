@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
+  damage: 50
+  dmgMultiplier: 1
   dmgLayer: 0600000007000000
   spellName: Ice Meteor
   element: 1
@@ -83,8 +83,8 @@ MonoBehaviour:
   - 0.5
   - 0.5
   size: 5
-  speed: 3
-  burnTicks: 0
-  burnDamagePerTick: 0
+  speed: 5
+  burnTicks: 25
+  burnDamagePerTick: 3
   offset: {x: 0, y: 20, z: 5}
   spell: {fileID: 7268181049600962120, guid: 40b2b9d93e85b18498cf98389817458a, type: 3}

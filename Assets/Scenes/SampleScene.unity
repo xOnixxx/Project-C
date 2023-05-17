@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMaster: {fileID: 8860005460541269535}
   inControl: 1
-  pauser: {fileID: 0}
+  pauser: {fileID: 1170002933}
   gravity: 9.87
   speed: 6
   sprintHorizontalSpeed: 10
@@ -6234,6 +6234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3395480703438746847, guid: aa3b1430d2837664fb866023d1373b44, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e1aacb0836c4fe45b1ba70cc025d512, type: 3}
     - target: {fileID: 3908542938086698868, guid: aa3b1430d2837664fb866023d1373b44, type: 3}
       propertyPath: m_Camera
       value: 
@@ -6354,12 +6358,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8860005460541269535}
+    - target: {fileID: 3908542939205526956, guid: aa3b1430d2837664fb866023d1373b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3908542938871744953, guid: aa3b1430d2837664fb866023d1373b44, type: 3}
     - target: {fileID: 3908542939677448248, guid: aa3b1430d2837664fb866023d1373b44, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8860005460541269535}
-    m_RemovedComponents:
-    - {fileID: 3908542938871744953, guid: aa3b1430d2837664fb866023d1373b44, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa3b1430d2837664fb866023d1373b44, type: 3}
 --- !u!1001 &8860005460541269531
 PrefabInstance:
@@ -6456,6 +6463,10 @@ PrefabInstance:
       propertyPath: possibleHazards.Array.data[2]
       value: 
       objectReference: {fileID: 2786806341869943658, guid: 7c94544d52c0d6b49a931e34707bd9e3, type: 3}
+    - target: {fileID: 8860005461638597278, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: height
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8860005461996174526, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
       propertyPath: m_RootOrder
       value: 0

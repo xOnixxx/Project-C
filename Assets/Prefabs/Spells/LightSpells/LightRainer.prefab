@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d57a1699c120d438c131dac52636bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
   dmgMultiplier: 1
-  dmgLayer: 
+  dmgLayer: 0600000007000000
   spellName: 
   element: 3
   spellSprite: {fileID: 0}
@@ -126,11 +126,11 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 5828371057168701643, guid: 63ba36a914d8499439d15b5da9395ba5, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
-  burstAmount: 500
+  burstAmount: 1500
   burstInterval: 1
   speedProjectile: 100
   speedSpawner: 100
-  area: 20
+  area: 50
 --- !u!54 &-3804166073021511884
 Rigidbody:
   m_ObjectHideFlags: 0

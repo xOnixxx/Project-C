@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -663068522594135638}
   - component: {fileID: -6301971406885078643}
   - component: {fileID: 5124813853688311896}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyRangedLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   spell:
   - {fileID: 8078911858458276985, guid: f8be487258d943e45b55399c596aabc7, type: 3}
   attackRange: 20
-  movementSpeed: 1
+  movementSpeed: 1.5
   gravity: 9.87
   canMove: 1
   canAttack: 1

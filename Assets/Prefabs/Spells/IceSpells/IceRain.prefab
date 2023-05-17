@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dmgMultiplier: 0
+  damage: 3
+  dmgMultiplier: 1
   dmgLayer: 0600000007000000
   spellName: Ice Rain
   element: 1
@@ -79,9 +79,9 @@ MonoBehaviour:
   - 0.5
   - 0.4
   - 1
-  size: 5
+  size: 1
   speed: 1
   burnTicks: 10
   burnDamagePerTick: 1
-  offset: {x: 0, y: 10, z: 10}
+  offset: {x: 0, y: 40, z: 10}
   spell: {fileID: 1348534342020629269, guid: d75bf3dee96bac949aab880c7c82f7a4, type: 3}

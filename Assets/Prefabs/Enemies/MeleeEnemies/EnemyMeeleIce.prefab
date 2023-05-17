@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3778633467096808556}
   - component: {fileID: 4703312505808668319}
   - component: {fileID: -8495312669987927178}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyMeeleIce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handler: {fileID: 0}
   target: {fileID: 0}
-  movementSpeed: 4
+  movementSpeed: 2.5
   gravity: 9.87
   attackRange: 1.5
   damage: 5

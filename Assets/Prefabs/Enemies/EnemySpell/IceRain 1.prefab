@@ -52,9 +52,9 @@ MonoBehaviour:
   nodeCastPositions: []
   lifetimes: []
   spawnDelays: []
-  size: 5
+  size: 1
   speed: 1
   burnTicks: 10
   burnDamagePerTick: 1
-  offset: {x: 0, y: 10, z: 10}
+  offset: {x: 0, y: 30, z: 10}
   spell: {fileID: 1348534342020629269, guid: d75bf3dee96bac949aab880c7c82f7a4, type: 3}

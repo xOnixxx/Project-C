@@ -53,7 +53,7 @@ MonoBehaviour:
   lifetimes: []
   spawnDelays: []
   size: 1
-  speed: 20
+  speed: 1
   burnTicks: 0
   burnDamagePerTick: 0
   offset: {x: 0, y: 0, z: 0}

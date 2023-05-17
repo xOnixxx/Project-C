@@ -107,22 +107,25 @@ public class GameHandler : MonoBehaviour
     {
         spellManager.enabled = false;
         advancer.gameObject.SetActive(false);
+        if (levelsPassed + 1 % 3 == 0)
+        {
+            player.GetComponent<PlayerController>().enabled = false;
+            Cursor.visible = true;
+            pickedHazard.Revert(this);
+            SetDefaultSettings();
+            pickedHazard = possibleHazards[Random.Range(0, possibleHazards.Count)];
+            pickedHazard.Modify(this);
+        }
         Restart();
         //UI - picking spells
         if (levelsPassed % 3 == 0)
         {
-            player.GetComponent<PlayerController>().enabled = false;
-            Cursor.visible = true;
             for (int i = pickedSpells.Count - 1; i >= 0; i--)
             {
                 Destroy(pickedSpells[i].gameObject);
             }
             pickedSpells.Clear();
             pickedSpellIndexes.Clear();
-            pickedHazard.Revert(this);
-            SetDefaultSettings();
-            pickedHazard = possibleHazards[Random.Range(0, possibleHazards.Count)];
-            pickedHazard.Modify(this);
             ChangeShowStatus(true);
             GenerateSpellChoice();
         }
@@ -211,7 +214,7 @@ public class GameHandler : MonoBehaviour
         RenderSettings.skybox.SetColor("_Tint", baseColorSkybox);
         RenderSettings.fogColor = fogColor;
         generalLight.color = baseColorLight;
-        tergen.roughness = Random.Range(1, 6);
+        tergen.roughness = Random.Range(2, 8);
         tergen.fineness = Random.Range(4, 20);
         tergen.noiseFrequency = Random.Range(1, 8);
         walls.radius = tergen.Size;
@@ -264,6 +267,10 @@ public class GameHandler : MonoBehaviour
             RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
             enemyBeh.handler = this;
             enemyBeh.target = player.transform;
+            for (int j = 0; j < enemyBeh.spell.Count; j++)
+            {
+                enemyBeh.spell[j] = Instantiate(enemyBeh.spell[j], Vector3.zero, Quaternion.identity, enemyParent.transform);
+            }
             HealthManager health = enemy.GetComponent<HealthManager>();
             health.charController = enemyBeh;
         }
@@ -280,6 +287,10 @@ public class GameHandler : MonoBehaviour
         RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
         enemyBeh.handler = this;
         enemyBeh.target = player.transform;
+        for (int j = 0; j < enemyBeh.spell.Count; j++)
+        {
+            enemyBeh.spell[j] = Instantiate(enemyBeh.spell[j], Vector3.zero, Quaternion.identity, enemyParent.transform);
+        }
         HealthManager health = enemy.GetComponent<HealthManager>();
         health.charController = enemyBeh;
         currentEnemyNumber = 1;

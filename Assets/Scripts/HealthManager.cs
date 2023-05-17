@@ -46,13 +46,13 @@ public class HealthManager : MonoBehaviour
                 //StartCoroutine(InvulnerabilityFrames());
             }
             currentHealth -= (damage - resist * damage);
-            if(!isPlayer)
-            {
-                particles.Play();
-            }
             switch (element)
             {
                 case ISpell.Element.None:
+                    if (!isPlayer)
+                    {
+                        particles.Play();
+                    }
                     break;
                 case ISpell.Element.Ice:
                     if (!alreadyTakingDoT)
@@ -61,6 +61,10 @@ public class HealthManager : MonoBehaviour
                         if(isPlayer)
                         {
                             StartCoroutine(hurtImages.ShowHurtScreen(0, burnTicks * 0.2f + 0.3f));
+                        }
+                        if (!isPlayer)
+                        {
+                            particles.Play();
                         }
                         StartCoroutine(DamageOverTime(0.2f, burnDamage, 0, burnTicks));
                     }
@@ -72,6 +76,10 @@ public class HealthManager : MonoBehaviour
                         {
                             StartCoroutine(hurtImages.ShowHurtScreen(1, burnTicks * 0.2f + 0.3f));
                         }
+                        if (!isPlayer)
+                        {
+                            particles.Play();
+                        }
                         alreadyTakingDoT = true;
                         StartCoroutine(DamageOverTime(0.2f ,burnDamage, 0, burnTicks));
                     }
@@ -81,11 +89,19 @@ public class HealthManager : MonoBehaviour
                     {
                         StartCoroutine(hurtImages.ShowHurtScreen(2, 0.3f));
                     }
+                    if (!isPlayer)
+                    {
+                        particles.Play();
+                    }
                     break;
                 case ISpell.Element.Earth:
                     if (isPlayer)
                     {
                         StartCoroutine(hurtImages.ShowHurtScreen(3, 1.3f));
+                    }
+                    if (!isPlayer)
+                    {
+                        particles.Play();
                     }
                     StartCoroutine(Stun(1));
                     break;

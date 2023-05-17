@@ -68,15 +68,26 @@ MonoBehaviour:
   - {fileID: 8078911858458276985, guid: f4cbdbef45906f74283a2a391f3f4ebd, type: 3}
   - {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
   - {fileID: 8078911858458276985, guid: dab93b474d75401409f5353e9bbc06ef, type: 3}
-  - {fileID: 988404038577311232, guid: 2e2d4d37a989e7b4e8e491098026d39c, type: 3}
+  - {fileID: 988404038577311232, guid: 46a089bcc426d50419836d7b128dbe0a, type: 3}
   elementalDmgUp: []
   numOfObstacles: 0
   numOfMeleeEnemies: 10
   numOfRangedEnemies: 5
   numOfTrees: 200
   meleeEnemyTypes:
-  - {fileID: 3907090797505001811, guid: aa8b134f796df934988dfea66d165512, type: 3}
+  - {fileID: 6095399286829797779, guid: 96e96fba5152d274799d5c3b95ed933e, type: 3}
+  - {fileID: 6095399286829797779, guid: 85a8ee6a4cf00024b879f0495ed0357b, type: 3}
+  - {fileID: 6095399286829797779, guid: bd6f87c79d942e7469abfdb4c8cba858, type: 3}
+  - {fileID: 6095399286829797779, guid: 27bfadb83c2adfe4fb64f529f11a1376, type: 3}
   rangedEnemyTypes:
-  - {fileID: 3785073729319328507, guid: 4153eecd1859d954985baec15669fc6a, type: 3}
+  - {fileID: 6265658475245885725, guid: d83674d1e7cdadb4793e1958c10d2f6b, type: 3}
+  - {fileID: 6265658475245885725, guid: 43ad425addd8d1240a35357fe29c5f80, type: 3}
+  - {fileID: 6265658475245885725, guid: f257be64c25929e4bb443a3002ba2879, type: 3}
+  - {fileID: 6265658475245885725, guid: d5360bc97afffb64c8746a7ee687eb51, type: 3}
   bossTypes:
-  - {fileID: 3785073729319328507, guid: 9d386347cbfe3954d92d22891b03def8, type: 3}
+  - {fileID: 5874924541936657879, guid: 16afddfaf08aeef45b8186fb226b7e70, type: 3}
+  - {fileID: 5874924541936657879, guid: 9556aa2aa22b57044885797f91c0fae4, type: 3}
+  - {fileID: 5874924541936657879, guid: 433f540bcf375204e9aa4e25532dcc8c, type: 3}
+  - {fileID: 5874924541936657879, guid: 498294fe65e664e4ab8ec130b2d5dec2, type: 3}
+  - {fileID: 5874924541936657879, guid: 9f96ff1fa6703944db117bb580aaa4ea, type: 3}
+  - {fileID: 5874924541936657879, guid: d2334750643ac9f408e2f7fb742f1a59, type: 3}

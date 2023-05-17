@@ -201,7 +201,8 @@ public class GameHandler : MonoBehaviour
         }
         spellManager.spells = pickedSpells;
         Cursor.visible = false;
-        player.GetComponent<PlayerController>().enabled = true;
+        PlayerController playCon = player.GetComponent<PlayerController>();
+        playCon.enabled = true;
         CharacterController character = player.GetComponent<CharacterController>();
         character.enabled = true;
         starter.gameObject.SetActive(false);
@@ -254,7 +255,8 @@ public class GameHandler : MonoBehaviour
             MeleeEnemyBehaviour melee = enemy.GetComponent<MeleeEnemyBehaviour>();
             melee.handler = this;
             melee.target = player.transform;
-            enemy.GetComponent<HealthManager>().charController = melee;
+            HealthManager health = enemy.GetComponent<HealthManager>();
+            health.charController = melee;
 
         }
         for (int i = 0; i < rangedEnemyNumber; i++)
@@ -265,7 +267,8 @@ public class GameHandler : MonoBehaviour
             RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
             enemyBeh.handler = this;
             enemyBeh.target = player.transform;
-            enemy.GetComponent<HealthManager>().charController = enemyBeh;
+            HealthManager health = enemy.GetComponent<HealthManager>();
+            health.charController = enemyBeh;
         }
         currentEnemyNumber = meleeEnemyNumber + rangedEnemyNumber;
     }
@@ -278,7 +281,8 @@ public class GameHandler : MonoBehaviour
         RangedEnemyBehaviour enemyBeh = enemy.GetComponent<RangedEnemyBehaviour>();
         enemyBeh.handler = this;
         enemyBeh.target = player.transform;
-        enemy.GetComponent<HealthManager>().charController = enemyBeh;
+        HealthManager health = enemy.GetComponent<HealthManager>();
+        health.charController = enemyBeh;
         currentEnemyNumber = 1;
     }
     public void CheckForEnemyCount()

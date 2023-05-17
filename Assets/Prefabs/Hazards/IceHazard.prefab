@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 62759941938052225, guid: 6a8d07dd53fcc634ab8cde70189ef633, type: 3}
   - {fileID: 988404038577311232, guid: da8d7f52d865c734f9a69c4cd6410753, type: 3}
   - {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
-  - {fileID: 988404038577311232, guid: 2e2d4d37a989e7b4e8e491098026d39c, type: 3}
+  - {fileID: 988404038577311232, guid: 46a089bcc426d50419836d7b128dbe0a, type: 3}
   - {fileID: -4600260682615596345, guid: 06a44222c0a75c742887f39af0fb45f4, type: 3}
   - {fileID: -2802946992431128660, guid: e2b7ab126504af54f8fefb928fa6d13e, type: 3}
   - {fileID: 988404038577311232, guid: 15c08fee7849fa44b8423716dc5b6ad9, type: 3}
@@ -65,8 +65,12 @@ MonoBehaviour:
   numOfRangedEnemies: 20
   numOfTrees: 100
   meleeEnemyTypes:
-  - {fileID: 0}
+  - {fileID: 6095399286829797779, guid: bd6f87c79d942e7469abfdb4c8cba858, type: 3}
+  - {fileID: 6095399286829797779, guid: 85a8ee6a4cf00024b879f0495ed0357b, type: 3}
+  - {fileID: 6095399286829797779, guid: 27bfadb83c2adfe4fb64f529f11a1376, type: 3}
   rangedEnemyTypes:
-  - {fileID: 0}
+  - {fileID: 6265658475245885725, guid: d83674d1e7cdadb4793e1958c10d2f6b, type: 3}
+  - {fileID: 6265658475245885725, guid: f257be64c25929e4bb443a3002ba2879, type: 3}
   bossTypes:
-  - {fileID: 0}
+  - {fileID: 5874924541936657879, guid: 498294fe65e664e4ab8ec130b2d5dec2, type: 3}
+  - {fileID: 5874924541936657879, guid: 9f96ff1fa6703944db117bb580aaa4ea, type: 3}

@@ -32,7 +32,6 @@ public class GameHandler : MonoBehaviour
     public int spawnPointsNumber = 4;
     public float spawnDistance = 8;
 
-    public Texture2D levelTexture;
     public Texture2D groundTexture;
     public GameObject[] trees;
 

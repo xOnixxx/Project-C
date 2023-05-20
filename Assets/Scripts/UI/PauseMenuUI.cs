@@ -79,6 +79,7 @@ public class PauseMenuUI : MonoBehaviour
 
     public void ShowDeathScreen()
     {
+        Cursor.visible = true;
         dieMessage.enabled = true;
         toMenu.gameObject.SetActive(true);
     }

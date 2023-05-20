@@ -9,7 +9,7 @@ public class dmgMod : MonoBehaviour
 public class EnviromentalHazards : MonoBehaviour
 {
 
-    public Texture2D levelTexture;
+    public int grassID;
     public Texture2D groundTexture;
     public GameObject[] trees;
     
@@ -24,7 +24,7 @@ public class EnviromentalHazards : MonoBehaviour
     public List<GameObject> rangedEnemyTypes;
     public List<GameObject> bossTypes;
 
-    private Texture2D levelTextureOG;
+    private int grassIDOG;
     private Texture2D groundTextureOG;
     private GameObject[] treesOG;
 
@@ -42,7 +42,7 @@ public class EnviromentalHazards : MonoBehaviour
     public void Modify(GameHandler game)
     {
         groundTextureOG = game.tergen.groundTexture;
-        levelTextureOG = game.tergen.grassTexture;
+        grassIDOG = game.tergen.grassID;
         treesOG = game.tergen.tree;
         allowedPlayerElOG = game.allowedPlayerEl;
         elementalDmgUpOG = game.elementalDmgUp;
@@ -56,7 +56,7 @@ public class EnviromentalHazards : MonoBehaviour
         bossTypesOG = game.bossTypes;
 
         game.tergen.groundTexture = groundTexture;
-        game.tergen.grassTexture = levelTexture;
+        game.tergen.grassID = grassID;
         game.tergen.tree = trees;
         game.allowedPlayerEl = allowedPlayerEl;
         game.elementalDmgUp = elementalDmgUp;
@@ -73,7 +73,7 @@ public class EnviromentalHazards : MonoBehaviour
     public void Revert(GameHandler game)
     {
         game.tergen.groundTexture = groundTextureOG;
-        game.tergen.grassTexture = levelTextureOG;
+        game.tergen.grassID = grassIDOG;
         game.tergen.tree = treesOG;
         game.allowedPlayerEl = allowedPlayerElOG;
         game.elementalDmgUp = elementalDmgUpOG;

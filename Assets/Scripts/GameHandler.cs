@@ -50,9 +50,11 @@ public class GameHandler : MonoBehaviour
     public Image choice1Border;
     public Button choice1;
     public Text choice1Text;
+    public Text tooltip1;
     public Image choice2Border;
     public Button choice2;
     public Text choice2Text;
+    public Text tooltip2;
     public Image overlay;
     public Text tooltip;
     public Text count;
@@ -99,9 +101,11 @@ public class GameHandler : MonoBehaviour
         choice1.gameObject.SetActive(changer);
         choice1Border.enabled = changer;
         choice1Text.enabled = changer;
+        tooltip1.enabled = changer;
         choice2.gameObject.SetActive(changer);
         choice2Border.enabled = changer;
         choice2Text.enabled = changer;
+        tooltip2.enabled = changer;
     }
     public void StartLevel()
     {
@@ -207,6 +211,7 @@ public class GameHandler : MonoBehaviour
         character.enabled = true;
         starter.gameObject.SetActive(false);
         currentlyPlaying = true;
+        Time.timeScale = pauser.baseTimeScale;
     }
 
     public void SetDefaultSettings()
@@ -214,9 +219,9 @@ public class GameHandler : MonoBehaviour
         RenderSettings.skybox.SetColor("_Tint", baseColorSkybox);
         RenderSettings.fogColor = fogColor;
         generalLight.color = baseColorLight;
-        tergen.roughness = Random.Range(2, 8);
+        tergen.roughness = Random.Range(3, 10);
         tergen.fineness = Random.Range(4, 20);
-        tergen.noiseFrequency = Random.Range(1, 8);
+        tergen.noiseFrequency = Random.Range(2, 8);
         walls.radius = tergen.Size;
         walls.height = 80;
     }

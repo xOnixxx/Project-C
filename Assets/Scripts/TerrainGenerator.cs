@@ -6,7 +6,7 @@ public class TerrainGenerator : MonoBehaviour
 {
     //Must be power of 2 + 1
     public Texture2D groundTexture;
-    public Texture2D grassTexture;
+    public int grassID;
     public GameObject[] tree;
     public int treeAmount = 200;
     public int heightMapResolution = 33;
@@ -19,6 +19,7 @@ public class TerrainGenerator : MonoBehaviour
     private int[,] detailMap;
     private float maximumHeight;
     private GameObject currentTerrain;
+    public TerrainData terdata;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +52,7 @@ public class TerrainGenerator : MonoBehaviour
         }
         heightMap = new float[heightMapResolution, heightMapResolution];
         detailMap = new int[heightMapResolution, heightMapResolution];
-        TerrainData terdata = new TerrainData();
+        //TerrainData terdata = new TerrainData();
         int mapLength = heightMap.GetLength(0);
         terdata.heightmapResolution = heightMapResolution;
         terdata.size = new Vector3(2*Size,roughness,2*Size);
@@ -76,8 +77,6 @@ public class TerrainGenerator : MonoBehaviour
             }
         }
         terdata.SetHeights(0, 0, heightMap);
-        DetailPrototype[] details= new DetailPrototype[1];
-        DetailPrototype detail = new DetailPrototype();
         TreePrototype[] trees = new TreePrototype[tree.Length];
         for (int i = 0; i < tree.Length; i++)
         {
@@ -102,11 +101,8 @@ public class TerrainGenerator : MonoBehaviour
             treeinstances[i] = testTree;
         }
         terdata.SetTreeInstances(treeinstances, true);
-        detail.prototypeTexture = grassTexture;
-        details[0] = detail;
-        terdata.detailPrototypes = details;
         terdata.SetDetailResolution(heightMapResolution, grassDensity);
-        terdata.SetDetailLayer(0, 0, 0, detailMap);
+        terdata.SetDetailLayer(0, 0, grassID, detailMap);
 
         TerrainLayer[] terrainLayers = new TerrainLayer[1];
         TerrainLayer ground = new TerrainLayer();

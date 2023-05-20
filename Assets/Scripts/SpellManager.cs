@@ -14,6 +14,7 @@ public class SpellManager : MonoBehaviour
     public List<ISpell> spells = new List<ISpell>();
     public Image chargedSpellImage;
     public Text chargedSpellText;
+    public Text tooltip;
     private int chargedSpellIndex = -2;
     public bool isCasting = false;
 
@@ -83,6 +84,7 @@ public class SpellManager : MonoBehaviour
                 chargedSpellImage.enabled = true;
                 chargedSpellText.text = spells[chargedSpellIndex].spellName + " charged (" + ((float)caster.successfulPops / spells[chargedSpellIndex].nodeCastPositions.Count).ToString("##.##") + ")";
                 chargedSpellText.enabled = true;
+                tooltip.enabled = true;
             }
             isCasting = false;
             player.enabled = true;
@@ -94,5 +96,6 @@ public class SpellManager : MonoBehaviour
     {
         chargedSpellImage.enabled = false;
         chargedSpellText.enabled = false;
+        tooltip.enabled = false;
     }    
 }

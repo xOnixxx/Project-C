@@ -7,7 +7,7 @@ public class HealthManager : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth = 100;
     public float resist = 0;
-    public float invulnerabilityTime = 0.2f;
+    //public float invulnerabilityTime = 0.2f;
     public bool canBeInvulnerable = false;
     private bool isInvulnerable = false;
     private bool alreadyTakingDoT = false;
@@ -40,11 +40,11 @@ public class HealthManager : MonoBehaviour
     {
         if(!isInvulnerable)
         {
-            if(canBeInvulnerable)
+            /*if(canBeInvulnerable)
             {
-                //isInvulnerable = true;
-                //StartCoroutine(InvulnerabilityFrames());
-            }
+                isInvulnerable = true;
+                StartCoroutine(InvulnerabilityFrames());
+            }*/
             currentHealth -= (damage - resist * damage);
             switch (element)
             {
@@ -121,11 +121,11 @@ public class HealthManager : MonoBehaviour
         charController.Die();
     }
 
-    private IEnumerator InvulnerabilityFrames()
+    /*private IEnumerator InvulnerabilityFrames()
     {
         yield return new WaitForSeconds(invulnerabilityTime);
         isInvulnerable = false;
-    }
+    }*/
 
     private IEnumerator Stun(float stunLength)
     {

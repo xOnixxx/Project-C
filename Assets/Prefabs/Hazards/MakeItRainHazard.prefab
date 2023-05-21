@@ -43,8 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d08422179140b4fb6fd81732651eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTexture: {fileID: 2800000, guid: 466da0875c466a5479e8bd896be49024, type: 3}
+  grassID: 2
   groundTexture: {fileID: 2800000, guid: f51c976299a205e459acfa5e5110af0b, type: 3}
+  trees:
+  - {fileID: 1767654333338078013, guid: a2eae1aa4d641b6409025fe68feaf301, type: 3}
+  - {fileID: 1767654333338078013, guid: 4101a64506a307546a2221c9aa6b0740, type: 3}
   allowedPlayerEl:
   - {fileID: 6254002897089264580, guid: 09f3c58c489a32342b2ed751ca4fc57e, type: 3}
   - {fileID: 62759941938052225, guid: e54d1260c67c26f4eba741f06f267300, type: 3}
@@ -54,12 +57,22 @@ MonoBehaviour:
   - {fileID: 62759941938052225, guid: f90aaf1f87d5c0e4f85a1008c06166cd, type: 3}
   - {fileID: 62759941938052225, guid: 6e96d78961be13744b5a1e355d3c6164, type: 3}
   - {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
-  allowedEnemyEl:
-  - {fileID: 62759941938052225, guid: c40dfeb7fe68ef64687aec79543d56f5, type: 3}
-  - {fileID: 62759941938052225, guid: f90aaf1f87d5c0e4f85a1008c06166cd, type: 3}
-  - {fileID: 62759941938052225, guid: 6e96d78961be13744b5a1e355d3c6164, type: 3}
-  - {fileID: 8078911858458276985, guid: 6e81fdd0aa41ca14b9dd6307c361bd39, type: 3}
   elementalDmgUp:
   - {fileID: 0}
   numOfObstacles: 0
-  numOfEnemies: 0
+  numOfMeleeEnemies: 50
+  numOfRangedEnemies: 10
+  numOfTrees: 69
+  meleeEnemyTypes:
+  - {fileID: 6095399286829797779, guid: 31abc4c74081af145b7ee9f6979f391e, type: 3}
+  - {fileID: 6095399286829797779, guid: 6776f4f726a7eea4791b5d78bb830743, type: 3}
+  - {fileID: 6095399286829797779, guid: 855c3ec58095cfd4e964504da8bdcf44, type: 3}
+  - {fileID: 6095399286829797779, guid: 6784874c5310d53439aa705428061334, type: 3}
+  rangedEnemyTypes:
+  - {fileID: 6265658475245885725, guid: d5360bc97afffb64c8746a7ee687eb51, type: 3}
+  - {fileID: 6265658475245885725, guid: f257be64c25929e4bb443a3002ba2879, type: 3}
+  - {fileID: 6265658475245885725, guid: 43ad425addd8d1240a35357fe29c5f80, type: 3}
+  - {fileID: 6265658475245885725, guid: d83674d1e7cdadb4793e1958c10d2f6b, type: 3}
+  bossTypes:
+  - {fileID: 5874924541936657879, guid: 9f96ff1fa6703944db117bb580aaa4ea, type: 3}
+  - {fileID: 5874924541936657879, guid: 433f540bcf375204e9aa4e25532dcc8c, type: 3}

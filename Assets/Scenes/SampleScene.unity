@@ -6538,7 +6538,7 @@ PrefabInstance:
       objectReference: {fileID: 619214840}
     - target: {fileID: 8860005460541269535, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
       propertyPath: possibleHazards.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8860005460541269535, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
       propertyPath: possibleHazards.Array.data[1]
@@ -6548,6 +6548,10 @@ PrefabInstance:
       propertyPath: possibleHazards.Array.data[2]
       value: 
       objectReference: {fileID: 2786806341869943658, guid: 7c94544d52c0d6b49a931e34707bd9e3, type: 3}
+    - target: {fileID: 8860005460541269535, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
+      propertyPath: possibleHazards.Array.data[3]
+      value: 
+      objectReference: {fileID: -217789873057328922, guid: 4c45478f61896c04f8664c7d1b3949ca, type: 3}
     - target: {fileID: 8860005461638597278, guid: 243f9702cab63d44e8aa2c98714692ea, type: 3}
       propertyPath: height
       value: 80

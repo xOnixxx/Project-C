@@ -302,7 +302,7 @@ public class GameHandler : MonoBehaviour
     }
     public void CheckForEnemyCount()
     {
-        if(currentlyPlaying && currentEnemyNumber == 0)
+        if(currentlyPlaying && (currentEnemyNumber == 0 || enemyParent.transform.childCount == 0))
         {
             Cursor.visible = true;
             currentlyPlaying = false;

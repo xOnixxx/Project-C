@@ -108,6 +108,8 @@ public class GameHandler : MonoBehaviour
     }
     public void StartLevel()
     {
+        Time.timeScale = pauser.baseTimeScale;
+        AudioListener.pause = false;
         spellManager.enabled = false;
         advancer.gameObject.SetActive(false);
         if (levelsPassed + 1 % 3 == 0)
@@ -210,7 +212,6 @@ public class GameHandler : MonoBehaviour
         character.enabled = true;
         starter.gameObject.SetActive(false);
         currentlyPlaying = true;
-        Time.timeScale = pauser.baseTimeScale;
     }
 
     public void SetDefaultSettings()

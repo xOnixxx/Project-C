@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 5828371057168701643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 162526234279423213}
   - {fileID: 3653516758119085460}
@@ -100,7 +100,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-6986181105132956806
 Rigidbody:
@@ -343,6 +343,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6657015286509100010}
     m_Modifications:
+    - target: {fileID: 2657894586738194355, guid: cb15577892e7ea2438694a259c23d0ae, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.023164287
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657894586738194355, guid: cb15577892e7ea2438694a259c23d0ae, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.3811052
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657894586738194355, guid: cb15577892e7ea2438694a259c23d0ae, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0.113342166
+      objectReference: {fileID: 0}
     - target: {fileID: 5270485356260971615, guid: cb15577892e7ea2438694a259c23d0ae, type: 3}
       propertyPath: m_Name
       value: LightTrail

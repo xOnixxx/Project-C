@@ -60,7 +60,7 @@ MonoBehaviour:
   - {fileID: 988404038577311232, guid: 46a089bcc426d50419836d7b128dbe0a, type: 3}
   elementalDmgUp: []
   numOfObstacles: 0
-  numOfMeleeEnemies: 5
+  numOfMeleeEnemies: 10
   numOfRangedEnemies: 15
   numOfTrees: 30
   meleeEnemyTypes:

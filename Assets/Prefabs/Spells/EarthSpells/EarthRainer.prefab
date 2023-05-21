@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348534342020629269}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -126,11 +126,11 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
-  burstAmount: 500
+  burstAmount: 1000
   burstInterval: 0.2
   speedProjectile: 20
   speedSpawner: 100
-  area: 50
+  area: 25
 --- !u!54 &-3804166073021511884
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class CastingMode : MonoBehaviour
     private Color color;
     public bool finishedCasting = false;
     public float timeBeforeMiniGame = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,25 +84,37 @@ public class CastingMode : MonoBehaviour
 
     private void PopNode(GameObject button)
     {
+        button.GetComponent<SpellNodeBehaviour>().Hit();
         particlePos.anchoredPosition = button.GetComponent<RectTransform>().anchoredPosition;
         particleMain.startColor = button.GetComponent<Button>().image.color;
         particles.Play();
+        button.GetComponent<AudioSource>().PlayOneShot(button.GetComponent<AudioSource>().clip, 1);
         successfulPops += 1;
-        Destroy(button);
+        StartCoroutine(DelayedDeath(1, button));
     }
 
     private IEnumerator HandleButton(GameObject button, float lifetime)
     {
         yield return new WaitForSeconds(lifetime);
-        if(button !=null)
+
+        if(button !=null && !button.GetComponent<SpellNodeBehaviour>().getHit())
         {
             Destroy(button);
         }
     }
 
+    private IEnumerator DelayedDeath(float delay, GameObject button)
+    {
+        button.GetComponent<Image>().enabled= false;
+        button.GetComponentInChildren<Text>().enabled = false;
+        button.GetComponent<Button>().enabled = false;
+        yield return new WaitForSeconds(delay);
+        Destroy(button);
+    }
+
     private IEnumerator StartMinigame()
     {
-        //Time.timeScale = 0.5f;
+        Time.timeScale = 0.5f;
         yield return new WaitForSeconds(timeBeforeMiniGame);
         StartCoroutine(CreateButton(0));
     }

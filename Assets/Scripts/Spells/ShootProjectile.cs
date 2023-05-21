@@ -25,9 +25,10 @@ public class ShootProjectile : ISpell
         GameObject projectile = Instantiate(spell, origin, Quaternion.identity, anchor.transform);
         projectile.transform.localPosition += offset;
         projectile.transform.localScale *= size;
-        if (projectile.GetComponent<Damager>() != null )
-        {
-            projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer, element, burnTicks,burnDamagePerTick);
+        if (projectile.GetComponent<Damager>() != null ){projectile.GetComponent<Damager>().SetDamager(damage, dmgLayer, element, burnTicks,burnDamagePerTick);}
+        if (projectile.GetComponent<AudioSource>() != null) {
+            //Debug.Log(GetComponent<ProjectileAudioManager>().sounds);
+            projectile.GetComponent<AudioSource>().PlayOneShot(projectile.GetComponent<ProjectileAudioManager>().sounds[0]);
         }
         projectile.transform.parent= null;    
         projectile.transform.LookAt(target);

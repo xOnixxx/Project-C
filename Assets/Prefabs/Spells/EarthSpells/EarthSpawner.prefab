@@ -128,8 +128,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
   shooterPrefab: {fileID: -8167653782131612734, guid: 7e0cdfb2fe3bf554480ce3a386feb3b9, type: 3}
-  burstAmount: 10
-  burstInterval: 1
+  burstAmount: 150
+  burstInterval: 1.5
   speedProjectile: 8
   speedSpawner: 100
 --- !u!54 &624818418826276025

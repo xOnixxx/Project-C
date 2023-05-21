@@ -55,15 +55,15 @@ MonoBehaviour:
   - {x: 1300, y: 750}
   - {x: 1450, y: 600}
   lifetimes:
-  - 1
   - 0.5
-  - 0.5
-  - 0.5
+  - 0.25
+  - 0.25
+  - 0.25
   spawnDelays:
-  - 1
   - 0.5
-  - 0.5
-  - 0.5
+  - 0.25
+  - 0.25
+  - 0.25
   size: 1
   speed: 5
   burnTicks: 30

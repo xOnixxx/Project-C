@@ -46,7 +46,7 @@ MonoBehaviour:
   damage: 25
   dmgMultiplier: 1
   dmgLayer: 0600000007000000
-  spellName: Light Globe
+  spellName: Light Spawner
   element: 3
   spellSprite: {fileID: 21300000, guid: 8ebbbba662e706a48afa851ab77a924a, type: 3}
   nodeCastPositions:

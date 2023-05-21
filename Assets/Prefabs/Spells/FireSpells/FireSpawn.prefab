@@ -46,7 +46,7 @@ MonoBehaviour:
   damage: 1
   dmgMultiplier: 1
   dmgLayer: 07000000
-  spellName: Fire Globe
+  spellName: Fire Spawner
   element: 2
   spellSprite: {fileID: 21300000, guid: f0b173a1633e2bf48920666cda055f0c, type: 3}
   nodeCastPositions:

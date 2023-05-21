@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d08422179140b4fb6fd81732651eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTexture: {fileID: 2800000, guid: 1d92176f1114aa249a1325cb6d52eec0, type: 3}
+  grassID: 0
   groundTexture: {fileID: 2800000, guid: 36d7fb85a779bba4ebfe7ff66eed335d, type: 3}
   trees:
   - {fileID: 7494923444958524680, guid: 38edc740fa5e2a54cbe2db5bf212b13a, type: 3}
@@ -71,8 +71,8 @@ MonoBehaviour:
   - {fileID: 988404038577311232, guid: 46a089bcc426d50419836d7b128dbe0a, type: 3}
   elementalDmgUp: []
   numOfObstacles: 0
-  numOfMeleeEnemies: 1
-  numOfRangedEnemies: 3
+  numOfMeleeEnemies: 10
+  numOfRangedEnemies: 10
   numOfTrees: 200
   meleeEnemyTypes:
   - {fileID: 6095399286829797779, guid: 96e96fba5152d274799d5c3b95ed933e, type: 3}

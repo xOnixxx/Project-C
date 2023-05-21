@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca246c7be718cb43aa8e533069d9c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  currentHealth: 1000
+  maxHealth: 50
+  currentHealth: 50
   resist: 0
   canBeInvulnerable: 0
   charController: {fileID: 4121039603335213331}
@@ -136,13 +136,13 @@ MonoBehaviour:
   - {fileID: 62759941938052225, guid: 2f7d19abce441974bb6c57c677df2b0f, type: 3}
   - {fileID: 988404038577311232, guid: fb0e91e208b629549987c4bdf55d271b, type: 3}
   - {fileID: 8078911858458276985, guid: f8be487258d943e45b55399c596aabc7, type: 3}
-  attackRange: 40
-  movementSpeed: 1
+  attackRange: 45
+  movementSpeed: 3
   gravity: 9.87
   canMove: 1
   canAttack: 1
   dmgMultiplier: 1
-  attackDelay: 5
+  attackDelay: 2
 --- !u!143 &9212576761705070642
 CharacterController:
   m_ObjectHideFlags: 0

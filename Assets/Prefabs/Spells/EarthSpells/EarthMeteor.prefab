@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95d08a2127045459292c759fc27ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 150
+  damage: 125
   dmgMultiplier: 1
   dmgLayer: 0600000007000000
   spellName: Earth Meteor
@@ -57,19 +57,19 @@ MonoBehaviour:
   - {x: 1400, y: 200}
   - {x: 1300, y: 100}
   lifetimes:
-  - 1
-  - 1
-  - 0.4
-  - 1
-  - 0.4
-  - 1
+  - 0.5
+  - 0.5
+  - 0.2
+  - 0.5
+  - 0.2
+  - 0.5
   spawnDelays:
-  - 1
-  - 1
   - 0.5
-  - 1
   - 0.5
-  - 1
+  - 0.25
+  - 0.5
+  - 0.25
+  - 0.5
   size: 5
   speed: 5
   burnTicks: 0

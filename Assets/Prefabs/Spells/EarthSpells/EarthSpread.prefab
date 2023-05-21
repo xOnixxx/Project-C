@@ -57,21 +57,23 @@ MonoBehaviour:
   - {x: 1320, y: 350}
   - {x: 1320, y: 250}
   lifetimes:
-  - 1
   - 0.5
-  - 1
+  - 0.25
   - 0.5
-  - 1
+  - 0.25
   - 0.5
+  - 0.25
   spawnDelays:
-  - 0.5
-  - 0.5
-  - 1.5
-  - 0.5
-  - 0.5
-  - 0.5
+  - 0.25
+  - 0.25
+  - 0.75
+  - 0.25
+  - 0.25
+  - 0.25
   size: 1
   speed: 1
+  burnTicks: 0
+  burnDamagePerTick: 0
   offset: {x: 0, y: 0, z: 0}
   spell: {fileID: 7268181049600962120, guid: 5759f77282e3c514ebb6b9fee8627763, type: 3}
   radius: 1.5

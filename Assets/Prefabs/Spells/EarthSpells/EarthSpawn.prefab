@@ -46,7 +46,7 @@ MonoBehaviour:
   damage: 10
   dmgMultiplier: 1
   dmgLayer: 07000000
-  spellName: Earth Globe
+  spellName: Earth Spawner
   element: 4
   spellSprite: {fileID: 21300000, guid: 6fdd1176b729d074496f9a8112aea040, type: 3}
   nodeCastPositions:
@@ -59,23 +59,23 @@ MonoBehaviour:
   - {x: 1240, y: 250}
   - {x: 1640, y: 250}
   lifetimes:
-  - 0.75
-  - 0.75
+  - 0.5
+  - 0.4
+  - 0.15
+  - 0.4
+  - 0.4
+  - 0.15
   - 0.3
-  - 0.75
-  - 0.75
   - 0.3
-  - 0.6
-  - 0.6
   spawnDelays:
-  - 1
-  - 1
-  - 0.2
-  - 1
-  - 1
-  - 0.2
-  - 0.6
-  - 0.6
+  - 0.5
+  - 0.5
+  - 0.1
+  - 0.5
+  - 0.5
+  - 0.1
+  - 0.3
+  - 0.3
   size: 1
   speed: 2
   burnTicks: 0

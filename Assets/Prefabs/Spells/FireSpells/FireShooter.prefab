@@ -54,13 +54,13 @@ MonoBehaviour:
   - {x: 500, y: 700}
   - {x: 600, y: 800}
   lifetimes:
-  - 0.5
-  - 0.4
-  - 0.4
+  - 0.25
+  - 0.2
+  - 0.2
   spawnDelays:
-  - 0.4
-  - 0.4
-  - 0.4
+  - 0.2
+  - 0.2
+  - 0.2
   size: 1.5
   speed: 8
   burnTicks: 25

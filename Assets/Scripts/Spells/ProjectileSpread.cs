@@ -88,6 +88,11 @@ public class ProjectileSpread : ISpell
         //icicle.transform.rotation = Quaternion.LookRotation(target);
         projectile.transform.LookAt(target);
         projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward*500*speed);
+        if (projectile.GetComponent<AudioSource>() != null)
+        {
+            //Debug.Log(GetComponent<ProjectileAudioManager>().sounds);
+            projectile.GetComponent<AudioSource>().PlayOneShot(projectile.GetComponent<ProjectileAudioManager>().sounds[0]);
+        }
 
     }
 }

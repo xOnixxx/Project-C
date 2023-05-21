@@ -52,6 +52,7 @@ public class PauseMenuUI : MonoBehaviour
     }
     public void PauseGame()
     {
+        baseTimeScale = Time.timeScale;
         Time.timeScale = 0;
         ChangeStates();
     }

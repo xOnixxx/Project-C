@@ -20,7 +20,7 @@ public class ParticleDestroy : MonoBehaviour
                 explosionEffect[i] = explosionEffectParents[i].GetComponent<ParticleSystem>();
             }
         }
-        TimedDeath();
+        StartCoroutine(TimedDeath());
     }
 
     // Update is called once per frame
@@ -34,6 +34,11 @@ public class ParticleDestroy : MonoBehaviour
     {
         if (collision.gameObject.tag != "Spells" && isFragile)
         {
+            if (GetComponent<AudioSource>() != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(GetComponent<ProjectileAudioManager>().sounds[1]);
+            }
+
             KillLoud();
         }
     }
@@ -72,7 +77,6 @@ public class ParticleDestroy : MonoBehaviour
         gameObject.GetComponent<MeshRenderer>().enabled= false;
         gameObject.GetComponent<Collider>().enabled= false;
         yield return new WaitForSeconds(timeToExplode);
-
 
         Destroy(gameObject);
     }

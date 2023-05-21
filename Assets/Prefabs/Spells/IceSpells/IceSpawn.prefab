@@ -46,7 +46,7 @@ MonoBehaviour:
   damage: 10
   dmgMultiplier: 1
   dmgLayer: 07000000
-  spellName: Ice Globe
+  spellName: Ice Spawner
   element: 1
   spellSprite: {fileID: 21300000, guid: f3f8b23dc256c1947a9bd83076911aa4, type: 3}
   nodeCastPositions:
